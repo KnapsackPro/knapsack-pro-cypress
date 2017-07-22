@@ -1,0 +1,34 @@
+{
+  "name": "knapsack-pro-js",
+  "version": "0.0.0",
+  "description": "Knapsack Pro JS splits tests across CI nodes and makes sure that tests will run in optimal time on each node.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KnapsackPro/knapsack-pro-js.git"
+  },
+  "keywords": [
+    "todo",
+    "todo",
+    "todo"
+  ],
+  "author": "Knapsack Pro <arturtrzop@gmail.com> (https://knapsackpro.com/)",
+  "contributors": [
+    {
+      "name": "Artur Trzop",
+      "email": "arturtrzop@gmail.com"
+    },
+    {
+      "name": "Rafał Trzop",
+      "email": "rafaltrzop@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KnapsackPro/knapsack-pro-js/issues"
+  },
+  "homepage": "https://github.com/KnapsackPro/knapsack-pro-js#readme"
+}
