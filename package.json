@@ -29,5 +29,8 @@
   },
   "bin": {
     "knapsack-pro": "bin/knapsack-pro.js"
+  },
+  "dependencies": {
+    "jasmine": "^2.6.0"
   }
 }
