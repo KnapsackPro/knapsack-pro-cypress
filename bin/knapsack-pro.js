@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var Jasmine = require('jasmine');
+var childProcess = require('child_process');
 
 var specFiles = (function() {
   var jasmine = new Jasmine();
@@ -18,31 +19,38 @@ var specFiles = (function() {
   return jasmine.specFiles;
 })();
 
-var runTestsByFile = function (specFiles) {
-  var head = specFiles[0];
-  var tail = specFiles.slice(1);
+function runSpecFiles(specFiles, callback) {
+  var specFilesHead = specFiles[0];
+  if (specFilesHead === undefined) return;
 
-  if (head === undefined) return;
+  var process = childProcess.fork(__dirname + '/runSpecFile.js', [specFilesHead]);
 
-  console.log(head);
+  // keep track of whether callback has been invoked to prevent multiple invocations
+  var callbackInvoked = false;
 
-  var jasmine = new Jasmine();
+  // listen for errors as they may prevent the exit event from firing
+  process.on('error', function (error) {
+    if (callbackInvoked) return;
+    callbackInvoked = true;
 
-  jasmine.loadConfig({
-    spec_dir: 'spec',
-    spec_files: [
-      head
-    ],
-    helpers: [
-      'helpers/**/*.js'
-    ]
+    callback(error);
   });
 
-  jasmine.onComplete(function(passed) {
-    runTestsByFile(tail);
+  // execute the callback once the process has finished running
+  process.on('exit', function (code) {
+    var specFilesTail = specFiles.slice(1);
+    runSpecFiles(specFilesTail, callback);
+
+    if (callbackInvoked) return;
+    callbackInvoked = true;
+
+    var error = (code === 0) ? null : new Error('exit code ' + code);
+    callback(error);
   });
+}
 
-  jasmine.execute();
-};
+function handleError(error) {
+  if (error) throw error;
+}
 
-runTestsByFile(specFiles);
+runSpecFiles(specFiles, handleError);
