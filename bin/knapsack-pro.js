@@ -43,6 +43,6 @@ var runTestsByFile = function (specFiles) {
   });
 
   jasmine.execute();
-}
+};
 
 runTestsByFile(specFiles);
