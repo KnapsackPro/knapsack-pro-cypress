@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 
 var Jasmine = require('jasmine');
-
-var specFile = process.argv[2];
+var jasmine = new Jasmine();
 
 function runSpecFile(specFile) {
-  var jasmine = new Jasmine();
-
   jasmine.loadConfig({
     spec_dir: 'spec',
     spec_files: [
@@ -20,4 +17,5 @@ function runSpecFile(specFile) {
   jasmine.execute();
 }
 
+var specFile = process.argv[2];
 runSpecFile(specFile);
