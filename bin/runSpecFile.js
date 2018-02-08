@@ -14,7 +14,16 @@ function runSpecFile(specFile) {
     ]
   });
 
+  var timer = process.hrtime();
   jasmine.execute();
+  var timerDiff = process.hrtime(timer);
+
+  var specTimeExecution = timerDiff[0] + timerDiff[1] / 1e9;
+
+  process.send({
+    path: specFile,
+    time_execution: specTimeExecution
+  });
 }
 
 var specFile = process.argv[2];
