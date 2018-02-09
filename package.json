@@ -31,6 +31,6 @@
     "knapsack-pro": "bin/knapsack-pro.js"
   },
   "dependencies": {
-    "jasmine": "^2.9.0"
+    "jasmine": "^3.0.0"
   }
 }
