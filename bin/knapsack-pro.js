@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var childProcess = require('child_process');
+var path = require('path');
 var Jasmine = require('jasmine');
 var jasmine = new Jasmine();
 
@@ -18,7 +19,8 @@ function runSpecFiles(specFiles) {
   var specFilesHead = specFiles[0];
   if (specFilesHead === undefined) return;
 
-  var specProcess = childProcess.fork(__dirname + '/runSpecFile.js', [specFilesHead]);
+  var specProcess = childProcess.fork(__dirname + path.sep + 'runSpecFile.js', [specFilesHead]);
+
 
   specProcess.on('error', function (error) {
     if (error) throw error;
