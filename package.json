@@ -19,6 +19,9 @@
     }
   ],
   "license": "MIT",
+  "scripts": {
+    "start": "gulp"
+  },
   "homepage": "https://github.com/KnapsackPro/knapsack-pro-js#readme",
   "repository": {
     "type": "git",
@@ -33,5 +36,14 @@
   "dependencies": {
     "axios": "^0.17.1",
     "jasmine": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.39",
+    "@babel/register": "^7.0.0-beta.39",
+    "babel-preset-env": "^1.6.1",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-typescript": "^4.0.1",
+    "typescript": "^2.7.1"
   }
 }
