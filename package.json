@@ -40,6 +40,8 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.39",
     "@babel/register": "^7.0.0-beta.39",
+    "@types/jasmine": "^2.8.6",
+    "@types/node": "^9.4.5",
     "babel-preset-env": "^1.6.1",
     "del": "^3.0.0",
     "gulp": "^4.0.0",

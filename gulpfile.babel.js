@@ -15,14 +15,14 @@ export function clean() {
   ]);
 }
 
-export function watch() {
-  gulp.watch(paths.src, compile);
-}
-
 export function compile() {
   return tsProject.src()
     .pipe(tsProject())
     .js.pipe(gulp.dest(paths.dest));
+}
+
+export function watch() {
+  gulp.watch(paths.src, compile);
 }
 
 export const build = gulp.series(
