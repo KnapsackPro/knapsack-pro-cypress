@@ -1,2 +1,5 @@
 /.idea/
 /node_modules/
+
+# remove below line when lib becomes stable
+/bin/
