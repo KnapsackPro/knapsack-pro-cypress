@@ -3,8 +3,7 @@
 import Jasmine = require('jasmine');
 
 function runSpecFile(specFile: string) {
-  const jasmine = new Jasmine();
-
+  const jasmine = new Jasmine({});
   jasmine.loadConfig({
     spec_dir: 'spec',
     spec_files: [
