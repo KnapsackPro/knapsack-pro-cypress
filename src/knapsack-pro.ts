@@ -3,36 +3,19 @@
 import Jasmine = require('jasmine');
 import childProcess = require('child_process');
 import path = require('path');
-import axios from 'axios';
 
-// TODO: use fake env data for testing
-process.env.KNAPSACK_PRO_TEST_SUITE_TOKEN = '4499425b5908312eb878ddc1a6e437c2';
-process.env.KNAPSACK_PRO_FIXED_QUEUE_SPLIT = 'false';
-process.env.KNAPSACK_PRO_COMMIT_HASH = 'ae3396177d9f8ca87e2b93b4b0a25babd09d574d';
-process.env.KNAPSACK_PRO_BRANCH = 'master';
-process.env.KNAPSACK_PRO_NODE_TOTAL = '2';
-process.env.KNAPSACK_PRO_NODE_INDEX = '1';
-process.env.KNAPSACK_PRO_NODE_BUILD_ID = '1234'; // TODO: use new Date().getTime(); for testing
+import { KnapsackProCore } from './knapsack-pro-core';
+import { TestFile } from './test-file.model';
 
-class TestFile {
-  path: string;
-  time_execution?: number;
-}
-
-abstract class KnapsackProCore {
-  // ...
-}
-
-class KnapsackPro extends KnapsackProCore {
-  private readonly apiBaseUrl: string;
+class KnapsackPro {
+  private knapsackProCore: KnapsackProCore;
   private jasmine: Jasmine;
 
   private testFiles1: TestFile[]; // TODO: rename variable
   private testFiles2: TestFile[]; // TODO: rename variable
 
   constructor() {
-    super(); // TODO: implement KnapsackProCore?
-    this.apiBaseUrl = 'https://api-staging.knapsackpro.com/v1'; // TODO: move to KnapsackProCore?
+    this.knapsackProCore = new KnapsackProCore();
 
     this.jasmine = new Jasmine({});
     this.jasmine.loadConfig({
@@ -48,24 +31,14 @@ class KnapsackPro extends KnapsackProCore {
     this.testFiles1 = this.jasmine.specFiles.map(specFile => {
       return { path: specFile };
     });
+  }
+
+  initQueueMode() {
     this.runQueueMode(this.testFiles1, true);
   }
 
   private runQueueMode(testFiles: TestFile[], initializeQueue = false) {
-    const url = `${this.apiBaseUrl}/queues/queue`;
-    const data = {
-      test_suite_token: process.env.KNAPSACK_PRO_TEST_SUITE_TOKEN,
-      can_initialize_queue: initializeQueue,
-      fixed_queue_split: process.env.KNAPSACK_PRO_FIXED_QUEUE_SPLIT === 'true',
-      commit_hash: process.env.KNAPSACK_PRO_COMMIT_HASH,
-      branch: process.env.KNAPSACK_PRO_BRANCH,
-      node_total: process.env.KNAPSACK_PRO_NODE_TOTAL,
-      node_index: process.env.KNAPSACK_PRO_NODE_INDEX,
-      node_build_id: process.env.KNAPSACK_PRO_NODE_BUILD_ID,
-      test_files: testFiles
-    };
-
-    axios.post(url, data)
+    this.knapsackProCore.queueRequest(testFiles, initializeQueue)
       .then(response => {
         const queueTestFiles = response.data.test_files;
         const queueEmpty = queueTestFiles.length === 0;
@@ -112,17 +85,7 @@ class KnapsackPro extends KnapsackProCore {
   }
 
   private sendTestSuiteSubsetSummary(testFiles: TestFile[]) {
-    const url = `${this.apiBaseUrl}/build_subsets`;
-    const data = {
-      test_suite_token: process.env.KNAPSACK_PRO_TEST_SUITE_TOKEN,
-      commit_hash: process.env.KNAPSACK_PRO_COMMIT_HASH,
-      branch: process.env.KNAPSACK_PRO_BRANCH,
-      node_total: process.env.KNAPSACK_PRO_NODE_TOTAL,
-      node_index: process.env.KNAPSACK_PRO_NODE_INDEX,
-      test_files: testFiles
-    };
-
-    axios.post(url, data)
+    this.knapsackProCore.buildSubsetRequest(testFiles)
       .then(response => {
         // console.log(response); // TODO: uncomment
       })
@@ -133,3 +96,4 @@ class KnapsackPro extends KnapsackProCore {
 }
 
 const knapsackPro = new KnapsackPro();
+knapsackPro.initQueueMode();
