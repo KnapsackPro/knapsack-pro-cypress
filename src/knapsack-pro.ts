@@ -3,13 +3,14 @@
 import Jasmine = require('jasmine');
 import childProcess = require('child_process');
 import path = require('path');
-import util = require('util')
 
 import { KnapsackProCore } from './knapsack-pro-core';
+import { KnapsackProLogger } from './knapsack-pro-logger';
 import { TestFile } from './test-file.model';
 
 class KnapsackPro {
   private knapsackProCore: KnapsackProCore;
+  private knapsackProLogger: KnapsackProLogger;
   private jasmine: Jasmine;
 
   private testFiles1: TestFile[]; // TODO: rename variable
@@ -17,6 +18,7 @@ class KnapsackPro {
 
   constructor() {
     this.knapsackProCore = new KnapsackProCore();
+    this.knapsackProLogger = new KnapsackProLogger();
 
     this.jasmine = new Jasmine({});
     this.jasmine.loadConfig({
@@ -25,7 +27,7 @@ class KnapsackPro {
         '**/*[sS]pec.js'
       ],
       helpers: [
-        'helpers/**/*.js'
+        'helpers/**/*.js',
       ]
     });
 
@@ -51,7 +53,9 @@ class KnapsackPro {
 
         this.runSpecFiles(queueTestFiles);
       })
-      .catch(this.logResponse);
+      .catch(error => {
+        this.knapsackProLogger.logError(error);
+      });
   }
 
   private runSpecFiles(testFiles: TestFile[]) {
@@ -88,14 +92,9 @@ class KnapsackPro {
       .then(response => {
         // console.log(response); // TODO: uncomment
       })
-      .catch(this.logResponse);
-  }
-
-  private logResponse(error: any) {
-    console.log(util.inspect(error.response.data, {
-      showHidden: false,
-      depth: null
-    }))
+      .catch(error => {
+        this.knapsackProLogger.logError(error);
+      });
   }
 }
 
