@@ -3,6 +3,7 @@
 import Jasmine = require('jasmine');
 import childProcess = require('child_process');
 import path = require('path');
+import util = require('util')
 
 import { KnapsackProCore } from './knapsack-pro-core';
 import { TestFile } from './test-file.model';
@@ -50,9 +51,7 @@ class KnapsackPro {
 
         this.runSpecFiles(queueTestFiles);
       })
-      .catch(error => {
-        console.log(error);
-      });
+      .catch(this.logResponse);
   }
 
   private runSpecFiles(testFiles: TestFile[]) {
@@ -89,9 +88,14 @@ class KnapsackPro {
       .then(response => {
         // console.log(response); // TODO: uncomment
       })
-      .catch(error => {
-        console.log(error);
-      });
+      .catch(this.logResponse);
+  }
+
+  private logResponse(error) {
+    console.log(util.inspect(error.response.data, {
+      showHidden: false,
+      depth: null
+    }))
   }
 }
 
