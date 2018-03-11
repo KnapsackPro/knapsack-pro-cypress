@@ -1,4 +1,4 @@
-import util = require('util')
+import util = require('util');
 
 export class KnapsackProLogger {
   // TODO use types from axios instead of any
