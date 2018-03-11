@@ -43,6 +43,8 @@ class KnapsackPro {
   private runQueueMode(testFiles: TestFile[], initializeQueue = false) {
     this.knapsackProCore.queueRequest(testFiles, initializeQueue)
       .then(response => {
+        this.knapsackProLogger.logResponse(response);
+
         const queueTestFiles = response.data.test_files;
         const queueEmpty = queueTestFiles.length === 0;
 
@@ -90,7 +92,7 @@ class KnapsackPro {
   private sendTestSuiteSubsetSummary(testFiles: TestFile[]) {
     this.knapsackProCore.buildSubsetRequest(testFiles)
       .then(response => {
-        // console.log(response); // TODO: uncomment
+        this.knapsackProLogger.logResponse(response);
       })
       .catch(error => {
         this.knapsackProLogger.logError(error);
