@@ -91,7 +91,7 @@ class KnapsackPro {
       .catch(this.logResponse);
   }
 
-  private logResponse(error) {
+  private logResponse(error: any) {
     console.log(util.inspect(error.response.data, {
       showHidden: false,
       depth: null
