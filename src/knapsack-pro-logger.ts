@@ -1,16 +1,18 @@
 import util = require('util');
+import {
+  AxiosError,
+  AxiosResponse
+} from 'axios';
 
 export class KnapsackProLogger {
-  // TODO use types from axios instead of any
-  public logResponse(response: any) {
+  public logResponse(response: AxiosResponse<any>) {
     console.log(util.inspect(response.data, {
       showHidden: false,
       depth: null
     }));
   }
 
-  // TODO use types from axios instead of any
-  public logError(error: any) {
+  public logError(error: AxiosError) {
     this.logResponse(error.response);
   }
 }
