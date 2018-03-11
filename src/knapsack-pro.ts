@@ -31,7 +31,13 @@ class KnapsackPro {
       ]
     });
 
-    this.testFiles1 = this.jasmine.specFiles.map(specFile => {
+    let projectBaseDir = this.jasmine.projectBaseDir;
+    if (process.platform === 'win32') {
+      projectBaseDir = projectBaseDir.replace(/\\/g, '/');
+    }
+
+    this.testFiles1 = this.jasmine.specFiles.map(specFilePath => {
+      const specFile = specFilePath.replace(projectBaseDir, '');
       return { path: specFile };
     });
   }
