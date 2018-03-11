@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
 import Jasmine = require('jasmine');
+import path = require('path');
 
 function runSpecFile(specFile: string) {
   const jasmine = new Jasmine({});
   jasmine.loadConfig({
     spec_dir: 'spec',
     spec_files: [
-      specFile
+      path.resolve(specFile)
     ],
     helpers: [
       'helpers/**/*.js'
@@ -21,7 +22,7 @@ function runSpecFile(specFile: string) {
   const specTimeExecution = timerDiff[0] + timerDiff[1] / 1e9;
 
   process.send({
-    path: specFile, // TODO: try to get not absolute path
+    path: specFile,
     time_execution: specTimeExecution
   });
 }

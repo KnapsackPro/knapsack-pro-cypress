@@ -37,7 +37,7 @@ class KnapsackPro {
     }
 
     this.testFiles1 = this.jasmine.specFiles.map(specFilePath => {
-      const specFile = specFilePath.replace(projectBaseDir, '');
+      const specFile = specFilePath.replace(projectBaseDir, '.');
       return { path: specFile };
     });
   }
