@@ -1,13 +1,14 @@
 {
-  "name": "knapsack-pro-js",
-  "version": "0.0.0",
-  "description": "Knapsack Pro JS splits tests across CI nodes and makes sure that tests will run in optimal time on each node.",
+  "name": "knapsack-pro-cypress",
+  "version": "0.1.0",
+  "description": "Knapsack Pro Cypress splits Cypress.io tests across CI nodes and makes sure that tests will run in optimal time on each CI node.",
   "keywords": [
-    "todo",
-    "todo",
-    "todo"
+    "knapsack-pro",
+    "cypress",
+    "test suite parallelisation",
+    "parallelisation"
   ],
-  "author": "Knapsack Pro <arturtrzop@gmail.com> (https://knapsackpro.com/)",
+  "author": "Knapsack Pro <arturtrzop@gmail.com> (https://knapsackpro.com)",
   "contributors": [
     {
       "name": "Artur Trzop",
@@ -22,25 +23,23 @@
   "scripts": {
     "start": "gulp"
   },
-  "homepage": "https://github.com/KnapsackPro/knapsack-pro-js#readme",
+  "homepage": "https://github.com/KnapsackPro/knapsack-pro-cypress",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KnapsackPro/knapsack-pro-js.git"
+    "url": "https://github.com/KnapsackPro/knapsack-pro-cypress.git"
   },
   "bugs": {
-    "url": "https://github.com/KnapsackPro/knapsack-pro-js/issues"
+    "url": "https://github.com/KnapsackPro/knapsack-pro-cypress/issues"
   },
   "bin": {
-    "knapsack-pro": "bin/knapsack-pro.js"
+    "knapsack-pro": "bin/knapsack-pro-cypress.js"
   },
   "dependencies": {
-    "axios": "^0.17.1",
-    "jasmine": "^3.0.0"
+    "axios": "^0.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.39",
     "@babel/register": "^7.0.0-beta.39",
-    "@types/jasmine": "^2.8.6",
     "@types/node": "^9.4.5",
     "babel-preset-env": "^1.6.1",
     "del": "^3.0.0",
