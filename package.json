@@ -34,7 +34,9 @@
   "bin": {
     "knapsack-pro": "bin/knapsack-pro-cypress.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "knapsack-pro-core-js": "file:../knapsack-pro-core-js"
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.39",
     "@babel/register": "^7.0.0-beta.39",
