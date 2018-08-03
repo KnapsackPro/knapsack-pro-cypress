@@ -32,7 +32,7 @@
     "url": "https://github.com/KnapsackPro/knapsack-pro-cypress/issues"
   },
   "bin": {
-    "knapsack-pro": "bin/knapsack-pro-cypress.js"
+    "knapsack-pro-cypress": "bin/knapsack-pro-cypress.js"
   },
   "dependencies": {
     "knapsack-pro-core": "file:../knapsack-pro-core-js"
