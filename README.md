@@ -6,6 +6,10 @@
 
 We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with dynamic test suite split](https://youtu.be/hUEB1XDKEFY).
 
+## Dependencies
+
+* [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js)
+
 ## Development
 
 ```
