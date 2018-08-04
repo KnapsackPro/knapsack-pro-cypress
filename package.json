@@ -20,6 +20,10 @@
     }
   ],
   "license": "MIT",
+  "engines": {
+    "node": ">=8.11.1",
+    "npm": ">=5.6.0"
+  },
   "scripts": {
     "start": "gulp"
   },
