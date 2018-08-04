@@ -12,6 +12,12 @@ jobs:
     working_directory: ~/repo
 
     steps:
+      # dependencies
+      - run: cd ~ && (git clone -b $CIRCLE_BRANCH --single-branch git@github.com:KnapsackPro/knapsack-pro-core-js.git || git clone --single-branch git@github.com:KnapsackPro/knapsack-pro-core-js.git)
+      - run: cd ~/knapsack-pro-core-js && npm install
+      - run: cd ~/knapsack-pro-core-js && npm run tsc
+
+      # @knapsack-pro/cypress project
       - checkout
 
       # Download and cache dependencies
