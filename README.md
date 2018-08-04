@@ -1,4 +1,4 @@
-# knapsack-pro-cypress
+# @knapsack-pro/cypress
 
 ## Development
 
