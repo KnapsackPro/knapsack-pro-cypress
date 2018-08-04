@@ -13,7 +13,7 @@ jobs:
 
     steps:
       # dependencies
-      - run: cd ~ && (git clone -b $CIRCLE_BRANCH --single-branch git@github.com:KnapsackPro/knapsack-pro-core-js.git || git clone --single-branch git@github.com:KnapsackPro/knapsack-pro-core-js.git)
+      - run: cd ~ && (git clone -b $CIRCLE_BRANCH --single-branch https://github.com/KnapsackPro/knapsack-pro-core-js.git || git clone --single-branch https://github.com/KnapsackPro/knapsack-pro-core-js.git)
       - run: cd ~/knapsack-pro-core-js && npm install
       - run: cd ~/knapsack-pro-core-js && npm run tsc
 
