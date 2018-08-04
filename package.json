@@ -25,7 +25,8 @@
     "npm": ">=5.6.0"
   },
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "lint": "tslint 'src/**/*.ts'"
   },
   "homepage": "https://github.com/KnapsackPro/knapsack-pro-cypress",
   "repository": {
@@ -49,6 +50,7 @@
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-typescript": "^4.0.1",
+    "tslint": "^5.11.0",
     "typescript": "^2.7.1"
   }
 }
