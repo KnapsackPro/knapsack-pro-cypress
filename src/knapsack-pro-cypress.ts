@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-import KnapsackProCore from "@knapsack-pro/core";
-import { TestFile } from "@knapsack-pro/core/test-file.model";
+import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
 
 const knapsackPro = new KnapsackProCore([]);
 knapsackPro.runQueueMode((queueTestFiles: TestFile[]) => {
