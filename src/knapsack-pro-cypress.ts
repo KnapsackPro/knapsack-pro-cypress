@@ -4,7 +4,7 @@ import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
 
 const knapsackPro = new KnapsackProCore([]);
 knapsackPro.runQueueMode((queueTestFiles: TestFile[]) => {
-  const recordedTestFiles<TestFile[]> = [];
+  const recordedTestFiles: TestFile[] = [];
   const deferredRecordedTestFiles = new Promise();
 
   // run tests by cypress
