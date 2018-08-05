@@ -44,14 +44,14 @@
     "@knapsack-pro/core": "file:../knapsack-pro-core-js"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.39",
+    "@babel/core": "^7.0.0-beta.56",
     "@babel/preset-env": "^7.0.0-beta.56",
-    "@babel/register": "^7.0.0-beta.39",
-    "@types/node": "^9.4.5",
+    "@babel/register": "^7.0.0-beta.56",
+    "@types/node": "^9.6.25",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
-    "gulp-typescript": "^4.0.1",
+    "gulp-typescript": "^4.0.2",
     "tslint": "^5.11.0",
-    "typescript": "^2.7.1"
+    "typescript": "^2.9.2"
   }
 }
