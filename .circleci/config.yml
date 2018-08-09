@@ -13,9 +13,21 @@ jobs:
 
     steps:
       # dependencies
+      # @knapsack-pro/core project
+      - restore_cache:
+          keys:
+          - v1-knapsack-pro-core-{{ checksum "~/knapsack-pro-core-js/package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-knapsack-pro-core-
+
       - run: cd ~ && (git clone -b $CIRCLE_BRANCH --single-branch https://github.com/KnapsackPro/knapsack-pro-core-js.git || git clone --single-branch https://github.com/KnapsackPro/knapsack-pro-core-js.git)
       - run: cd ~/knapsack-pro-core-js && npm install
       - run: cd ~/knapsack-pro-core-js && npm run tsc
+
+      - save_cache:
+          paths:
+            - ~/knapsack-pro-core-js/node_modules
+          key: v1-knapsack-pro-core-{{ checksum "~/knapsack-pro-core-js/package.json" }}
 
       # @knapsack-pro/cypress project
       - checkout
@@ -23,7 +35,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}-{{ checksum "~/knapsack-pro-core-js/package.json" }}
+          - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
@@ -32,8 +44,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-            - ~/knapsack-pro-core-js/node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}-{{ checksum "~/knapsack-pro-core-js/package.json" }}
+          key: v1-dependencies-{{ checksum "package.json" }}
 
       # run TypeScript Compiler
       - run: npm run tsc
