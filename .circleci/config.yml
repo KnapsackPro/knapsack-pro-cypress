@@ -24,7 +24,7 @@ jobs:
 
       - run: cd ~/knapsack-pro-core-js && npm install
       - run: cd ~/knapsack-pro-core-js && npm run tsc
-      - run: cd ~/knapsack-pro-core-js && npm link
+      - run: cd ~/knapsack-pro-core-js && sudo npm link
 
       - save_cache:
           paths:
