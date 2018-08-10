@@ -16,10 +16,29 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
 $ npm install
 ```
 
+Ensure you checked readme for `@knapsack-pro/core` before running below command.
+It's important to run `npm link package-name` after `npm install` so the link will override package installed by npm.
+
+```
+$ npm link @knapsack-pro/core
+```
+
 Compile typescript code with `gulp`. The output will be in `bin` directory.
 
 ```
 $ npm start
+```
+
+## Publishing
+
+Ensure you have in `package.json` the latest version of `@knapsack-pro/core` and you run `npm install`:
+
+```
+{
+  "dependencies": {
+    "@knapsack-pro/core": "latest"
+  }
+}
 ```
 
 ## Testing
