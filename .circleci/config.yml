@@ -24,6 +24,7 @@ jobs:
 
       - run: cd ~/knapsack-pro-core-js && npm install
       - run: cd ~/knapsack-pro-core-js && npm run tsc
+      - run: cd ~/knapsack-pro-core-js && npm link
 
       - save_cache:
           paths:
@@ -41,6 +42,7 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
+      - run: npm link @knapsack-pro/core
 
       - save_cache:
           paths:
