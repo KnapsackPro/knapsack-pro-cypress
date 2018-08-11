@@ -1,6 +1,10 @@
 import gulp from 'gulp';
 import del from 'del';
 import ts from 'gulp-typescript';
+import gFilter from 'gulp-filter';
+import chmod from 'gulp-chmod';
+ 
+const filter = gFilter('src/cli.js', {restore: true});
 
 const tsProject = ts.createProject('tsconfig.json');
 const paths = {
@@ -16,9 +20,19 @@ export function clean() {
 }
 
 export function compile() {
+  const filterBinFiles = gFilter('bin/knapsack-pro-cypress.js', { restore: true });
+
   return tsProject.src()
     .pipe(tsProject())
-    .js.pipe(gulp.dest(paths.dest));
+    // compile ts to js
+    .js
+    // filter a subset of the files
+    .pipe(filterBinFiles)
+    // make them executable
+    .pipe(chmod(0o755))
+    // bring back the previously filtered out files
+    .pipe(filterBinFiles.restore)
+    .pipe(gulp.dest(paths.dest));
 }
 
 export function watch() {
