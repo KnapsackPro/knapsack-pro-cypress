@@ -29,6 +29,12 @@ Compile typescript code with `gulp`. The output will be in `bin` directory.
 $ npm start
 ```
 
+Register this package globally in your local system. This way we will be able to develop other npm packages dependent on `@knapsack-pro/cypress`:
+
+```
+$ npm link
+```
+
 ## Publishing
 
 Ensure you have in `package.json` the latest version of `@knapsack-pro/core` and you run `npm install`:
