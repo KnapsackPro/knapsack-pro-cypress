@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
-import * as Promise from "bluebird";
 
 const knapsackPro = new KnapsackProCore([]);
 knapsackPro.runQueueMode((queueTestFiles: TestFile[]) => {
