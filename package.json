@@ -27,7 +27,7 @@
   "scripts": {
     "start": "gulp",
     "tsc": "tsc",
-    "lint": "tslint 'src/**/*.ts' --format stylish"
+    "lint": "tslint --project . --format stylish"
   },
   "homepage": "https://github.com/KnapsackPro/knapsack-pro-cypress",
   "repository": {
