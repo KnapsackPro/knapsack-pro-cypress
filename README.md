@@ -12,24 +12,27 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
 
 ## Development
 
+1. Setup [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js) project.
+
+2. Install dependencies.
+
 ```
 $ npm install
 ```
 
-Ensure you checked readme for `@knapsack-pro/core` before running below command.
-It's important to run `npm link package-name` after `npm install` so the link will override package installed by npm.
+3. Use your local version of `@knapsack-pro/core` registered with node.
 
 ```
 $ npm link @knapsack-pro/core
 ```
 
-Compile typescript code with `gulp`. The output will be in `bin` directory.
+4. Compile typescript code with `gulp`. The output will be in `bin` directory.
 
 ```
 $ npm start
 ```
 
-Register this package globally in your local system. This way we will be able to develop other npm packages dependent on `@knapsack-pro/cypress`:
+5. Register `@knapsack-pro/cypress` package globally in your local system. This way we will be able to develop other npm packages dependent on it.
 
 ```
 $ npm link
