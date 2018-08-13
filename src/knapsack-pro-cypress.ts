@@ -2,7 +2,8 @@
 
 import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
 
-const knapsackPro = new KnapsackProCore([]);
+const allTestFiles: TestFile[] = [];
+const knapsackPro = new KnapsackProCore(allTestFiles);
 knapsackPro.runQueueMode((queueTestFiles: TestFile[]) => {
   const recordedTestFiles: TestFile[] = [];
 
