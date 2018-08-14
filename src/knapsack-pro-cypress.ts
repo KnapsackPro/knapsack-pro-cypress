@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
-// import "cypress";
 import cypress = require("cypress");
 
 const allTestFiles: TestFile[] = [{path: "a_spec.rb"}];
