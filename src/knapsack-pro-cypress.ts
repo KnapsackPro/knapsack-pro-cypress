@@ -1,28 +1,45 @@
 #!/usr/bin/env node
 
 import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
-import "cypress";
+// import "cypress";
+import cypress = require("cypress");
 
-const allTestFiles: TestFile[] = [];
+const allTestFiles: TestFile[] = [{path: "a_spec.rb"}];
+// const allTestFiles: TestFile[] = [];
 const knapsackPro = new KnapsackProCore(allTestFiles);
 
 const onSuccess = async (queueTestFiles: TestFile[]) => {
   const recordedTestFiles: TestFile[] = [];
 
-  // cypress.run({
-  //   spec: './cypress/integration/examples/actions.spec.js'
-  // })
-  // .then((results) => {
-  //   console.log(results)
-  // })
-  // .catch((err) => {
-  //   console.error(err)
-  // })
+  const deferredRecordedTestFiles = new Promise<TestFile[]>((resolve: any, reject: any) => {
+    // https://docs.cypress.io/guides/guides/module-api.html#Example
+    cypress
+      .run({
+        spec: [
+          "./cypress/integration/examples/actions.spec.js",
+          "./cypress/integration/examples/cookies.spec.js",
+        ], // TODO use queueTestFiles here
+      })
+      .then((results: any) => {
+        console.log(results);
+        console.log(results.runs);
 
-  const deferredRecordedTestFiles = new Promise<TestFile[]>((resolve, reject) => {
-    // run tests by cypress
-    // https://docs.cypress.io/guides/guides/command-line.html#Cypress-Module-API
-    resolve(recordedTestFiles);
+        results.runs.forEach((test: any) => {
+          const timeExecutionMs = test.stats.wallClockDuration; // in miliseconds
+          const timeExecution = timeExecutionMs / 1000.0;
+          recordedTestFiles.push({
+            path: test.spec.relative,
+            time_execution: timeExecution,
+          });
+        });
+
+        console.log(recordedTestFiles);
+
+        resolve(recordedTestFiles);
+      })
+      .catch((err: any) => {
+        console.error(err);
+      });
   });
 
   return deferredRecordedTestFiles;
