@@ -21,9 +21,6 @@ const onSuccess = async (queueTestFiles: TestFile[]) => {
         ], // TODO use queueTestFiles here
       })
       .then((results: any) => {
-        console.log(results);
-        console.log(results.runs);
-
         results.runs.forEach((test: any) => {
           const timeExecutionMs = test.stats.wallClockDuration; // in miliseconds
           const timeExecution = timeExecutionMs / 1000.0;
@@ -32,8 +29,6 @@ const onSuccess = async (queueTestFiles: TestFile[]) => {
             time_execution: timeExecution,
           });
         });
-
-        console.log(recordedTestFiles);
 
         resolve(recordedTestFiles);
       })
