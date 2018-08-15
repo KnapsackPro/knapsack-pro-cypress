@@ -19,8 +19,8 @@ const onSuccess = async (queueTestFiles: TestFile[]) => {
           "./cypress/integration/examples/cookies.spec.js",
         ], // TODO use queueTestFiles here
       })
-      .then((results: any) => {
-        results.runs.forEach((test: any) => {
+      .then(({ runs: tests }: { runs: object[] }) => {
+        tests.forEach((test: any) => {
           const timeExecutionMs = test.stats.wallClockDuration; // in miliseconds
           const timeExecution = timeExecutionMs / 1000.0;
           recordedTestFiles.push({
