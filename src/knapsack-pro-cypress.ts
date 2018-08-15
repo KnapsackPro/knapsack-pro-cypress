@@ -21,19 +21,14 @@ const allTestFiles: TestFile[] = knapsackProTestFilesFinder.allTestFiles();
 const knapsackPro = new KnapsackProCore(allTestFiles);
 
 const onSuccess = async (queueTestFiles: TestFile[]) => {
+  const testFilePaths: string[] = queueTestFiles.map((testFile: TestFile) => testFile.path);
   const recordedTestFiles: TestFile[] = [];
-
-  // TODO remove log
-  console.log("tests from queue", queueTestFiles);
 
   const deferredRecordedTestFiles = new Promise<TestFile[]>((resolve: any, reject: any) => {
     // https://docs.cypress.io/guides/guides/module-api.html#Example
     cypress
       .run({
-        spec: [
-          "./cypress/integration/examples/actions.spec.js",
-          "./cypress/integration/examples/cookies.spec.js",
-        ], // TODO use queueTestFiles here
+        spec: testFilePaths,
       })
       .then(({ runs: tests }: { runs: object[] }) => {
         tests.forEach((test: any) => {
