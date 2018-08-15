@@ -14,13 +14,20 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
 
 1. Setup [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js) project.
 
-2. Install dependencies.
+2. Set up environment variables:
+
+    ```
+    $ cp .env.sample .env
+    $ vim .env
+    ```
+
+3. Install dependencies.
 
     ```
     $ npm install
     ```
 
-3. Use your local version of `@knapsack-pro/core` registered with node.
+    Take note that NPM postinstall script defined in `package.json` may run below command based on `.env` configuration:
 
     ```
     $ npm link @knapsack-pro/core
