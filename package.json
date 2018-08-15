@@ -27,7 +27,8 @@
   "scripts": {
     "start": "gulp",
     "tsc": "tsc",
-    "lint": "tslint --project . --format stylish"
+    "lint": "tslint --project . --format stylish",
+    "postinstall": "bash ./scripts/postinstall"
   },
   "homepage": "https://github.com/KnapsackPro/knapsack-pro-cypress",
   "repository": {

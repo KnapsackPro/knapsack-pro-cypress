@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ "$KNAPSACK_PRO_ENV" == "development" ]; then
+  npm link @knapsack-pro/core
+fi
