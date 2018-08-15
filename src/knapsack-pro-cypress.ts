@@ -5,43 +5,30 @@ const cypress = require("cypress"); // tslint:disable-line:no-var-requires
 const glob = require("glob");
 
 class KnapsackProTestFilesFinder {
-
-  public allTestFiles() {
+  public allTestFiles(): TestFile[] {
     const testFiles: TestFile[] = [];
 
     // TODO add support for jsx etc
     // https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests.html#Test-files
-    glob("cypress/integration/**/*.js", {}, (error: any, files: any) => {
-      // files is an array of filenames.
-      // If the `nonull` option is set, and nothing
-      // was found, then files is ["**/*.js"]
-      // er is an error object or null.
-      if (error) {
-        // tslint:disable-next-line:no-console
-        console.error(error);
-        return;
-      }
+    const files: string[] = glob.sync("cypress/integration/**/*.js", {});
 
-      files.forEach((testFilePath: string) => {
-        testFiles.push({ path: testFilePath });
-      });
-      console.log(testFiles); // here has value
+    files.forEach((testFilePath: string) => {
+      testFiles.push({ path: testFilePath });
     });
 
-    console.log(testFiles); // here is empty, because of async operation
     return testFiles;
   }
 }
 
 const knapsackProTestFilesFinder = new KnapsackProTestFilesFinder();
-
-const knapsackPro = new KnapsackProCore(knapsackProTestFilesFinder.allTestFiles());
+const allTestFiles: TestFile[] = knapsackProTestFilesFinder.allTestFiles();
+const knapsackPro = new KnapsackProCore(allTestFiles);
 
 const onSuccess = async (queueTestFiles: TestFile[]) => {
   const recordedTestFiles: TestFile[] = [];
 
-  // TODO remove log, this should be list of tests fetched from queue
-  console.log(queueTestFiles);
+  // TODO remove log
+  console.log("tests from queue", queueTestFiles);
 
   const deferredRecordedTestFiles = new Promise<TestFile[]>((resolve: any, reject: any) => {
     // https://docs.cypress.io/guides/guides/module-api.html#Example
