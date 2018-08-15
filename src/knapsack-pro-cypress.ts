@@ -6,15 +6,11 @@ const glob = require("glob");
 
 class KnapsackProTestFilesFinder {
   public allTestFiles(): TestFile[] {
-    const testFiles: TestFile[] = [];
-
     // TODO add support for jsx etc
     // https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests.html#Test-files
-    const files: string[] = glob.sync("cypress/integration/**/*.js", {});
-
-    files.forEach((testFilePath: string) => {
-      testFiles.push({ path: testFilePath });
-    });
+    const testFiles: TestFile[] = glob
+      .sync("cypress/integration/**/*.js", {})
+      .map((testFilePath: string) => ({ path: testFilePath }));
 
     return testFiles;
   }
