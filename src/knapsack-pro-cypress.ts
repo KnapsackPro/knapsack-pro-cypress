@@ -4,10 +4,13 @@ import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
 const cypress = require("cypress"); // tslint:disable-line:no-var-requires
 const glob = require("glob");
 
-class KnapsackProTestFileFinder {
-  private testFiles: TestFile[] = [];
+class KnapsackProTestFilesFinder {
 
   public allTestFiles() {
+    const testFiles: TestFile[] = [];
+
+    // TODO add support for jsx etc
+    // https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests.html#Test-files
     glob("cypress/integration/**/*.js", {}, (error: any, files: any) => {
       // files is an array of filenames.
       // If the `nonull` option is set, and nothing
@@ -20,19 +23,19 @@ class KnapsackProTestFileFinder {
       }
 
       files.forEach((testFilePath: string) => {
-        this.testFiles.push({ path: testFilePath });
+        testFiles.push({ path: testFilePath });
       });
-      console.log(this.testFiles); // here has value
+      console.log(testFiles); // here has value
     });
 
-    console.log(this.testFiles); // here is empty, because of async operation
-    return this.testFiles;
+    console.log(testFiles); // here is empty, because of async operation
+    return testFiles;
   }
 }
 
-const knapsackProTestFileFinder = new KnapsackProTestFileFinder();
+const knapsackProTestFilesFinder = new KnapsackProTestFilesFinder();
 
-const knapsackPro = new KnapsackProCore(knapsackProTestFileFinder.allTestFiles());
+const knapsackPro = new KnapsackProCore(knapsackProTestFilesFinder.allTestFiles());
 
 const onSuccess = async (queueTestFiles: TestFile[]) => {
   const recordedTestFiles: TestFile[] = [];
