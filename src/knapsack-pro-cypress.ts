@@ -30,9 +30,6 @@ const onSuccess = async (queueTestFiles: TestFile[]) => {
         });
 
         resolve(recordedTestFiles);
-      })
-      .catch((err: any) => {
-        console.error(err);
       });
   });
 
