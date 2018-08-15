@@ -2,7 +2,7 @@
 
 import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
 const cypress = require("cypress"); // tslint:disable-line:no-var-requires
-const glob = require("glob");
+import glob = require("glob");
 
 class KnapsackProTestFilesFinder {
   public allTestFiles(): TestFile[] {
