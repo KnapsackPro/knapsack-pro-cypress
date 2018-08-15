@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
-import cypress = require("cypress");
+const cypress = require("cypress"); // tslint:disable-line:no-var-requires
 
 const allTestFiles: TestFile[] = [{path: "a_spec.rb"}];
 // const allTestFiles: TestFile[] = [];
