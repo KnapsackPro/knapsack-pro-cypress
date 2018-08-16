@@ -1,23 +1,12 @@
 #!/usr/bin/env node
 
-import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
 const cypress = require("cypress"); // tslint:disable-line:no-var-requires
-import glob = require("glob");
 
-class KnapsackProTestFilesFinder {
-  public allTestFiles(): TestFile[] {
-    // TODO add support for jsx etc
-    // https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests.html#Test-files
-    const testFiles: TestFile[] = glob
-      .sync("cypress/integration/**/*.js", {})
-      .map((testFilePath: string) => ({ path: testFilePath }));
+import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
+import { TestFilesFinder } from "./test-files-finder";
 
-    return testFiles;
-  }
-}
-
-const knapsackProTestFilesFinder = new KnapsackProTestFilesFinder();
-const allTestFiles: TestFile[] = knapsackProTestFilesFinder.allTestFiles();
+const testFilesFinder = new TestFilesFinder();
+const allTestFiles: TestFile[] = testFilesFinder.allTestFiles();
 const knapsackPro = new KnapsackProCore(allTestFiles);
 
 const onSuccess = async (queueTestFiles: TestFile[]) => {
