@@ -5,8 +5,7 @@ const cypress = require("cypress"); // tslint:disable-line:no-var-requires
 import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
 import { TestFilesFinder } from "./test-files-finder";
 
-const testFilesFinder = new TestFilesFinder();
-const allTestFiles: TestFile[] = testFilesFinder.allTestFiles();
+const allTestFiles: TestFile[] = TestFilesFinder.allTestFiles();
 const knapsackPro = new KnapsackProCore(allTestFiles);
 
 const onSuccess = async (queueTestFiles: TestFile[]) => {

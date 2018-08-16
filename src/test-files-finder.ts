@@ -1,10 +1,12 @@
-import { TestFile } from "@knapsack-pro/core";
 import glob = require("glob");
 
+import { TestFile } from "@knapsack-pro/core";
+import { EnvConfig } from "./env-config";
+
 export class TestFilesFinder {
-  public allTestFiles(): TestFile[] {
+  public static allTestFiles(): TestFile[] {
     return glob
-      .sync("cypress/integration/**/*.{js,jsx,coffee,cjsx}")
+      .sync(EnvConfig.testFilePattern)
       .map((testFilePath: string) => ({ path: testFilePath }));
   }
 }
