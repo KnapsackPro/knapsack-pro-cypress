@@ -2,26 +2,29 @@
 
 const cypress = require("cypress"); // tslint:disable-line:no-var-requires
 
-import { KnapsackProCore, TestFile } from "@knapsack-pro/core";
+import { KnapsackProCore, onQueueFailureType, onQueueSuccessType, TestFile } from "@knapsack-pro/core";
 import { TestFilesFinder } from "./test-files-finder";
 
 const allTestFiles: TestFile[] = TestFilesFinder.allTestFiles();
 const knapsackPro = new KnapsackProCore(allTestFiles);
 
-const onSuccess = async (queueTestFiles: TestFile[]): Promise<TestFile[]> => {
+const onSuccess: onQueueSuccessType = async (queueTestFiles) => {
   const testFilePaths: string[] = queueTestFiles.map((testFile: TestFile) => testFile.path);
-  const { runs: tests } = await cypress.run({ spec: testFilePaths });
+  const { runs: tests, totalFailed } = await cypress.run({ spec: testFilePaths });
 
   const recordedTestFiles: TestFile[] = tests.map((test: any) => ({
     path: test.spec.relative,
     time_execution: test.stats.wallClockDuration / 1000, // seconds
   }));
 
-  return recordedTestFiles;
+  return {
+    recordedTestFiles,
+    isTestSuiteGreen: totalFailed === 0,
+  };
 };
 
-const onError = (error: any) => {
-  // handle error
+const onError: onQueueFailureType = (error) => {
+  // TODO: handle error
 };
 
 knapsackPro.runQueueMode(onSuccess, onError);
