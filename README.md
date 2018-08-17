@@ -6,6 +6,22 @@
 
 We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with dynamic test suite split](https://youtu.be/hUEB1XDKEFY).
 
+## Installation
+
+```
+$ npm install --save-dev @knapsack-pro/cypress
+```
+
+## How to use
+
+TODO
+
+## FAQ
+
+### How to run tests only from specific directory?
+
+You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,coffee,cjsx}` and change pattern to match your directory with test files. You can use [glob](https://github.com/isaacs/node-glob) pattern.
+
 ## Dependencies
 
 * [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js)
