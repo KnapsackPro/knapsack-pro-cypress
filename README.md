@@ -6,6 +6,23 @@
 
 We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with dynamic test suite split](https://youtu.be/hUEB1XDKEFY) thanks to Queue Mode.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Installation](#installation)
+- [How to use](#how-to-use)
+- [FAQ](#faq)
+  - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
+- [Dependencies](#dependencies)
+- [Development](#development)
+- [Publishing](#publishing)
+- [Testing](#testing)
+  - [CI](#ci)
+  - [Example Cypress test suite](#example-cypress-test-suite)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Installation
 
 ```
