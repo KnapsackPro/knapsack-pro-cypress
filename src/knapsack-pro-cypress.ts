@@ -3,7 +3,10 @@
 const cypress = require("cypress"); // tslint:disable-line:no-var-requires
 
 import { KnapsackProCore, onQueueFailureType, onQueueSuccessType, TestFile } from "@knapsack-pro/core";
+import { EnvConfig } from "./env-config";
 import { TestFilesFinder } from "./test-files-finder";
+
+EnvConfig.loadEnvironmentVariables();
 
 const allTestFiles: TestFile[] = TestFilesFinder.allTestFiles();
 const knapsackPro = new KnapsackProCore(allTestFiles);
