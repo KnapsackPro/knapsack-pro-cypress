@@ -8,7 +8,7 @@ import { TestFilesFinder } from "./test-files-finder";
 const allTestFiles: TestFile[] = TestFilesFinder.allTestFiles();
 const knapsackPro = new KnapsackProCore(allTestFiles);
 
-const onSuccess: onQueueSuccessType = async (queueTestFiles) => {
+const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
   const testFilePaths: string[] = queueTestFiles.map((testFile: TestFile) => testFile.path);
   const { runs: tests, totalFailed } = await cypress.run({ spec: testFilePaths });
 
