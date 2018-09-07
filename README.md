@@ -38,7 +38,13 @@ $ npm install --save-dev @knapsack-pro/cypress
 
     The default is `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=false` which means when you want to retry the whole failed CI build then a new dynamic test suite split will happen across all retried parallel CI nodes thanks to Knapsack Pro Queue Mode. Some people may prefer to retry the whole failed CI build with test files allocated across parallel CI nodes in the same order as it happend for the failed CI build - in such case you should set `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
 
-3. Please select your CI provider and follow instructions to run tests with Knapsack Pro.
+3. (optional) `@knapsack-pro/cypress` detects information about CI build from supported CI environment variables. When information like git branch name and git commit hash cannot be detect from CI environment variables then `@knapsack-pro/cypress` will try to use git installed on CI machine to detect the infomation. If you don't have git installed then you should set the information using environment variables:
+
+    `KNAPSACK_PRO_COMMIT_HASH` - git commit hash (SHA1)
+    `KNAPSACK_PRO_BRANCH` - git branch name
+    `KNAPSACK_PRO_CI_NODE_BUILD_ID` - a unique ID for your CI build. All parallel CI nodes being part of single CI build must have the same node build ID. Example how to generate node build ID: `KNAPSACK_PRO_CI_NODE_BUILD_ID=$(openssl rand - base64 32)`.
+
+4. Please select your CI provider and follow instructions to run tests with `@knapsack-pro/cypress`.
 
 ## FAQ
 
