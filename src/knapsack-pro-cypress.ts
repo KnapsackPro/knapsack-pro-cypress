@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+// tslint:disable-next-line:no-var-requires
+const { name: clientName, version: clientVersion } = require("./../package.json");
+
 const cypress = require("cypress"); // tslint:disable-line:no-var-requires
 
 import { KnapsackProCore, onQueueFailureType, onQueueSuccessType, TestFile } from "@knapsack-pro/core";
@@ -9,7 +12,7 @@ import { TestFilesFinder } from "./test-files-finder";
 EnvConfig.loadEnvironmentVariables();
 
 const allTestFiles: TestFile[] = TestFilesFinder.allTestFiles();
-const knapsackPro = new KnapsackProCore(allTestFiles);
+const knapsackPro = new KnapsackProCore(clientName, clientVersion, allTestFiles);
 
 const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
   const testFilePaths: string[] = queueTestFiles.map((testFile: TestFile) => testFile.path);
