@@ -14,12 +14,13 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
 - [How to use](#how-to-use)
 - [FAQ](#faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
-- [Dependencies](#dependencies)
 - [Development](#development)
-- [Publishing](#publishing)
-- [Testing](#testing)
-  - [CI](#ci)
-  - [Example Cypress test suite](#example-cypress-test-suite)
+  - [Dependencies](#dependencies)
+  - [Setup project in development](#setup-project-in-development)
+  - [Publishing](#publishing)
+  - [Testing](#testing)
+    - [CI](#ci)
+    - [Example Cypress test suite](#example-cypress-test-suite)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -39,11 +40,13 @@ TODO
 
 You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,coffee,cjsx}` and change pattern to match your directory with test files. You can use [glob](https://github.com/isaacs/node-glob) pattern.
 
-## Dependencies
+## Development
+
+### Dependencies
 
 * [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js)
 
-## Development
+### Setup project in development
 
 1. Setup [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js) project.
 
@@ -78,7 +81,7 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
     $ npm link
     ```
 
-## Publishing
+### Publishing
 
 Ensure you have in `package.json` the latest version of `@knapsack-pro/core` and you run `npm install`:
 
@@ -90,12 +93,12 @@ Ensure you have in `package.json` the latest version of `@knapsack-pro/core` and
 }
 ```
 
-## Testing
+### Testing
 
-### CI
+#### CI
 
 If your feature requires code change in [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js) then please push the `@knapsack-pro/core` to GitHub first. Then you can push changes for `@knapsack-pro/cypress` to ensure the CI will use the latest `@knapsack-pro/core`.
 
-### Example Cypress test suite
+#### Example Cypress test suite
 
 To test `@knapsack-pro/cypress` against real test suite we use forked [cypress-example-kitchensink](https://github.com/KnapsackPro/cypress-example-kitchensink/blob/knapsack-pro/README.knapsack-pro.md) project.
