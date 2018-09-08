@@ -92,6 +92,8 @@ script:
 env:
   global:
     - KNAPSACK_PRO_CI_NODE_TOTAL=2
+    # allows to be able to retry failed tests on one of parallel job (CI node)
+    - KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true
 
   matrix:
     - KNAPSACK_PRO_CI_NODE_INDEX=0
