@@ -12,6 +12,9 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
 
 - [Installation](#installation)
 - [How to use](#how-to-use)
+  - [Configuration steps](#configuration-steps)
+  - [CI steps](#ci-steps)
+    - [CircleCI](#circleci)
 - [FAQ](#faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
@@ -32,6 +35,8 @@ $ npm install --save-dev @knapsack-pro/cypress
 
 ## How to use
 
+### Configuration steps
+
 1. Please add to your CI environment variables `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS`. You can generate API token in [user dashboard](https://knapsackpro.com/dashboard).
 
 2. (optional) Do you want to use "retry single failed parallel CI node" feature for your CI? For instance some of CI providers like Travis CI or Buildkite allows you to retry only one of failed parallel CI node instead of retrying the whole CI build with all parallel CI nodes. If you want to be able to retry only single failed parallel CI node then you need to tell Knapsack Pro API to remember the way how test files where allocated across parallel CI nodes by adding to your CI environment variables `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`. 
@@ -45,6 +50,33 @@ $ npm install --save-dev @knapsack-pro/cypress
     `KNAPSACK_PRO_CI_NODE_BUILD_ID` - a unique ID for your CI build. All parallel CI nodes being part of single CI build must have the same node build ID. Example how to generate node build ID: `KNAPSACK_PRO_CI_NODE_BUILD_ID=$(openssl rand - base64 32)`.
 
 4. Please select your CI provider and follow instructions to run tests with `@knapsack-pro/cypress`.
+
+    - [CircleCI](#circleci)
+
+### CI steps
+
+#### CircleCI
+
+Example configuration for CircleCI 2.0 platform.
+
+```YAML
+# ~/.circleci/config.yml
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/<language>:<version TAG>
+    parallelism: 2 # run 2 parallel CI nodes
+
+    steps:
+      - checkout
+
+      - run:
+        name: Run Cypress.io tests with @knapsack-pro/cypress using Knapsack Pro Queue Mode
+        command: $(npm bin)/knapsack-pro-cypress
+```
+
+Please remember to add additional parallel containers for your project in CircleCI settings.
 
 ## FAQ
 
