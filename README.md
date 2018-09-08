@@ -15,6 +15,7 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
   - [Configuration steps](#configuration-steps)
   - [CI steps](#ci-steps)
     - [CircleCI](#circleci)
+    - [Travis CI](#travis-ci)
 - [FAQ](#faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
@@ -52,6 +53,7 @@ $ npm install --save-dev @knapsack-pro/cypress
 4. Please select your CI provider and follow instructions to run tests with `@knapsack-pro/cypress`.
 
     - [CircleCI](#circleci)
+    - [Travis CI](#travis-ci)
 
 ### CI steps
 
@@ -77,6 +79,36 @@ jobs:
 ```
 
 Please remember to add additional parallel containers for your project in CircleCI settings.
+
+#### Travis CI
+
+You can parallelize your CI build across virtual machines with [travis matrix feature](https://docs.travis-ci.com/user/speeding-up-the-build/#parallelizing-your-builds-across-virtual-machines).
+
+```yaml
+# .travis.yml
+script:
+  - "$(npm bin)/knapsack-pro-cypress"
+
+env:
+  global:
+    - KNAPSACK_PRO_CI_NODE_TOTAL=2
+
+  matrix:
+    - KNAPSACK_PRO_CI_NODE_INDEX=0
+    - KNAPSACK_PRO_CI_NODE_INDEX=1
+```
+
+The configuration will generate matrix with 2 parallel jobs (2 parallel CI nodes):
+
+```
+# first CI node (first parallel job)
+KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=0
+
+# second CI node (second parallel job)
+KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 
+```
+
+More info about global and matrix ENV configuration in [travis docs](https://docs.travis-ci.com/user/customizing-the-build/#build-matrix).
 
 ## FAQ
 
