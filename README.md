@@ -23,6 +23,7 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
     - [AppVeyor](#appveyor)
     - [Gitlab CI](#gitlab-ci)
     - [SemaphoreCI.com](#semaphorecicom)
+    - [Cirrus-CI.org](#cirrus-ciorg)
 - [FAQ](#faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
@@ -68,6 +69,7 @@ $ npm install --save-dev @knapsack-pro/cypress
     - [AppVeyor](#appveyor)
     - [Gitlab CI](#gitlab-ci)
     - [SemaphoreCI.com](#semaphorecicom)
+    - [Cirrus-CI.org](#cirrus-ciorg)
 
 ### CI steps
 
@@ -275,6 +277,23 @@ $(npm bin)/knapsack-pro-cypress
 Tests will be split across 2 parallel threads.
 
 Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as global environment.
+
+#### Cirrus-CI.org
+
+The only thing you need to do is to configure number of parallel CI nodes for your project by using [matrix modification](https://cirrus-ci.org/guide/writing-tasks/#matrix-modification). See example for 2 parallel CI nodes.
+
+```
+# .cirrus.yml
+task:
+  matrix:
+    name: CI node 0
+    name: CI node 1
+  cypress_script: $(npm bin)/knapsack-pro-cypress
+```
+
+Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as global environment.
+
+Here is Ruby example for [`.cirrus.yml` configuration file](https://cirrus-ci.org/examples/#ruby) that you may find useful.
 
 ## FAQ
 
