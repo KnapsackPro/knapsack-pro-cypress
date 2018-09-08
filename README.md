@@ -22,6 +22,7 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
     - [Solano CI](#solano-ci)
     - [AppVeyor](#appveyor)
     - [Gitlab CI](#gitlab-ci)
+    - [SemaphoreCI.com](#semaphorecicom)
 - [FAQ](#faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
@@ -66,6 +67,7 @@ $ npm install --save-dev @knapsack-pro/cypress
     - [Solano CI](#solano-ci)
     - [AppVeyor](#appveyor)
     - [Gitlab CI](#gitlab-ci)
+    - [SemaphoreCI.com](#semaphorecicom)
 
 ### CI steps
 
@@ -257,6 +259,22 @@ test_ci_node_1:
 ```
 
 Remember to add API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` to [Secret Variables](https://gitlab.com/help/ci/variables/README.md#secret-variables) in `Gitlab CI Settings -> CI/CD Pipelines -> Secret Variables`.
+
+#### SemaphoreCI.com
+
+The only thing you need to do is set up `@knapsack-pro/cypress` for as many parallel threads as you need. Here is an example:
+
+```
+# Thread 1
+$(npm bin)/knapsack-pro-cypress
+
+# Thread 2
+$(npm bin)/knapsack-pro-cypress
+```
+
+Tests will be split across 2 parallel threads.
+
+Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as global environment.
 
 ## FAQ
 
