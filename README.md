@@ -25,6 +25,7 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
     - [SemaphoreCI.com](#semaphorecicom)
     - [Cirrus-CI.org](#cirrus-ciorg)
     - [Jenkins](#jenkins)
+    - [Other CI provider](#other-ci-provider)
 - [FAQ](#faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
@@ -72,6 +73,7 @@ $ npm install --save-dev @knapsack-pro/cypress
     - [SemaphoreCI.com](#semaphorecicom)
     - [Cirrus-CI.org](#cirrus-ciorg)
     - [Jenkins](#jenkins)
+    - [Other CI provider](#other-ci-provider)
 
 ### CI steps
 
@@ -350,6 +352,20 @@ timeout(time: 60, unit: 'MINUTES') {
 ```
 
 Remember to set environment variable `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` in Jenkins configuration with your API token.
+
+#### Other CI provider
+
+You have to define `KNAPSACK_PRO_CI_NODE_TOTAL` and `KNAPSACK_PRO_CI_NODE_INDEX` for each parallel job running as part of the same CI build.
+
+```
+# Step for first CI node
+KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=0 $(npm bin)/knapsack-pro-cypress
+
+# Step for second CI node
+KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 $(npm bin)/knapsack-pro-cypress
+```
+
+Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as global environment.
 
 ## FAQ
 
