@@ -16,6 +16,7 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
   - [CI steps](#ci-steps)
     - [CircleCI](#circleci)
     - [Travis CI](#travis-ci)
+    - [Buildkite.com](#buildkitecom)
 - [FAQ](#faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
@@ -54,6 +55,7 @@ $ npm install --save-dev @knapsack-pro/cypress
 
     - [CircleCI](#circleci)
     - [Travis CI](#travis-ci)
+    - [Buildkite.com](#buildkitecom)
 
 ### CI steps
 
@@ -111,6 +113,23 @@ KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1
 ```
 
 More info about global and matrix ENV configuration in [travis docs](https://docs.travis-ci.com/user/customizing-the-build/#build-matrix).
+
+#### Buildkite.com
+
+The only thing you need to do is to configure the parallelism parameter (number of parallel agents) in your build step and run the below command in your build:
+
+```
+$(npm bin)/knapsack-pro-cypress
+```
+
+If you want to use Buildkite retry single agent feature to retry just failed tests on particular agent (CI node) then you should set `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
+
+__Other useful resources:__
+
+Here you can find article [how to set up a new pipeline for your project in Buildkite and configure Knapsack Pro](http://docs.knapsackpro.com/2017/auto-balancing-7-hours-tests-between-100-parallel-jobs-on-ci-buildkite-example) and 2 example repositories for Ruby/Rails projects:
+
+* [Buildkite Rails Parallel Example with Knapsack Pro](https://github.com/KnapsackPro/buildkite-rails-parallel-example-with-knapsack_pro)
+* [Buildkite Rails Docker Parallel Example with Knapsack Pro](https://github.com/KnapsackPro/buildkite-rails-docker-parallel-example-with-knapsack_pro)
 
 ## FAQ
 
