@@ -17,6 +17,7 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
     - [CircleCI](#circleci)
     - [Travis CI](#travis-ci)
     - [Buildkite.com](#buildkitecom)
+    - [Codeship.com](#codeshipcom)
 - [FAQ](#faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
@@ -56,6 +57,7 @@ $ npm install --save-dev @knapsack-pro/cypress
     - [CircleCI](#circleci)
     - [Travis CI](#travis-ci)
     - [Buildkite.com](#buildkitecom)
+    - [Codeship.com](#codeshipcom)
 
 ### CI steps
 
@@ -130,6 +132,28 @@ Here you can find article [how to set up a new pipeline for your project in Buil
 
 * [Buildkite Rails Parallel Example with Knapsack Pro](https://github.com/KnapsackPro/buildkite-rails-parallel-example-with-knapsack_pro)
 * [Buildkite Rails Docker Parallel Example with Knapsack Pro](https://github.com/KnapsackPro/buildkite-rails-docker-parallel-example-with-knapsack_pro)
+
+#### Codeship.com
+
+Codeship does not provide parallel jobs environment variables so you will have to define `KNAPSACK_PRO_CI_NODE_TOTAL` and `KNAPSACK_PRO_CI_NODE_INDEX` for each [parallel test pipeline](https://documentation.codeship.com/basic/builds-and-configuration/parallel-tests/#using-parallel-test-pipelines). Below is an example for 2 parallel test pipelines.
+
+Configure test pipelines (1/2 used)
+
+```
+# first CI node running in parallel
+KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=0 $(npm bin)/knapsack-pro-cypress
+```
+
+Configure test pipelines (2/2 used)
+
+```
+# second CI node running in parallel
+KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 $(npm bin)/knapsack-pro-cypress
+```
+
+Remember to add API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` to `Environment` page of your project settings in Codeship.
+
+If you want to use Codeship retry single CI node feature to retry just failed tests on particular CI node then you should set `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
 
 ## FAQ
 
