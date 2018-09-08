@@ -20,6 +20,7 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
     - [Codeship.com](#codeshipcom)
     - [Heroku CI](#heroku-ci)
     - [Solano CI](#solano-ci)
+    - [AppVeyor](#appveyor)
 - [FAQ](#faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
@@ -62,6 +63,7 @@ $ npm install --save-dev @knapsack-pro/cypress
     - [Codeship.com](#codeshipcom)
     - [Heroku CI](#heroku-ci)
     - [Solano CI](#solano-ci)
+    - [AppVeyor](#appveyor)
 
 ### CI steps
 
@@ -200,6 +202,20 @@ You can learn more about [Heroku CI](https://devcenter.heroku.com/articles/herok
 #### Solano CI
 
 [Solano CI](https://www.solanolabs.com) does not provide parallel jobs environment variables so you will have to define `KNAPSACK_PRO_CI_NODE_TOTAL` and `KNAPSACK_PRO_CI_NODE_INDEX` for each parallel job running as part of the same CI build.
+
+```
+# Step for first CI node
+KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=0 $(npm bin)/knapsack-pro-cypress
+
+# Step for second CI node
+KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 $(npm bin)/knapsack-pro-cypress
+```
+
+Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as global environment.
+
+#### AppVeyor
+
+[AppVeyor](https://www.appveyor.com) does not provide parallel jobs environment variables so you will have to define `KNAPSACK_PRO_CI_NODE_TOTAL` and `KNAPSACK_PRO_CI_NODE_INDEX` for each parallel job running as part of the same CI build.
 
 ```
 # Step for first CI node
