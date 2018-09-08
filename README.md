@@ -18,6 +18,7 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
     - [Travis CI](#travis-ci)
     - [Buildkite.com](#buildkitecom)
     - [Codeship.com](#codeshipcom)
+    - [Heroku CI](#heroku-ci)
 - [FAQ](#faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
@@ -58,6 +59,7 @@ $ npm install --save-dev @knapsack-pro/cypress
     - [Travis CI](#travis-ci)
     - [Buildkite.com](#buildkitecom)
     - [Codeship.com](#codeshipcom)
+    - [Heroku CI](#heroku-ci)
 
 ### CI steps
 
@@ -154,6 +156,44 @@ KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 $(npm bin)/knapsack-pr
 Remember to add API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` to `Environment` page of your project settings in Codeship.
 
 If you want to use Codeship retry single CI node feature to retry just failed tests on particular CI node then you should set `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
+
+#### Heroku CI
+
+You can parallelize your tests on [Heroku CI](https://devcenter.heroku.com/articles/heroku-ci) by configuring `app.json` for your project.
+
+You can set how many parallel dynos with tests you want to run with `quantity` value.
+Use `test` key to run tests with `@knapsack-pro/cypress` as shown in below example.
+
+You need to specify also the environment variable `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` with API token for Knapsack Pro.
+For any sensitive environment variables (like Knapsack Pro API token) that you do not want commited in your `app.json` manifest, you can add them to your pipeline’s Heroku CI settings.
+
+```
+# app.json
+{
+  "environments": {
+    "test": {
+      "formation": {
+        "test": {
+          "quantity": 2
+        }
+      },
+      "addons": [
+        "heroku-postgresql"
+      ],
+      "scripts": {
+        "test": "$(npm bin)/knapsack-pro-cypress"
+      },
+      "env": {
+        "KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS": "example"
+      }
+    }
+  }
+}
+```
+
+Note the [Heroku CI Parallel Test Runs](https://devcenter.heroku.com/articles/heroku-ci-parallel-test-runs) are in Beta and you may need to ask Heroku support to enable it for your project.
+
+You can learn more about [Heroku CI](https://devcenter.heroku.com/articles/heroku-ci).
 
 ## FAQ
 
