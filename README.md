@@ -21,6 +21,7 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
     - [Heroku CI](#heroku-ci)
     - [Solano CI](#solano-ci)
     - [AppVeyor](#appveyor)
+    - [Gitlab CI](#gitlab-ci)
 - [FAQ](#faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
@@ -64,6 +65,7 @@ $ npm install --save-dev @knapsack-pro/cypress
     - [Heroku CI](#heroku-ci)
     - [Solano CI](#solano-ci)
     - [AppVeyor](#appveyor)
+    - [Gitlab CI](#gitlab-ci)
 
 ### CI steps
 
@@ -226,6 +228,35 @@ KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 $(npm bin)/knapsack-pr
 ```
 
 Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as global environment.
+
+#### Gitlab CI
+
+Gitlab CI does not provide parallel jobs environment variables so you will have to define `KNAPSACK_PRO_CI_NODE_TOTAL` and `KNAPSACK_PRO_CI_NODE_INDEX` for each parallel job running as part of the same `test` stage. Below is relevant part of `.gitlab-ci.yml` configuration for 2 parallel jobs.
+
+```
+# .gitlab-ci.yml
+stages:
+  - test
+
+variables:
+  KNAPSACK_PRO_CI_NODE_TOTAL: 2
+
+# first CI node running in parallel
+test_ci_node_0:
+  stage: test
+  script:
+    - export KNAPSACK_PRO_CI_NODE_INDEX=0
+    - $(npm bin)/knapsack-pro-cypress
+
+# second CI node running in parallel
+test_ci_node_1:
+  stage: test
+  script:
+    - export KNAPSACK_PRO_CI_NODE_INDEX=1
+    - $(npm bin)/knapsack-pro-cypress
+```
+
+Remember to add API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` to [Secret Variables](https://gitlab.com/help/ci/variables/README.md#secret-variables) in `Gitlab CI Settings -> CI/CD Pipelines -> Secret Variables`.
 
 ## FAQ
 
