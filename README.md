@@ -24,6 +24,7 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
     - [Gitlab CI](#gitlab-ci)
     - [SemaphoreCI.com](#semaphorecicom)
     - [Cirrus-CI.org](#cirrus-ciorg)
+    - [Jenkins](#jenkins)
 - [FAQ](#faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
@@ -70,6 +71,7 @@ $ npm install --save-dev @knapsack-pro/cypress
     - [Gitlab CI](#gitlab-ci)
     - [SemaphoreCI.com](#semaphorecicom)
     - [Cirrus-CI.org](#cirrus-ciorg)
+    - [Jenkins](#jenkins)
 
 ### CI steps
 
@@ -294,6 +296,60 @@ task:
 Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as global environment.
 
 Here is Ruby example for [`.cirrus.yml` configuration file](https://cirrus-ci.org/examples/#ruby) that you may find useful.
+
+#### Jenkins
+
+In order to run parallel jobs with Jenkins you should use Jenkins Pipeline.
+You can learn basics about it in the article [Parallelism and Distributed Builds with Jenkins](https://www.cloudbees.com/blog/parallelism-and-distributed-builds-jenkins).
+
+Here is example `Jenkinsfile` working with Jenkins Pipeline.
+
+```
+timeout(time: 60, unit: 'MINUTES') {
+  node() {
+    stage('Checkout') {
+      checkout([/* checkout code from git */])
+
+      // determine git commit hash because we need to pass it to Knapsack Pro
+      COMMIT_HASH = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+
+      stash 'source'
+    }
+  }
+
+  def num_nodes = 4; // define your total number of CI nodes (how many parallel jobs will be executed)
+  def nodes = [:]
+
+  for (int i = 0; i < num_nodes; i++) {
+    def index = i;
+    nodes["ci_node_${i}"] = {
+      node() {
+        stage('Setup') {
+          unstash 'source'
+          // other setup steps
+        }
+
+        def knapsack_options = """\
+            KNAPSACK_PRO_CI_NODE_TOTAL=${num_nodes}\
+            KNAPSACK_PRO_CI_NODE_INDEX=${index}\
+            KNAPSACK_PRO_COMMIT_HASH=${COMMIT_HASH}\
+            KNAPSACK_PRO_BRANCH=${env.BRANCH_NAME}\
+            KNAPSACK_PRO_CI_NODE_BUILD_ID=${env.BUILD_TAG}\
+        """
+
+        // example how to run tests with Knapsack Pro
+        stage('Run tests') {
+          sh """${knapsack_options} $(npm bin)/knapsack-pro-cypress"""
+        }
+      }
+    }
+  }
+
+  parallel nodes // run CI nodes in parallel
+}
+```
+
+Remember to set environment variable `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` in Jenkins configuration with your API token.
 
 ## FAQ
 
