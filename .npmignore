@@ -1,0 +1,12 @@
+.circleci
+node_modules
+# ignore ts source code
+/src
+.babelrc
+.editorconfig
+/.env
+/.env.example
+.idea
+/gulpfile.babel.js
+tsconfig.json
+tslint.json
