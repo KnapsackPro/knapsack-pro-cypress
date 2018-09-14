@@ -42,7 +42,7 @@
     "knapsack-pro-cypress": "lib/knapsack-pro-cypress.js"
   },
   "dependencies": {
-    "@knapsack-pro/core": "^0.1.0",
+    "@knapsack-pro/core": "^0.1.1",
     "cypress": "^3.1.0",
     "glob": "^7.1.2"
   },
