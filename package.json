@@ -39,7 +39,7 @@
     "url": "https://github.com/KnapsackPro/knapsack-pro-cypress/issues"
   },
   "bin": {
-    "knapsack-pro-cypress": "bin/knapsack-pro-cypress.js"
+    "knapsack-pro-cypress": "lib/knapsack-pro-cypress.js"
   },
   "dependencies": {
     "@knapsack-pro/core": "^0.1.0",
