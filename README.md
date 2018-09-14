@@ -416,15 +416,56 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 
 ### Publishing
 
-Ensure you have in `package.json` the latest version of `@knapsack-pro/core` and you run `npm install`:
+* Ensure you are signed in with:
 
-```
-{
-  "dependencies": {
-    "@knapsack-pro/core": "latest"
-  }
-}
-```
+    ```
+    $ npm adduser
+    ```
+
+* Ensure you have in `package.json` the latest version of `@knapsack-pro/core`.
+
+    ```
+    {
+      "dependencies": {
+        "@knapsack-pro/core": "^1.x.x"
+      }
+    }
+    ```
+
+    This way you will be able to test `@knapsack-pro/core` installed from npm registry. Ensure you have commented out `KNAPSACK_PRO_ENV=development` line in `.env` and then run `npm install`.
+
+* Before releasing a new version of package please ensure you updated `CHANGELOG.md` and added there link to releated pull requests.
+
+* If you added a new files to the repository please ensure unneeded files are listed in `.npmignore`.
+
+* Ensure you compiled project with:
+
+    ```
+    $ npm start
+    ```
+
+* In order to bump version of the package run (below command will also create git tag for the release):
+
+    ```
+    # bump patch version 0.0.x
+    $ npm version patch
+
+    # bump minor version 0.x.0
+    $ npm version minor
+    ```
+
+* Ensure you pushed to git repository created git tag:
+
+    ```
+    $ git push --tags
+    ```
+
+* Now you can publish package to npm registry:
+
+    ```
+    # --access=public flag is needed only for the very first publish to npm registry
+    $ npm publish --access=public
+    ```
 
 ### Testing
 
