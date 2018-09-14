@@ -444,7 +444,7 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
     $ npm start
     ```
 
-* In order to bump version of the package run (below command will also create git tag for the release):
+* In order to bump version of the package run below command. It will also create git commit and tag for the release:
 
     ```
     # bump patch version 0.0.x
@@ -454,9 +454,10 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
     $ npm version minor
     ```
 
-* Ensure you pushed to git repository created git tag:
+* Ensure you pushed to git repository created git commit and tag:
 
     ```
+    $ git push origin master
     $ git push --tags
     ```
 
