@@ -416,13 +416,13 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 
 ### Publishing
 
-* Ensure you are signed in with:
+1. Sign in to npm registry with command:
 
     ```
     $ npm adduser
     ```
 
-* Ensure you have in `package.json` the latest version of `@knapsack-pro/core`.
+2. Ensure you have in `package.json` the latest version of `@knapsack-pro/core`:
 
     ```
     {
@@ -434,19 +434,23 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 
     This way you will be able to test `@knapsack-pro/core` installed from npm registry. Ensure you have commented out `KNAPSACK_PRO_ENV=development` line in `.env` and then run `npm install`.
 
-* Before releasing a new version of package please ensure you updated `CHANGELOG.md` and added there link to releated pull requests.
+3. Before releasing a new version of package please ensure you have updated `CHANGELOG.md` and added links to related pull requests.
 
-* If you added a new files to the repository and they should be part of released npm package then please ensure they are included in `files` in `package.json`.
+4. If you have added new files to the repository and they should be part of the released npm package then please ensure they are included in `files` array in `package.json`.
 
-* If you changed headers in `README.md` please refresh table of contents with `npm run doctoc`.
+5. If you have changed any headers in `README.md` please refresh table of contents with:
 
-* Ensure you compiled project with:
+    ```
+    $ npm run doctoc
+    ```
+
+6. Compile project:
 
     ```
     $ npm start
     ```
 
-* In order to bump version of the package run below command. It will also create git commit and tag for the release:
+7. In order to [bump version of the package](https://docs.npmjs.com/cli/version) run below command. It will also create a version commit and tag for the release:
 
     ```
     # bump patch version 0.0.x
@@ -456,18 +460,16 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
     $ npm version minor
     ```
 
-* Ensure you pushed to git repository created git commit and tag:
+8. Push to git repository created commit and tag:
 
     ```
-    $ git push origin master
-    $ git push --tags
+    $ git push origin master --tags
     ```
 
-* Now you can publish package to npm registry:
+9. Now you can publish package to npm registry:
 
     ```
-    # --access=public flag is needed only for the very first publish to npm registry
-    $ npm publish --access=public
+    $ npm publish
     ```
 
 ### Testing
