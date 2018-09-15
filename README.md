@@ -434,7 +434,15 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 
     This way you will be able to test `@knapsack-pro/core` installed from npm registry. Ensure you have commented out `KNAPSACK_PRO_ENV=development` line in `.env` and then run `npm install`.
 
-3. Before releasing a new version of package please ensure you have updated `CHANGELOG.md` and added links to related pull requests.
+3. Before releasing a new version of package please update `CHANGELOG.md` with [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator):
+
+    ```
+    # install github_changelog_generator only once
+    $ gem install github_changelog_generator
+
+    # generate CHANGELOG.md
+    $ github_changelog_generator KnapsackPro/knapsack-pro-cypress
+    ```
 
 4. If you have added new files to the repository and they should be part of the released npm package then please ensure they are included in `files` array in `package.json`.
 
