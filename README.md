@@ -427,6 +427,12 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 
     Then run `npm install`. This way you will be able to test `@knapsack-pro/core` installed from npm registry instead of local one that was linked with `npm link @knapsack-pro/core`.
 
+    Now commit updated `package.json` and `package-lock.json`.
+
+    ```
+    $ git commit -am "Update @knapsack-pro/core"
+    ```
+
 3. Before releasing a new version of package please update `CHANGELOG.md` with [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator):
 
     ```
