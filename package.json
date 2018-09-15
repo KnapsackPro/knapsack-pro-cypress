@@ -28,8 +28,7 @@
     "start": "gulp",
     "tsc": "tsc",
     "lint": "tslint --project . --format stylish",
-    "doctoc": "doctoc --title \"## Table of Contents\" README.md",
-    "postinstall": "node ./scripts/postinstall.js"
+    "doctoc": "doctoc --title \"## Table of Contents\" README.md"
   },
   "files": [
     "/lib"
