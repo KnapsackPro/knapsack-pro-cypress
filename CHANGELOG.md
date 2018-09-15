@@ -1,5 +1,8 @@
 # Change Log
 
+## [v0.2.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v0.2.0) (2018-09-15)
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v0.1.2...v0.2.0)
+
 ## [v0.1.2](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v0.1.2) (2018-09-14)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v0.1.1...v0.1.2)
 
