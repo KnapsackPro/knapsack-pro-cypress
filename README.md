@@ -383,20 +383,13 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 
 1. Setup [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js) project.
 
-2. Set up environment variables:
-
-    ```
-    $ cp .env.sample .env
-    $ vim .env
-    ```
-
-3. Install dependencies:
+2. Install dependencies:
 
     ```
     $ npm install
     ```
 
-    Take note that NPM postinstall script defined in `package.json` may run below command based on `.env` configuration:
+3. In order to use local version of `@knapsack-pro/core` run:
 
     ```
     $ npm link @knapsack-pro/core
@@ -432,7 +425,7 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
     }
     ```
 
-    This way you will be able to test `@knapsack-pro/core` installed from npm registry. Ensure you have commented out `KNAPSACK_PRO_ENV=development` line in `.env` and then run `npm install`.
+    Then run `npm install`. This way you will be able to test `@knapsack-pro/core` installed from npm registry instead of local one that was linked with `npm link @knapsack-pro/core`.
 
 3. Before releasing a new version of package please update `CHANGELOG.md` with [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator):
 
