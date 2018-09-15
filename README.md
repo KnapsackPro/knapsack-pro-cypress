@@ -436,7 +436,9 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 
 * Before releasing a new version of package please ensure you updated `CHANGELOG.md` and added there link to releated pull requests.
 
-* If you added a new files to the repository please ensure unneeded files are listed in `.npmignore`.
+* If you added a new files to the repository and they should be part of released npm package then please ensure they are included in `files` in `package.json`.
+
+* If you changed headers in `README.md` please refresh table of contents with `npm run doctoc`.
 
 * Ensure you compiled project with:
 
