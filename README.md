@@ -30,7 +30,7 @@ We use Knapsack Pro Queue Mode. Learn more in the video [how to run tests with d
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
   - [Dependencies](#dependencies)
-  - [Setup project in development](#setup-project-in-development)
+  - [Setup](#setup)
   - [Publishing](#publishing)
   - [Testing](#testing)
     - [CI](#ci)
@@ -379,7 +379,7 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 
 * [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js)
 
-### Setup project in development
+### Setup
 
 1. Setup [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js) project.
 
@@ -390,7 +390,7 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
     $ vim .env
     ```
 
-3. Install dependencies.
+3. Install dependencies:
 
     ```
     $ npm install
@@ -402,13 +402,13 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
     $ npm link @knapsack-pro/core
     ```
 
-4. Compile typescript code with `gulp`. The output will be in `bin` directory.
+4. Compile TypeScript code to `lib` directory by running:
 
     ```
     $ npm start
     ```
 
-5. Register `@knapsack-pro/cypress` package globally in your local system. This way we will be able to develop other npm packages dependent on it.
+5. Register `@knapsack-pro/cypress` package globally in your local system. This way we will be able to develop other npm packages dependent on it:
 
     ```
     $ npm link
