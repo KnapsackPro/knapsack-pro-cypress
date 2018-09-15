@@ -31,6 +31,10 @@
     "doctoc": "doctoc --title \"## Table of Contents\" README.md",
     "postinstall": "node ./scripts/postinstall.js"
   },
+  "files": [
+    "/lib",
+    "/scripts"
+  ],
   "homepage": "https://knapsackpro.com",
   "repository": {
     "type": "git",
