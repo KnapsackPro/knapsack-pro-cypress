@@ -422,12 +422,12 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
     $ npm adduser
     ```
 
-2. Ensure you have in `package.json` the latest version of `@knapsack-pro/core`:
+2. Ensure you have the latest version of `@knapsack-pro/core` in `package.json`:
 
     ```
     {
       "dependencies": {
-        "@knapsack-pro/core": "^1.x.x"
+        "@knapsack-pro/core": "^x.x.x"
       }
     }
     ```
