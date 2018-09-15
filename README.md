@@ -437,7 +437,6 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 3. Before releasing a new version of package please update `CHANGELOG.md` with [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator):
 
     ```
-    # install github_changelog_generator only once
     $ gem install github_changelog_generator
 
     # generate CHANGELOG.md
