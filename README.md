@@ -472,7 +472,15 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
     $ git push origin master --tags
     ```
 
-9. Now you can publish package to npm registry:
+9. Now when git tag is on Github you can update `CHANGELOG.md` again.
+
+    ```
+    $ github_changelog_generator KnapsackPro/knapsack-pro-cypress
+    $ git commit -am "Update CHANGELOG.md"
+    $ git push origin master
+    ```
+
+10. Now you can publish package to npm registry:
 
     ```
     $ npm publish
