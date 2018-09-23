@@ -4,7 +4,7 @@
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v0.2.0...HEAD)
 
-**Merged pull requests:**
+**Fixed bugs:**
 
 - Bugfix: Filter bin files from proper out dir [\#1](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/1) ([ArturT](https://github.com/ArturT))
 
