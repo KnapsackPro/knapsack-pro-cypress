@@ -3,7 +3,7 @@ import del from 'del';
 import ts from 'gulp-typescript';
 import gFilter from 'gulp-filter';
 import chmod from 'gulp-chmod';
- 
+
 const filter = gFilter('src/cli.js', {restore: true});
 
 const tsProject = ts.createProject('tsconfig.json');
@@ -20,7 +20,7 @@ export function clean() {
 }
 
 export function compile() {
-  const filterBinFiles = gFilter('bin/knapsack-pro-cypress.js', { restore: true });
+  const filterBinFiles = gFilter(`${tsProject.config.compilerOptions.outDir}/knapsack-pro-cypress.js`, { restore: true });
 
   return tsProject.src()
     .pipe(tsProject())
