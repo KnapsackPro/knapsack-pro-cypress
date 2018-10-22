@@ -440,6 +440,8 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 
     # generate CHANGELOG.md
     $ github_changelog_generator KnapsackPro/knapsack-pro-cypress
+    $ git commit -am "Update CHANGELOG.md"
+    $ git push origin master
     ```
 
 4. If you have added new files to the repository and they should be part of the released npm package then please ensure they are included in `files` array in `package.json`.
