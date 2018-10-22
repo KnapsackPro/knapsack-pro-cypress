@@ -455,6 +455,9 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 6. Compile project:
 
     ```
+    # ensure you use local version of @knapsack-pro/core
+    $ npm link @knapsack-pro/core
+
     $ npm start
     ```
 
