@@ -6,6 +6,8 @@
 
 **Fixed bugs:**
 
+- Update @knapsack-pro/core to 0.2.1 to fix problem with wrong Knapsack Pro API endpoint url [\#3](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/3) ([ArturT](https://github.com/ArturT))
+- Fix security vulnerability with npm audit fix [\#2](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/2) ([ArturT](https://github.com/ArturT))
 - Filter bin files from proper out dir [\#1](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/1) ([ArturT](https://github.com/ArturT))
 
 ## [v0.2.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v0.2.0) (2018-09-15)
