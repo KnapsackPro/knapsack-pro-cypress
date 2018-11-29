@@ -62,7 +62,19 @@ $ npm install --save-dev @knapsack-pro/cypress
     `KNAPSACK_PRO_BRANCH` - git branch name
     `KNAPSACK_PRO_CI_NODE_BUILD_ID` - a unique ID for your CI build. All parallel CI nodes being part of single CI build must have the same node build ID. Example how to generate node build ID: `KNAPSACK_PRO_CI_NODE_BUILD_ID=$(openssl rand - base64 32)`.
 
-4. Please select your CI provider and follow instructions to run tests with `@knapsack-pro/cypress`.
+4. (optional) If you want to keep screenshots and videos of failed tests recorded by Cypress you need to set in `cypress.json` config file [trashAssetsBeforeRuns](https://docs.cypress.io/guides/references/configuration.html#Screenshots) to `false`:
+
+    ```
+    {
+      // your default config here
+      // ...
+      "trashAssetsBeforeRuns": false
+    }
+    ```
+
+    `@knapsack-pro/cypress` runs tests using [Cypress run command](https://docs.cypress.io/guides/guides/module-api.html#cypress-run) after fetching set of tests from Knapsack Pro Queue API. When another set of tests is fetched from Queue API then we run Cypress run command with a new set of tests and Cypress run command by default removes screenshots and videos. That's why we need to turn it off in order to preserve screenshots/videos.
+
+5. Please select your CI provider and follow instructions to run tests with `@knapsack-pro/cypress`.
 
     - [CircleCI](#circleci)
     - [Travis CI](#travis-ci)
