@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-// tslint:disable-next-line:no-var-requires
 const { name: clientName, version: clientVersion } = require('../package.json');
 
-const cypress = require('cypress'); // tslint:disable-line:no-var-requires
+const cypress = require('cypress');
 
 import {
   KnapsackProCore,
