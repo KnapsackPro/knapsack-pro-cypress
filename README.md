@@ -443,6 +443,7 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
        - [Prettier](https://plugins.jetbrains.com/plugin/10456-prettier)
        - [EditorConfig](https://plugins.jetbrains.com/plugin/7294-editorconfig)
        - [.ignore](https://plugins.jetbrains.com/plugin/7495--ignore)
+       - [.env files support](https://plugins.jetbrains.com/plugin/9525--env-files-support)
 
      - Go to `File > Settings > Languages & Frameworks > TypeScript > TSLint`
 
