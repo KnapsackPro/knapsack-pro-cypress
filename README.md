@@ -8,6 +8,7 @@ Learn about Knapsack Pro Queue Mode in the video [how to run tests with dynamic 
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -54,40 +55,40 @@ $ npm install --save-dev @knapsack-pro/cypress
 
 2. (optional) Do you want to use "retry single failed parallel CI node" feature for your CI? For instance some of CI providers like Travis CI, Buildkite or Codeship allows you to retry only one of failed parallel CI node instead of retrying the whole CI build with all parallel CI nodes. If you want to be able to retry only single failed parallel CI node then you need to tell Knapsack Pro API to remember the way how test files where allocated across parallel CI nodes by adding to your CI environment variables `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
 
-    The default is `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=false` which means when you want to retry the whole failed CI build then a new dynamic test suite split will happen across all retried parallel CI nodes thanks to Knapsack Pro Queue Mode. Some people may prefer to retry the whole failed CI build with test files allocated across parallel CI nodes in the same order as it happend for the failed CI build - in such case you should set `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
+   The default is `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=false` which means when you want to retry the whole failed CI build then a new dynamic test suite split will happen across all retried parallel CI nodes thanks to Knapsack Pro Queue Mode. Some people may prefer to retry the whole failed CI build with test files allocated across parallel CI nodes in the same order as it happend for the failed CI build - in such case you should set `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
 
 3. (optional) `@knapsack-pro/cypress` detects information about CI build from supported CI environment variables. When information like git branch name and git commit hash cannot be detect from CI environment variables then `@knapsack-pro/cypress` will try to use git installed on CI machine to detect the infomation. If you don't have git installed then you should set the information using environment variables:
 
-    `KNAPSACK_PRO_COMMIT_HASH` - git commit hash (SHA1)
-    `KNAPSACK_PRO_BRANCH` - git branch name
-    `KNAPSACK_PRO_CI_NODE_BUILD_ID` - a unique ID for your CI build. All parallel CI nodes being part of single CI build must have the same node build ID. Example how to generate node build ID: `KNAPSACK_PRO_CI_NODE_BUILD_ID=$(openssl rand - base64 32)`.
+   `KNAPSACK_PRO_COMMIT_HASH` - git commit hash (SHA1)
+   `KNAPSACK_PRO_BRANCH` - git branch name
+   `KNAPSACK_PRO_CI_NODE_BUILD_ID` - a unique ID for your CI build. All parallel CI nodes being part of single CI build must have the same node build ID. Example how to generate node build ID: `KNAPSACK_PRO_CI_NODE_BUILD_ID=$(openssl rand - base64 32)`.
 
 4. (optional) If you want to keep screenshots and videos of failed tests recorded by Cypress you need to set in `cypress.json` config file [trashAssetsBeforeRuns](https://docs.cypress.io/guides/references/configuration.html#Screenshots) to `false`:
 
-    ```
-    {
-      // your default config here
-      // ...
-      "trashAssetsBeforeRuns": false
-    }
-    ```
+   ```
+   {
+     // your default config here
+     // ...
+     "trashAssetsBeforeRuns": false
+   }
+   ```
 
-    `@knapsack-pro/cypress` runs tests using [Cypress run command](https://docs.cypress.io/guides/guides/module-api.html#cypress-run) after fetching set of tests from Knapsack Pro Queue API. When another set of tests is fetched from Queue API then we run Cypress run command again with a new set of tests and Cypress run command by default removes screenshots and videos. That's why we need to turn it off in order to preserve screenshots/videos.
+   `@knapsack-pro/cypress` runs tests using [Cypress run command](https://docs.cypress.io/guides/guides/module-api.html#cypress-run) after fetching set of tests from Knapsack Pro Queue API. When another set of tests is fetched from Queue API then we run Cypress run command again with a new set of tests and Cypress run command by default removes screenshots and videos. That's why we need to turn it off in order to preserve screenshots/videos.
 
 5. Please select your CI provider and follow instructions to run tests with `@knapsack-pro/cypress`.
 
-    - [CircleCI](#circleci)
-    - [Travis CI](#travis-ci)
-    - [Buildkite.com](#buildkitecom)
-    - [Codeship.com](#codeshipcom)
-    - [Heroku CI](#heroku-ci)
-    - [Solano CI](#solano-ci)
-    - [AppVeyor](#appveyor)
-    - [GitLab CI](#gitlab-ci)
-    - [SemaphoreCI.com](#semaphorecicom)
-    - [Cirrus-CI.org](#cirrus-ciorg)
-    - [Jenkins](#jenkins)
-    - [Other CI provider](#other-ci-provider)
+   - [CircleCI](#circleci)
+   - [Travis CI](#travis-ci)
+   - [Buildkite.com](#buildkitecom)
+   - [Codeship.com](#codeshipcom)
+   - [Heroku CI](#heroku-ci)
+   - [Solano CI](#solano-ci)
+   - [AppVeyor](#appveyor)
+   - [GitLab CI](#gitlab-ci)
+   - [SemaphoreCI.com](#semaphorecicom)
+   - [Cirrus-CI.org](#cirrus-ciorg)
+   - [Jenkins](#jenkins)
+   - [Other CI provider](#other-ci-provider)
 
 ### CI steps
 
@@ -156,12 +157,12 @@ $(npm bin)/knapsack-pro-cypress
 
 If you want to use Buildkite retry single agent feature to retry just failed tests on particular agent (CI node) then you should set `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
 
-__Other useful resources:__
+**Other useful resources:**
 
 Here you can find article [how to set up a new pipeline for your project in Buildkite and configure Knapsack Pro](http://docs.knapsackpro.com/2017/auto-balancing-7-hours-tests-between-100-parallel-jobs-on-ci-buildkite-example) and 2 example repositories for Ruby/Rails projects:
 
-* [Buildkite Rails Parallel Example with Knapsack Pro](https://github.com/KnapsackPro/buildkite-rails-parallel-example-with-knapsack_pro)
-* [Buildkite Rails Docker Parallel Example with Knapsack Pro](https://github.com/KnapsackPro/buildkite-rails-docker-parallel-example-with-knapsack_pro)
+- [Buildkite Rails Parallel Example with Knapsack Pro](https://github.com/KnapsackPro/buildkite-rails-parallel-example-with-knapsack_pro)
+- [Buildkite Rails Docker Parallel Example with Knapsack Pro](https://github.com/KnapsackPro/buildkite-rails-docker-parallel-example-with-knapsack_pro)
 
 #### Codeship.com
 
@@ -403,7 +404,7 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 
 ### Dependencies
 
-* [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js)
+- [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js)
 
 ### Setup
 
@@ -411,105 +412,105 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 
 2. Install dependencies:
 
-    ```
-    $ npm install
-    ```
+   ```
+   $ npm install
+   ```
 
 3. In order to use local version of `@knapsack-pro/core` run:
 
-    ```
-    $ npm link @knapsack-pro/core
-    ```
+   ```
+   $ npm link @knapsack-pro/core
+   ```
 
 4. Compile TypeScript code to `lib` directory by running:
 
-    ```
-    $ npm start
-    ```
+   ```
+   $ npm start
+   ```
 
 5. Register `@knapsack-pro/cypress` package globally in your local system. This way we will be able to develop other npm packages dependent on it:
 
-    ```
-    $ npm link
-    ```
+   ```
+   $ npm link
+   ```
 
 ### Publishing
 
 1. Sign in to npm registry with command:
 
-    ```
-    $ npm adduser
-    ```
+   ```
+   $ npm adduser
+   ```
 
 2. Ensure you have the latest version of `@knapsack-pro/core` in `package.json`:
 
-    ```
-    {
-      "dependencies": {
-        "@knapsack-pro/core": "^x.x.x"
-      }
-    }
-    ```
+   ```
+   {
+     "dependencies": {
+       "@knapsack-pro/core": "^x.x.x"
+     }
+   }
+   ```
 
-    Then run `npm install`. This way you will be able to test `@knapsack-pro/core` installed from npm registry instead of local one that was linked with `npm link @knapsack-pro/core`.
+   Then run `npm install`. This way you will be able to test `@knapsack-pro/core` installed from npm registry instead of local one that was linked with `npm link @knapsack-pro/core`.
 
-    Now commit updated `package.json` and `package-lock.json`.
+   Now commit updated `package.json` and `package-lock.json`.
 
-    ```
-    $ git commit -am "Update @knapsack-pro/core"
-    ```
+   ```
+   $ git commit -am "Update @knapsack-pro/core"
+   ```
 
 3. Before releasing a new version of package please update `CHANGELOG.md` with [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator):
 
-    ```
-    $ gem install github_changelog_generator
+   ```
+   $ gem install github_changelog_generator
 
-    # generate CHANGELOG.md
-    $ github_changelog_generator KnapsackPro/knapsack-pro-cypress
-    $ git commit -am "Update CHANGELOG.md"
-    $ git push origin master
-    ```
+   # generate CHANGELOG.md
+   $ github_changelog_generator KnapsackPro/knapsack-pro-cypress
+   $ git commit -am "Update CHANGELOG.md"
+   $ git push origin master
+   ```
 
 4. If you have added new files to the repository and they should be part of the released npm package then please ensure they are included in `files` array in `package.json`.
 
 5. If you have changed any headers in `README.md` please refresh table of contents with:
 
-    ```
-    $ npm run doctoc
-    ```
+   ```
+   $ npm run doctoc
+   ```
 
 6. Compile project:
 
-    ```
-    # ensure you use local version of @knapsack-pro/core
-    $ npm link @knapsack-pro/core
+   ```
+   # ensure you use local version of @knapsack-pro/core
+   $ npm link @knapsack-pro/core
 
-    $ npm start
-    ```
+   $ npm start
+   ```
 
 7. In order to [bump version of the package](https://docs.npmjs.com/cli/version) run below command. It will also create a version commit and tag for the release:
 
-    ```
-    # bump patch version 0.0.x
-    $ npm version patch
+   ```
+   # bump patch version 0.0.x
+   $ npm version patch
 
-    # bump minor version 0.x.0
-    $ npm version minor
-    ```
+   # bump minor version 0.x.0
+   $ npm version minor
+   ```
 
 8. Push to git repository created commit and tag:
 
-    ```
-    $ git push origin master --tags
-    ```
+   ```
+   $ git push origin master --tags
+   ```
 
 9. Now when git tag is on Github you can update `CHANGELOG.md` again.
 
-    ```
-    $ github_changelog_generator KnapsackPro/knapsack-pro-cypress
-    $ git commit -am "Update CHANGELOG.md"
-    $ git push origin master
-    ```
+   ```
+   $ github_changelog_generator KnapsackPro/knapsack-pro-cypress
+   $ git commit -am "Update CHANGELOG.md"
+   $ git push origin master
+   ```
 
 10. Now you can publish package to npm registry:
 
