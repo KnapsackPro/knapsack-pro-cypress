@@ -1,22 +1,34 @@
 #!/usr/bin/env node
 
-// tslint:disable-next-line:no-var-requires
-const { name: clientName, version: clientVersion } = require("../package.json");
+const { name: clientName, version: clientVersion } = require('../package.json');
 
-const cypress = require("cypress"); // tslint:disable-line:no-var-requires
+const cypress = require('cypress');
 
-import { KnapsackProCore, onQueueFailureType, onQueueSuccessType, TestFile } from "@knapsack-pro/core";
-import { EnvConfig } from "./env-config";
-import { TestFilesFinder } from "./test-files-finder";
+import {
+  KnapsackProCore,
+  onQueueFailureType,
+  onQueueSuccessType,
+  TestFile,
+} from '@knapsack-pro/core';
+import { EnvConfig } from './env-config';
+import { TestFilesFinder } from './test-files-finder';
 
 EnvConfig.loadEnvironmentVariables();
 
 const allTestFiles: TestFile[] = TestFilesFinder.allTestFiles();
-const knapsackPro = new KnapsackProCore(clientName, clientVersion, allTestFiles);
+const knapsackPro = new KnapsackProCore(
+  clientName,
+  clientVersion,
+  allTestFiles,
+);
 
 const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
-  const testFilePaths: string[] = queueTestFiles.map((testFile: TestFile) => testFile.path);
-  const { runs: tests, totalFailed } = await cypress.run({ spec: testFilePaths });
+  const testFilePaths: string[] = queueTestFiles.map(
+    (testFile: TestFile) => testFile.path,
+  );
+  const { runs: tests, totalFailed } = await cypress.run({
+    spec: testFilePaths,
+  });
 
   const recordedTestFiles: TestFile[] = tests.map((test: any) => ({
     path: test.spec.relative,
@@ -29,7 +41,7 @@ const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
   };
 };
 
-const onError: onQueueFailureType = (error) => {
+const onError: onQueueFailureType = error => {
   // TODO: handle error
 };
 

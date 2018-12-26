@@ -1,11 +1,16 @@
 {
   "defaultSeverity": "error",
-  "extends": [
-    "tslint:recommended"
-  ],
-  "jsRules": {},
+  "extends": ["tslint-config-airbnb"],
   "rules": {
-    "object-literal-sort-keys": false
-  },
-  "rulesDirectory": []
+    // remove when arrow-parens rule gains support for requireForBlockBody option
+    // https://palantir.github.io/tslint/rules/arrow-parens/
+    "arrow-parens": false,
+
+    // remove when arrow-parens rule gains support for requireForBlockBody option,
+    // https://github.com/buzinas/tslint-eslint-rules/blob/master/src/docs/rules/terArrowParensRule.md
+    "ter-arrow-parens": false,
+
+    // https://github.com/Microsoft/tslint-microsoft-contrib
+    "import-name": false
+  }
 }
