@@ -10,11 +10,7 @@ const paths = {
   dest: tsProject.config.compilerOptions.outDir,
 };
 
-export function clean() {
-  return del([`${paths.dest}/**`, `!${paths.dest}`]);
-}
-
-export function compile() {
+function compile() {
   const filterBinFiles = gFilter(
     `${tsProject.config.compilerOptions.outDir}/knapsack-pro-cypress.js`,
     { restore: true },
@@ -34,10 +30,12 @@ export function compile() {
   );
 }
 
-export function watch() {
+function watch() {
   gulp.watch(paths.src, compile);
 }
 
-export const build = gulp.series(clean, compile, watch);
+export const clean = () => del([`${paths.dest}/**`, `!${paths.dest}`]);
+export const build = gulp.series(clean, compile);
+export const dev = gulp.series(build, watch);
 
-export default build;
+export default dev;
