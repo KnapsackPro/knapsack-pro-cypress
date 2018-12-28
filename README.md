@@ -475,7 +475,7 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
 
        Turn on `Format On Save` checkbox.
 
-   From now on every change in code base will be automatically formatted by [Prettier](https://prettier.io/). [TSLint](https://palantir.github.io/tslint/) errors will be also automatically fixed on every file save.
+   From now on every change in code base will be automatically formatted by [Prettier](https://prettier.io/). [ESLint](https://eslint.org/) and [TSLint](https://palantir.github.io/tslint/) errors will be also automatically fixed on every file save.
 
 7. Write some code.
 
