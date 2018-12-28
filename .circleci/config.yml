@@ -52,5 +52,4 @@ jobs:
       # run TypeScript Compiler
       - run: npm run tsc
 
-      # run TSLint
       - run: npm run lint
