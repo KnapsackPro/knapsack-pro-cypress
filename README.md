@@ -445,6 +445,10 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
        - [.ignore](https://plugins.jetbrains.com/plugin/7495--ignore)
        - [.env files support](https://plugins.jetbrains.com/plugin/9525--env-files-support)
 
+     - Go to `File > Settings > Languages & Frameworks > JavaScript > Code Quality Tools > ESLint`
+
+       Turn on `Enable` checkbox.
+
      - Go to `File > Settings > Languages & Frameworks > TypeScript > TSLint`
 
        Turn on `Enable` checkbox.
@@ -458,18 +462,20 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
      - Install the following plugins:
 
        - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+       - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
        - [TypeScript TSLint Plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin)
        - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
      - Go to `File > Preferences > Settings > Extensions > Prettier - Code formatter`
 
+       Turn on `Prettier: Eslint Integration` checkbox.
        Turn on `Prettier: Tslint Integration` checkbox.
 
      - Go to `File > Preferences > Settings > Text Editor > Formatting`
 
        Turn on `Format On Save` checkbox.
 
-   From now on every change in code base will be automatically formatted by [Prettier](https://prettier.io/). [TSLint](https://palantir.github.io/tslint/) errors will be also automatically fixed on every file save.
+   From now on every change in code base will be automatically formatted by [Prettier](https://prettier.io/). [ESLint](https://eslint.org/) and [TSLint](https://palantir.github.io/tslint/) errors will be also automatically fixed on every file save.
 
 7. Write some code.
 
