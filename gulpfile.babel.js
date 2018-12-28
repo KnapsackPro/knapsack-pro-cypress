@@ -4,8 +4,6 @@ import ts from 'gulp-typescript';
 import gFilter from 'gulp-filter';
 import chmod from 'gulp-chmod';
 
-const filter = gFilter('src/cli.js', {restore: true});
-
 const tsProject = ts.createProject('tsconfig.json');
 const paths = {
   src: tsProject.config.include,
