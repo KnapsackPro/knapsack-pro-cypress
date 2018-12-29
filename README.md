@@ -535,7 +535,7 @@ You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,cof
    # ensure you use local version of @knapsack-pro/core
    $ npm link @knapsack-pro/core
 
-   $ npm start
+   $ npm run build
    ```
 
 7. In order to [bump version of the package](https://docs.npmjs.com/cli/version) run below command. It will also create a version commit and tag for the release:
