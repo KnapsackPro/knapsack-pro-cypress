@@ -30,7 +30,7 @@ Learn about Knapsack Pro Queue Mode in the video [how to run tests with dynamic 
     - [Jenkins](#jenkins)
     - [Other CI provider](#other-ci-provider)
 - [FAQ](#faq)
-  - [General FAQ for Knapsack Pro Core features (See first)](#general-faq-for-knapsack-pro-core-features-see-first)
+  - [Knapsack Pro Core features FAQ](#knapsack-pro-core-features-faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
 - [Development](#development)
   - [Dependencies](#dependencies)
@@ -397,7 +397,7 @@ Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as g
 
 ## FAQ
 
-### General FAQ for Knapsack Pro Core features (See first)
+### Knapsack Pro Core features FAQ
 
 This project depends on `@knapsack-pro/core`. Please check the [FAQ for `@knapsack-pro/core`](https://github.com/KnapsackPro/knapsack-pro-core-js#table-of-contents) to learn more about core features available to you.
 
