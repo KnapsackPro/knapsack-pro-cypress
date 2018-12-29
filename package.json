@@ -30,13 +30,9 @@
     }
   ],
   "license": "MIT",
-  "engines": {
-    "node": ">=8.11.1",
-    "npm": ">=5.6.0"
-  },
   "scripts": {
     "start": "gulp",
-    "tsc": "tsc",
+    "build": "gulp build",
     "lint": "npm run lint:js && npm run lint:ts",
     "lint:js": "eslint .",
     "lint:ts": "tslint --project . --format stylish",

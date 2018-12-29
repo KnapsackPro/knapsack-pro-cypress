@@ -1,56 +1,56 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
+# Javascript Node.js CircleCI 2.0 configuration file
+# https://circleci.com/docs/2.0/language-javascript/
+
 version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      - image: circleci/node:8.11
+      - image: circleci/node:8.15
 
-    working_directory: ~/repo
+    working_directory: ~/knapsack-pro-cypress
 
     steps:
-      # dependencies
-      # @knapsack-pro/core project
-      - run: cd ~ && (git clone -b $CIRCLE_BRANCH --single-branch https://github.com/KnapsackPro/knapsack-pro-core-js.git || git clone --single-branch https://github.com/KnapsackPro/knapsack-pro-core-js.git)
+      # clone @knapsack-pro/core project
+      - run:
+          name: Checkout code of @knapsack-pro/core
+          command: cd ~ && (git clone -b $CIRCLE_BRANCH --single-branch https://github.com/KnapsackPro/knapsack-pro-core-js.git || git clone --single-branch https://github.com/KnapsackPro/knapsack-pro-core-js.git)
 
+      # set up @knapsack-pro/core project
       - restore_cache:
+          name: Restoring Cache of @knapsack-pro/core
           keys:
             - v1-knapsack-pro-core-{{ checksum "~/knapsack-pro-core-js/package.json" }}
-            # fallback to using the latest cache if no exact match is found
+            # fallback to the latest cache if no exact match is found
             - v1-knapsack-pro-core-
 
       - run: cd ~/knapsack-pro-core-js && npm install
-      - run: cd ~/knapsack-pro-core-js && npm run tsc
+      - run: cd ~/knapsack-pro-core-js && npm run build
       - run: cd ~/knapsack-pro-core-js && sudo npm link
 
       - save_cache:
+          name: Saving Cache of @knapsack-pro/core
+          key: v1-knapsack-pro-core-{{ checksum "~/knapsack-pro-core-js/package.json" }}
           paths:
             - ~/knapsack-pro-core-js/node_modules
-          key: v1-knapsack-pro-core-{{ checksum "~/knapsack-pro-core-js/package.json" }}
 
-      # @knapsack-pro/cypress project
+      # check out source code to working directory
       - checkout
 
-      # Download and cache dependencies
+      # restore, install and cache dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
+            # fallback to the latest cache if no exact match is found
             - v1-dependencies-
-
       - run: npm install
       - run: npm link @knapsack-pro/core
-
       - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run TypeScript Compiler
-      - run: npm run tsc
+      # build project
+      - run: npm run build
 
-      # run TSLint
+      # run code linters
       - run: npm run lint
