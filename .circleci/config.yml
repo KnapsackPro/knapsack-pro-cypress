@@ -5,9 +5,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.11
+      - image: circleci/node:8.15
 
-    working_directory: ~/repo
+    working_directory: ~/knapsack-pro-cypress
 
     steps:
       # dependencies
@@ -17,7 +17,7 @@ jobs:
       - restore_cache:
           keys:
             - v1-knapsack-pro-core-{{ checksum "~/knapsack-pro-core-js/package.json" }}
-            # fallback to using the latest cache if no exact match is found
+            # fallback to the latest cache if no exact match is found
             - v1-knapsack-pro-core-
 
       - run: cd ~/knapsack-pro-core-js && npm install
@@ -25,27 +25,27 @@ jobs:
       - run: cd ~/knapsack-pro-core-js && sudo npm link
 
       - save_cache:
+          key: v1-knapsack-pro-core-{{ checksum "~/knapsack-pro-core-js/package.json" }}
           paths:
             - ~/knapsack-pro-core-js/node_modules
-          key: v1-knapsack-pro-core-{{ checksum "~/knapsack-pro-core-js/package.json" }}
 
-      # @knapsack-pro/cypress project
+      # check out source code of @knapsack-pro/cypress to working directory
       - checkout
 
-      # Download and cache dependencies
+      # restore, install and cache dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
+            # fallback to the latest cache if no exact match is found
             - v1-dependencies-
 
       - run: npm install
       - run: npm link @knapsack-pro/core
 
       - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
 
       # build project
       - run: npm run build
