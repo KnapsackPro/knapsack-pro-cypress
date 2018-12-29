@@ -1,5 +1,18 @@
 # Change Log
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v0.3.1...HEAD)
+
+**Implemented enhancements:**
+
+- Add changes related to fallback mode [\#8](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/8) ([ArturT](https://github.com/ArturT))
+
+**Merged pull requests:**
+
+- Add ESLint with Airbnb base config [\#7](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/7) ([ArturT](https://github.com/ArturT))
+- Add Prettier and configure TSLint [\#6](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/6) ([ArturT](https://github.com/ArturT))
+
 ## [v0.3.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v0.3.1) (2018-11-15)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v0.3.0...v0.3.1)
 
