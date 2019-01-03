@@ -41,8 +41,7 @@ const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
   };
 };
 
-const onError: onQueueFailureType = error => {
-  // TODO: handle error
-};
+// we do nothing when error so pass noop
+const onError: onQueueFailureType = (error: any) => {};
 
 knapsackPro.runQueueMode(onSuccess, onError);
