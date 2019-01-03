@@ -320,7 +320,7 @@ task:
   matrix:
     name: CI node 0
     name: CI node 1
-  cypress_script: $(npm bin)/knapsack-pro-cypress
+  test_script: $(npm bin)/knapsack-pro-cypress
 ```
 
 Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as global environment.
