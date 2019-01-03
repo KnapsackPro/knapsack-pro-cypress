@@ -72,7 +72,7 @@
     "gulp": "^4.0.0",
     "gulp-chmod": "^2.0.0",
     "gulp-filter": "^5.1.0",
-    "gulp-typescript": "^4.0.2",
+    "gulp-typescript": "^5.0.0",
     "prettier": "1.15.3",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
