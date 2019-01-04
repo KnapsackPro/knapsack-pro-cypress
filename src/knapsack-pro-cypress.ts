@@ -32,7 +32,7 @@ const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
 
   const recordedTestFiles: TestFile[] = tests.map((test: any) => ({
     path: test.spec.relative,
-    time_execution: test.stats.wallClockDuration / 1000, // seconds
+    time_execution: test.stats.wallClockDuration / 1000,
   }));
 
   return {
