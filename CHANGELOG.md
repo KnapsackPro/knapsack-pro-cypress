@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.0.1...HEAD)
+
+**Merged pull requests:**
+
+- Update package dependencies [\#9](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/9) ([rafaltrzop](https://github.com/rafaltrzop))
+
 ## [v1.0.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.0.1) (2018-12-29)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.0.0...v1.0.1)
 
