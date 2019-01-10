@@ -44,9 +44,19 @@ Learn about Knapsack Pro Queue Mode in the video [how to run tests with dynamic 
 
 ## Installation
 
+For `npm` users:
+
 ```
 $ npm install --save-dev @knapsack-pro/cypress
 ```
+
+For `yarn` users:
+
+```
+$ yarn add --dev @knapsack-pro/cypress
+```
+
+Whenever you see `npm` in below steps you can use `yarn` there as well.
 
 ## How to use
 
