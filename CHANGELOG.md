@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.0.1...HEAD)
 
+**Implemented enhancements:**
+
+- Add support for Cypress CLI arguments and update Cypress to ^3.1.5 [\#11](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/11) ([ArturT](https://github.com/ArturT))
+
 **Merged pull requests:**
 
 - Update package dependencies [\#9](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/9) ([rafaltrzop](https://github.com/rafaltrzop))
