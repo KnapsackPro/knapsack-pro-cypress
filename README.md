@@ -34,6 +34,7 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
 - [FAQ](#faq)
   - [Knapsack Pro Core features FAQ](#knapsack-pro-core-features-faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
+  - [How to record CI builds in Cypress Dashboard?](#how-to-record-ci-builds-in-cypress-dashboard)
 - [Development](#development)
   - [Dependencies](#dependencies)
   - [Setup](#setup)
@@ -416,6 +417,44 @@ This project depends on `@knapsack-pro/core`. Please check the [FAQ for `@knapsa
 ### How to run tests only from specific directory?
 
 You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,coffee,cjsx}` and change pattern to match your directory with test files. You can use [glob](https://github.com/isaacs/node-glob) pattern.
+
+### How to record CI builds in Cypress Dashboard?
+
+You can pass [Cypress CLI arguments](https://docs.cypress.io/guides/guides/command-line.html#cypress-run) to `@knapsack-pro/cypress` and thanks to this send recorded run to [Cypress Dashboard](https://dashboard.cypress.io).
+
+```
+export CYPRESS_RECORD_KEY=your-record-key
+
+$(npm bin)/knapsack-pro-cypress --record
+```
+
+Note when you use `--record` argument then you will see in Cypress Dashboard multiple runs for single CI build. The reason is the fact that `@knapsack-pro/cypress` split test files in dynamic ways across CI nodes. It fetches batch of test files from Knapsack Pro API Queue to run it. The batch of test files is shown as single run in Cypress Dashboard.
+
+In order to show single run in Cypress Dashboard you need to group all batches of test files fetched from Knapsack Pro API Queue for particular CI build. You need to pass `--ci-build-id` and `group` arguments. This works only for paid Cypress plan.
+
+```
+$(npm bin)/knapsack-pro-cypress --record --ci-build-id $CI_BUILD_ID --group @knapsack-pro/cypress
+```
+
+You must use CI build ID variable for your CI provider instead of above example `$CI_BUILD_ID`.
+
+| CI provider    | Environment variable                         |
+| -------------- | -------------------------------------------- |
+| AppVeyor       | `APPVEYOR_BUILD_NUMBER`                      |
+| Bamboo         | `BAMBOO_BUILD_NUMBER`                        |
+| Buildkite      | `BUILDKITE_BUILD_NUMBER`                     |
+| Circle         | `CIRCLE_WORKFLOW_ID`, `CIRCLE_BUILD_NUMBER`  |
+| Cirrus         | `CIRRUS_BUILD_ID`                            |
+| Codeship       | `CI_BUILD_NUMBER`                            |
+| Codeship Basic | `CI_BUILD_NUMBER`                            |
+| Codeship Pro   | `CI_BUILD_ID`                                |
+| Drone          | `DRONE_BUILD_NUMBER`                         |
+| Gitlab         | `CI_PIPELINE_ID`, `CI_JOB_ID`, `CI_BUILD_ID` |
+| Heroku         | `HEROKU_TEST_RUN_ID`                         |
+| Jenkins        | `BUILD_NUMBER`                               |
+| Semaphore      | `SEMAPHORE_BUILD_NUMBER`                     |
+| Solano         | `TDDIUM_SESSION_ID`                          |
+| Travis         | `TRAVIS_BUILD_ID`                            |
 
 ## Development
 

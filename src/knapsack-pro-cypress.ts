@@ -6,12 +6,20 @@ const cypress = require('cypress');
 
 import {
   KnapsackProCore,
+  KnapsackProLogger,
   onQueueFailureType,
   onQueueSuccessType,
   TestFile,
 } from '@knapsack-pro/core';
 import { EnvConfig } from './env-config';
 import { TestFilesFinder } from './test-files-finder';
+import { CypressCLI } from './cypress-cli';
+
+const cypressCLIOptions = CypressCLI.argvToOptions();
+const knapsackProLogger = new KnapsackProLogger();
+knapsackProLogger.debug(
+  `Cypress CLI options:\n${KnapsackProLogger.objectInspect(cypressCLIOptions)}`,
+);
 
 EnvConfig.loadEnvironmentVariables();
 
@@ -27,6 +35,7 @@ const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
     (testFile: TestFile) => testFile.path,
   );
   const { runs: tests, totalFailed } = await cypress.run({
+    ...cypressCLIOptions,
     spec: testFilePaths,
   });
 
