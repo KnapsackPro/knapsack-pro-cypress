@@ -428,9 +428,9 @@ export CYPRESS_RECORD_KEY=your-record-key
 $(npm bin)/knapsack-pro-cypress --record
 ```
 
-Note when you use `--record` argument then you will see in Cypress Dashboard multiple runs for single CI build. The reason is the fact that `@knapsack-pro/cypress` split test files in dynamic ways across CI nodes. It fetches batch of test files from Knapsack Pro API Queue to run it. The batch of test files is shown as single run in Cypress Dashboard.
+Note when you use `--record` argument then you will see in Cypress Dashboard multiple runs for single CI build. The reason is the fact that `@knapsack-pro/cypress` split test files in dynamic way across CI nodes. It fetches batch of test files from Knapsack Pro API Queue to run it. The batch of test files is shown as single run in Cypress Dashboard.
 
-In order to show single run in Cypress Dashboard you need to group all batches of test files fetched from Knapsack Pro API Queue for particular CI build. You need to pass `--ci-build-id` and `group` arguments. This works only for paid Cypress plan.
+In order to show single run in Cypress Dashboard correctly you need to group all batches of test files fetched from Knapsack Pro API Queue for particular CI build. You need to pass `--ci-build-id` and `--group` arguments. This works only for paid Cypress plan.
 
 ```
 $(npm bin)/knapsack-pro-cypress --record --ci-build-id $CI_BUILD_ID --group @knapsack-pro/cypress
