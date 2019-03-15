@@ -452,7 +452,8 @@ You must use CI build ID variable for your CI provider instead of above example 
 | Gitlab         | `CI_PIPELINE_ID`, `CI_JOB_ID`, `CI_BUILD_ID` |
 | Heroku         | `HEROKU_TEST_RUN_ID`                         |
 | Jenkins        | `BUILD_NUMBER`                               |
-| Semaphore      | `SEMAPHORE_BUILD_NUMBER`                     |
+| Semaphore 1.0  | `SEMAPHORE_BUILD_NUMBER`                     |
+| Semaphore 2.0  | `SEMAPHORE_WORKFLOW_ID`                      |
 | Solano         | `TDDIUM_SESSION_ID`                          |
 | Travis         | `TRAVIS_BUILD_ID`                            |
 
