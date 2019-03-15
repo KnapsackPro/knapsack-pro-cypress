@@ -1,5 +1,18 @@
 # Change Log
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.1.0...HEAD)
+
+**Implemented enhancements:**
+
+- Pass CLI arguments to cypress.run  [\#10](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/10)
+- Add support for Semaphore CI 2.0 [\#12](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/12) ([ArturT](https://github.com/ArturT))
+
+**Fixed bugs:**
+
+- Pass CLI arguments to cypress.run  [\#10](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/10)
+
 ## [v1.1.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.1.0) (2019-03-07)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.0.1...v1.1.0)
 
