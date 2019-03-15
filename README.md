@@ -28,6 +28,8 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
       - [GitLab CI `>= 11.5`](#gitlab-ci--115)
       - [GitLab CI `< 11.5` (old GitLab CI)](#gitlab-ci--115-old-gitlab-ci)
     - [SemaphoreCI.com](#semaphorecicom)
+      - [Semaphore 2.0](#semaphore-20)
+      - [Semaphore 1.0](#semaphore-10)
     - [Cirrus-CI.org](#cirrus-ciorg)
     - [Jenkins](#jenkins)
     - [Other CI provider](#other-ci-provider)
@@ -308,6 +310,42 @@ test_ci_node_1:
 ```
 
 #### SemaphoreCI.com
+
+##### Semaphore 2.0
+
+`@knapsack-pro/cypress` supports environment variables provided by Semaphore CI 2.0 to run your tests. You will have to define a few things in `.semaphore/semaphore.yml` config file.
+
+- You need to set `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS`. If you don't want to commit secrets in yml file then you can [follow this guide](https://docs.semaphoreci.com/article/66-environment-variables-and-secrets).
+- You need to create as many jobs with unique names (Node 0 - Knapsack Pro, Node 1 - Knapsack Pro etc) as many parallel jobs you want to run. If your test suite is long you should use more parallel jobs.
+- If you have 2 parallel jobs you need to set `KNAPSACK_PRO_CI_NODE_TOTAL=2` for each job.
+- You need to set job index starting from 0 like `KNAPSACK_PRO_CI_NODE_INDEX=0` for Node 0.
+
+Below you can find example part of Semaphore CI 2.0 config.
+
+```yaml
+blocks:
+  - name: Cypress tests
+    task:
+      env_vars:
+        - name: KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS
+          value: your_api_token_here
+      prologue:
+        commands:
+          - checkout
+          - nvm install --lts carbon
+          - sem-version node --lts carbon
+
+      jobs:
+        - name: Node 0 - Knapsack Pro
+          commands:
+            - KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=0 $(npm bin)/knapsack-pro-cypress
+
+        - name: Node 1 - Knapsack Pro
+          commands:
+            - KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 $(npm bin)/knapsack-pro-cypress
+```
+
+##### Semaphore 1.0
 
 The only thing you need to do is set up `@knapsack-pro/cypress` for as many parallel threads as you need. Here is an example:
 
