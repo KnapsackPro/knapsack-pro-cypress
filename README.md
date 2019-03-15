@@ -28,6 +28,8 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
       - [GitLab CI `>= 11.5`](#gitlab-ci--115)
       - [GitLab CI `< 11.5` (old GitLab CI)](#gitlab-ci--115-old-gitlab-ci)
     - [SemaphoreCI.com](#semaphorecicom)
+      - [Semaphore 2.0](#semaphore-20)
+      - [Semaphore 1.0](#semaphore-10)
     - [Cirrus-CI.org](#cirrus-ciorg)
     - [Jenkins](#jenkins)
     - [Other CI provider](#other-ci-provider)
