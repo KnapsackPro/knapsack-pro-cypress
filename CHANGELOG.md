@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.2.0...HEAD)
+
+**Implemented enhancements:**
+
+- Reduce data transfer and speed up usage of Knapsack Pro API for Queue Mode [\#13](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/13) ([ArturT](https://github.com/ArturT))
+
 ## [v1.2.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.2.0) (2019-03-15)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.1.0...v1.2.0)
 
