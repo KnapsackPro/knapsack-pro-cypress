@@ -75,9 +75,9 @@ Whenever you see `npm` in below steps you can use `yarn` there as well.
 
 3. (optional) `@knapsack-pro/cypress` detects information about CI build from supported CI environment variables. When information like git branch name and git commit hash cannot be detect from CI environment variables then `@knapsack-pro/cypress` will try to use git installed on CI machine to detect the infomation. If you don't have git installed then you should set the information using environment variables:
 
-   * `KNAPSACK_PRO_COMMIT_HASH` - git commit hash (SHA1)
-   * `KNAPSACK_PRO_BRANCH` - git branch name
-   * `KNAPSACK_PRO_CI_NODE_BUILD_ID` - a unique ID for your CI build. All parallel CI nodes being part of single CI build must have the same node build ID. Example how to generate node build ID: `KNAPSACK_PRO_CI_NODE_BUILD_ID=$(openssl rand - base64 32)`.
+   - `KNAPSACK_PRO_COMMIT_HASH` - git commit hash (SHA1)
+   - `KNAPSACK_PRO_BRANCH` - git branch name
+   - `KNAPSACK_PRO_CI_NODE_BUILD_ID` - a unique ID for your CI build. All parallel CI nodes being part of single CI build must have the same node build ID. Example how to generate node build ID: `KNAPSACK_PRO_CI_NODE_BUILD_ID=$(openssl rand - base64 32)`.
 
 4. (optional) If you want to keep screenshots and videos of failed tests recorded by Cypress you need to set in `cypress.json` config file [trashAssetsBeforeRuns](https://docs.cypress.io/guides/references/configuration.html#Screenshots) to `false`:
 
