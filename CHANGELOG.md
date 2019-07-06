@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.3.0...HEAD)
+
+**Fixed bugs:**
+
+- Update @knapsack-pro/core 1.3.1 [\#14](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/14) ([ArturT](https://github.com/ArturT))
+
 ## [v1.3.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.3.0) (2019-04-14)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.2.0...v1.3.0)
 
