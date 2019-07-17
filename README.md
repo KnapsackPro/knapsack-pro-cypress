@@ -180,6 +180,25 @@ Here you can find article [how to set up a new pipeline for your project in Buil
 - [Buildkite Rails Parallel Example with Knapsack Pro](https://github.com/KnapsackPro/buildkite-rails-parallel-example-with-knapsack_pro)
 - [Buildkite Rails Docker Parallel Example with Knapsack Pro](https://github.com/KnapsackPro/buildkite-rails-docker-parallel-example-with-knapsack_pro)
 
+When using the `docker-compose` plugin on Buildkite, you have to tell it which environment variables to pass to the docker container. Thanks to it Knapsack Pro can detect info about CI build like commit, branch name, amount of parallel nodes.
+
+```yaml
+steps:
+  - label: "Test"
+    parallelism: 2
+    plugins:
+      - docker-compose#3.0.3:
+        run: app
+        command: $(npm bin)/knapsack-pro-cypress
+        config: docker-compose.test.yml
+        env:
+          - BUILDKITE_PARALLEL_JOB_COUNT
+          - BUILDKITE_PARALLEL_JOB
+          - BUILDKITE_BUILD_NUMBER
+          - BUILDKITE_COMMIT
+          - BUILDKITE_BRANCH
+```
+
 #### Codeship.com
 
 Codeship does not provide parallel jobs environment variables so you will have to define `KNAPSACK_PRO_CI_NODE_TOTAL` and `KNAPSACK_PRO_CI_NODE_INDEX` for each [parallel test pipeline](https://documentation.codeship.com/basic/builds-and-configuration/parallel-tests/#using-parallel-test-pipelines). Below is an example for 2 parallel test pipelines.
