@@ -36,6 +36,7 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
 - [FAQ](#faq)
   - [Knapsack Pro Core features FAQ](#knapsack-pro-core-features-faq)
   - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
+  - [How to pass command line arguments?](#how-to-pass-command-line-arguments)
   - [How to record CI builds in Cypress Dashboard?](#how-to-record-ci-builds-in-cypress-dashboard)
 - [Development](#development)
   - [Dependencies](#dependencies)
@@ -483,6 +484,16 @@ This project depends on `@knapsack-pro/core`. Please check the [FAQ for `@knapsa
 ### How to run tests only from specific directory?
 
 You can set `KNAPSACK_PRO_TEST_FILE_PATTERN=cypress/integration/**/*.{js,jsx,coffee,cjsx}` and change pattern to match your directory with test files. You can use [glob](https://github.com/isaacs/node-glob) pattern.
+
+### How to pass command line arguments?
+
+You can pass command line arguments to Cypress by just passing them to `@knapsack-pro/cypress`. See example:
+
+```
+$(npm bin)/knapsack-pro-cypress --browser chrome
+```
+
+You can pass many of [Cypress CLI arguments](https://docs.cypress.io/guides/guides/command-line.html#cypress-run) to `@knapsack-pro/cypress`.
 
 ### How to record CI builds in Cypress Dashboard?
 
