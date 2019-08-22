@@ -79,7 +79,16 @@ Whenever you see `npm` in below steps you can use `yarn` there as well.
    - `KNAPSACK_PRO_BRANCH` - git branch name
    - `KNAPSACK_PRO_CI_NODE_BUILD_ID` - a unique ID for your CI build. All parallel CI nodes being part of single CI build must have the same node build ID. Example how to generate node build ID: `KNAPSACK_PRO_CI_NODE_BUILD_ID=$(openssl rand - base64 32)`.
 
-4. (optional) If you want to keep screenshots and videos of failed tests recorded by Cypress you need to set in `cypress.json` config file [trashAssetsBeforeRuns](https://docs.cypress.io/guides/references/configuration.html#Screenshots) to `false`:
+4. (optional) If you have test files in a non-default directory you won't be able to run tests and you may see below error.
+
+   ```
+   Response body:
+   { errors: [ { test_files: [ 'parameter is required' ] } ] }
+   ```
+
+   Please [adjust `KNAPSACK_PRO_TEST_FILE_PATTERN`](#how-to-run-tests-only-from-specific-directory) variable to match your test files directory structure to let Knapsack Pro detect all the test files you want to run in parallel.
+
+5. (optional) If you want to keep screenshots and videos of failed tests recorded by Cypress you need to set in `cypress.json` config file [trashAssetsBeforeRuns](https://docs.cypress.io/guides/references/configuration.html#Screenshots) to `false`:
 
    ```
    {
@@ -91,7 +100,7 @@ Whenever you see `npm` in below steps you can use `yarn` there as well.
 
    `@knapsack-pro/cypress` runs tests using [Cypress run command](https://docs.cypress.io/guides/guides/module-api.html#cypress-run) after fetching set of tests from Knapsack Pro Queue API. When another set of tests is fetched from Queue API then we run Cypress run command again with a new set of tests and Cypress run command by default removes screenshots and videos. That's why we need to turn it off in order to preserve screenshots/videos.
 
-5. Please select your CI provider and follow instructions to run tests with `@knapsack-pro/cypress`.
+6. Please select your CI provider and follow instructions to run tests with `@knapsack-pro/cypress`.
 
    - [CircleCI](#circleci)
    - [Travis CI](#travis-ci)
