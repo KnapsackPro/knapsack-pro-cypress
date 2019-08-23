@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.3.1...HEAD)
+
+**Implemented enhancements:**
+
+- Update @knapsack-pro/core 1.4.0 and update docs for Semaphore 2.0 [\#15](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/15) ([ArturT](https://github.com/ArturT))
+
 ## [v1.3.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.3.1) (2019-07-06)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.3.0...v1.3.1)
 
