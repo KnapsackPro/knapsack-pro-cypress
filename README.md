@@ -30,6 +30,7 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
       - [Semaphore 1.0](#semaphore-10)
     - [Cirrus-CI.org](#cirrus-ciorg)
     - [Jenkins](#jenkins)
+    - [GitHub Actions](#github-actions)
     - [Other CI provider](#other-ci-provider)
 - [FAQ](#faq)
   - [Knapsack Pro Core features FAQ](#knapsack-pro-core-features-faq)
@@ -453,6 +454,62 @@ timeout(time: 60, unit: 'MINUTES') {
 ```
 
 Remember to set environment variable `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` in Jenkins configuration with your API token.
+
+#### GitHub Actions
+
+`@knapsack-pro/cypress` supports environment variables provided by GitHub Actions to run your tests. You have to define a few things in `.github/workflows/main.yaml` config file.
+
+- You need to set `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` environment variable in GitHub repository Settings -> Secrets. See [creating and using secrets in GitHub Actions](https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables).
+- You should create as many parallel jobs as you need with `matrix.ci_node_total` and `matrix.ci_node_index` properties. If your test suite is slow you should use more parallel jobs.
+
+Below you can find config for GitHub Actions.
+
+```yaml
+# .github/workflows/main.yaml
+name: Main
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x]
+        # Set N number of parallel jobs you want to run tests on.
+        # Use higher number if you have slow tests to split them on more parallel jobs.
+        # Remember to update ci_node_index below to 0..N-1
+        ci_node_total: [2]
+        # set N-1 indexes for parallel jobs
+        # When you run 2 parallel jobs then first job will have index 0, the second job will have index 1 etc
+        ci_node_index: [0, 1]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: npm install and build
+        run: |
+          npm install
+          npm run build --if-present
+
+      - name: Run http server with the app in the background
+        run: |
+          npm run start:ci &
+
+      - name: Run tests with Knapsack Pro
+        env:
+          KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS: ${{ secrets.KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS }}
+          KNAPSACK_PRO_CI_NODE_TOTAL: ${{ matrix.ci_node_total }}
+          KNAPSACK_PRO_CI_NODE_INDEX: ${{ matrix.ci_node_index }}
+        run: |
+          $(npm bin)/knapsack-pro-cypress
+```
 
 #### Other CI provider
 
