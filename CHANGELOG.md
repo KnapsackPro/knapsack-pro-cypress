@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.4.1...HEAD)
+
+**Implemented enhancements:**
+
+- Update @knapsack-pro/core 1.5.0 to add support for GitHub Actions [\#17](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/17) ([ArturT](https://github.com/ArturT))
+
 ## [v1.4.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.4.1) (2019-09-04)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.4.0...v1.4.1)
 
@@ -16,10 +24,6 @@
 
 ## [v1.3.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.3.1) (2019-07-06)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.3.0...v1.3.1)
-
-**Fixed bugs:**
-
-- Update @knapsack-pro/core 1.3.1 [\#14](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/14) ([ArturT](https://github.com/ArturT))
 
 ## [v1.3.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.3.0) (2019-04-14)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.2.0...v1.3.0)
@@ -47,10 +51,6 @@
 
 - Add support for Cypress CLI arguments and update Cypress to ^3.1.5 [\#11](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/11) ([ArturT](https://github.com/ArturT))
 
-**Merged pull requests:**
-
-- Update package dependencies [\#9](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/9) ([rafaltrzop](https://github.com/rafaltrzop))
-
 ## [v1.0.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.0.1) (2018-12-29)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.0.0...v1.0.1)
 
@@ -60,6 +60,10 @@
 **Implemented enhancements:**
 
 - Add changes related to fallback mode [\#8](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/8) ([ArturT](https://github.com/ArturT))
+
+**Fixed bugs:**
+
+- Update @knapsack-pro/core 1.3.1 [\#14](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/14) ([ArturT](https://github.com/ArturT))
 
 **Merged pull requests:**
 
@@ -84,6 +88,10 @@
 - Update @knapsack-pro/core to 0.2.1 to fix problem with wrong Knapsack Pro API endpoint url [\#3](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/3) ([ArturT](https://github.com/ArturT))
 - Fix security vulnerability with npm audit fix [\#2](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/2) ([ArturT](https://github.com/ArturT))
 - Filter bin files from proper out dir [\#1](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/1) ([ArturT](https://github.com/ArturT))
+
+**Merged pull requests:**
+
+- Update package dependencies [\#9](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/9) ([rafaltrzop](https://github.com/rafaltrzop))
 
 ## [v0.2.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v0.2.0) (2018-09-15)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v0.1.2...v0.2.0)
