@@ -344,7 +344,7 @@ test_ci_node_1:
 `@knapsack-pro/cypress` supports environment variables provided by Semaphore CI 2.0 to run your tests. You will have to define a few things in `.semaphore/semaphore.yml` config file.
 
 - You need to set `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS`. If you don't want to commit secrets in yml file then you can [follow this guide](https://docs.semaphoreci.com/article/66-environment-variables-and-secrets).
-- You should create as many parallel jobs as you need with `parallelism` property. If your test suite is long you should use more parallel jobs.
+- You should create as many parallel jobs as you need with `parallelism` property. If your test suite is slow you should use more parallel jobs.
 
 Below you can find example part of Semaphore CI 2.0 config.
 
