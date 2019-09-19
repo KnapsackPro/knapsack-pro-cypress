@@ -475,6 +475,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         node-version: [8.x]
         # Set N number of parallel jobs you want to run tests on.
