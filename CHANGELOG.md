@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
-
-[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.5.0...HEAD)
+## [v1.5.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.5.1) (2019-09-26)
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.5.0...v1.5.1)
 
 **Fixed bugs:**
 
@@ -62,6 +61,10 @@
 
 - Add support for Cypress CLI arguments and update Cypress to ^3.1.5 [\#11](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/11) ([ArturT](https://github.com/ArturT))
 
+**Merged pull requests:**
+
+- Update package dependencies [\#9](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/9) ([rafaltrzop](https://github.com/rafaltrzop))
+
 ## [v1.0.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.0.1) (2018-12-29)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.0.0...v1.0.1)
 
@@ -74,7 +77,6 @@
 
 **Merged pull requests:**
 
-- Update package dependencies [\#9](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/9) ([rafaltrzop](https://github.com/rafaltrzop))
 - Add ESLint with Airbnb base config [\#7](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/7) ([ArturT](https://github.com/ArturT))
 - Add Prettier and configure TSLint [\#6](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/6) ([ArturT](https://github.com/ArturT))
 
