@@ -39,6 +39,14 @@ const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
     spec: testFilePaths,
   });
 
+  // when Cypress crashed
+  if (typeof tests === 'undefined') {
+    return {
+      recordedTestFiles: [],
+      isTestSuiteGreen: false,
+    };
+  }
+
   const recordedTestFiles: TestFile[] = tests.map((test: any) => ({
     path: test.spec.relative,
     time_execution: test.stats.wallClockDuration / 1000,
