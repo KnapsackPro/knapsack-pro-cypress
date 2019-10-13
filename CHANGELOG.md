@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
-
-[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.5.1...HEAD)
+## [v1.6.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.6.0) (2019-10-13)
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.5.1...v1.6.0)
 
 **Implemented enhancements:**
 
@@ -68,6 +67,7 @@
 **Implemented enhancements:**
 
 - Add support for Cypress CLI arguments and update Cypress to ^3.1.5 [\#11](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/11) ([ArturT](https://github.com/ArturT))
+- Add changes related to fallback mode [\#8](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/8) ([ArturT](https://github.com/ArturT))
 
 **Merged pull requests:**
 
@@ -79,13 +79,10 @@
 ## [v1.0.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.0.0) (2018-12-29)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v0.3.1...v1.0.0)
 
-**Implemented enhancements:**
-
-- Add changes related to fallback mode [\#8](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/8) ([ArturT](https://github.com/ArturT))
-
 **Merged pull requests:**
 
 - Add ESLint with Airbnb base config [\#7](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/7) ([ArturT](https://github.com/ArturT))
+- Add Prettier and configure TSLint [\#6](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/6) ([ArturT](https://github.com/ArturT))
 
 ## [v0.3.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v0.3.1) (2018-11-15)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v0.3.0...v0.3.1)
@@ -105,10 +102,6 @@
 - Update @knapsack-pro/core to 0.2.1 to fix problem with wrong Knapsack Pro API endpoint url [\#3](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/3) ([ArturT](https://github.com/ArturT))
 - Fix security vulnerability with npm audit fix [\#2](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/2) ([ArturT](https://github.com/ArturT))
 - Filter bin files from proper out dir [\#1](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/1) ([ArturT](https://github.com/ArturT))
-
-**Merged pull requests:**
-
-- Add Prettier and configure TSLint [\#6](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/6) ([ArturT](https://github.com/ArturT))
 
 ## [v0.2.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v0.2.0) (2018-09-15)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v0.1.2...v0.2.0)
