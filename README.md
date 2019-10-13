@@ -115,6 +115,8 @@ Whenever you see `npm` in below steps you can use `yarn` there as well.
    - [SemaphoreCI.com](#semaphorecicom)
    - [Cirrus-CI.org](#cirrus-ciorg)
    - [Jenkins](#jenkins)
+   - [GitHub Actions](#github-actions)
+   - [Codefresh.io](#codefreshio)
    - [Other CI provider](#other-ci-provider)
 
 ### CI steps
