@@ -10,6 +10,7 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table of Contents
 
 - [Installation](#installation)
 - [How to use](#how-to-use)
@@ -31,6 +32,7 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
     - [Cirrus-CI.org](#cirrus-ciorg)
     - [Jenkins](#jenkins)
     - [GitHub Actions](#github-actions)
+    - [Codefresh.io](#codefreshio)
     - [Other CI provider](#other-ci-provider)
 - [FAQ](#faq)
   - [Knapsack Pro Core features FAQ](#knapsack-pro-core-features-faq)
@@ -510,6 +512,88 @@ jobs:
           KNAPSACK_PRO_CI_NODE_INDEX: ${{ matrix.ci_node_index }}
         run: |
           $(npm bin)/knapsack-pro-cypress
+```
+
+#### Codefresh.io
+
+`@knapsack-pro/cypress` supports environment variables provided by Codefresh.io to run your tests. You have to define a few things in `.codefresh/codefresh.yml` config file.
+
+- You need to set an API token like `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` in Codefresh dashboard, see left menu Pipelines -> settings (cog icon next to the pipeline) -> Variables tab (see a vertical menu on the right side).
+- Set where Codefresh YAML file can be found. In Codefresh dashboard, see left menu Pipelines -> settings (cog icon next to pipeline) -> Workflow tab (horizontal menu on the top) -> Path to YAML (set there `./.codefresh/codefresh.yml`).
+- Set how many parallel jobs (parallel CI nodes) you want to run with `KNAPSACK_PRO_CI_NODE_TOTAL` environment variable in `.codefresh/codefresh.yml` file.
+- Ensure in the `matrix` section you listed all `KNAPSACK_PRO_CI_NODE_INDEX` environment variables with a value from `0` to `KNAPSACK_PRO_CI_NODE_TOTAL-1`. Codefresh will generate a matrix of parallel jobs where each job has a different value for `KNAPSACK_PRO_CI_NODE_INDEX`. Thanks to that Knapsack Pro knows what tests should be run on each parallel job.
+
+Below you can find Codefresh YAML config and `Test.Dockerfile` used by Codefresh to run the project and Cypress test suite inside of Docker container.
+
+```yaml
+# .codefresh/codefresh.yml
+version: "1.0"
+
+stages:
+  - "clone"
+  - "build"
+  - "tests"
+
+steps:
+  main_clone:
+    type: "git-clone"
+    description: "Cloning main repository..."
+    repo: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}"
+    revision: "${{CF_BRANCH}}"
+    stage: "clone"
+  BuildTestDockerImage:
+    title: Building Test Docker image
+    type: build
+    arguments:
+      image_name: "${{CF_ACCOUNT}}/${{CF_REPO_NAME}}-test"
+      tag: "${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}"
+      dockerfile: Test.Dockerfile
+    stage: "build"
+
+  run_tests:
+    stage: "tests"
+    image: "${{BuildTestDockerImage}}"
+    working_directory: /src
+    fail_fast: false
+    environment:
+      # set how many parallel jobs you want to run
+      - KNAPSACK_PRO_CI_NODE_TOTAL=2
+    matrix:
+      environment:
+        # please ensure you have here listed N-1 indexes
+        # where N is KNAPSACK_PRO_CI_NODE_TOTAL
+        - KNAPSACK_PRO_CI_NODE_INDEX=0
+        - KNAPSACK_PRO_CI_NODE_INDEX=1
+    commands:
+      # run http server in the background (silent mode)
+      # we did && echo on purpose to ensure Codefresh does not fail
+      # when we pass npm process to background with & sign
+      - (npm run start:ci &) && echo "start http server in the background"
+      - $(npm bin)/knapsack-pro-cypress
+```
+
+Add `Test.Dockerfile` to your project repository.
+
+```Dockerfile
+FROM cypress/base:10
+
+RUN apt-get update && \
+  apt-get install -y \
+  python3-dev \
+  python3-pip
+
+# Install AWS CLI
+RUN pip3 install awscli
+
+# Install Codefresh CLI
+RUN wget https://github.com/codefresh-io/cli/releases/download/v0.31.1/codefresh-v0.31.1-alpine-x64.tar.gz
+RUN tar -xf codefresh-v0.31.1-alpine-x64.tar.gz -C /usr/local/bin/
+
+COPY . /src
+
+WORKDIR /src
+
+RUN npm install
 ```
 
 #### Other CI provider
