@@ -670,6 +670,7 @@ You must use CI build ID variable for your CI provider instead of above example 
 | Semaphore 2.0  | `SEMAPHORE_WORKFLOW_ID`                      |
 | Solano         | `TDDIUM_SESSION_ID`                          |
 | Travis         | `TRAVIS_BUILD_ID`                            |
+| Codefresh.io   | `CF_BUILD_ID`                                |
 
 ## Development
 
