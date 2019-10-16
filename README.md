@@ -232,7 +232,7 @@ KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 $(npm bin)/knapsack-pr
 
 Remember to add API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` to `Environment` page of your project settings in Codeship.
 
-If you want to use Codeship retry single CI node feature to retry just failed tests on particular CI node then you should set `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
+CodeShip uses the same build number if you restart a build. Because of that you need to set `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true` in order to be able to restart CI build.
 
 #### Heroku CI
 
