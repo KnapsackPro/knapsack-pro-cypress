@@ -67,7 +67,6 @@
 **Implemented enhancements:**
 
 - Add support for Cypress CLI arguments and update Cypress to ^3.1.5 [\#11](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/11) ([ArturT](https://github.com/ArturT))
-- Add changes related to fallback mode [\#8](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/8) ([ArturT](https://github.com/ArturT))
 
 **Merged pull requests:**
 
@@ -78,6 +77,10 @@
 
 ## [v1.0.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.0.0) (2018-12-29)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v0.3.1...v1.0.0)
+
+**Implemented enhancements:**
+
+- Add changes related to fallback mode [\#8](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/8) ([ArturT](https://github.com/ArturT))
 
 **Merged pull requests:**
 
