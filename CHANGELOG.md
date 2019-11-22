@@ -1,11 +1,23 @@
 # Change Log
 
-## [v1.6.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.6.0) (2019-10-13)
-[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.5.1...v1.6.0)
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.6.0...HEAD)
 
 **Implemented enhancements:**
 
+- Run tests only when they are detected on the disk. Do not run tests when the test file pattern is invalid. Require to set KNAPSACK\_PRO\_TEST\_FILE\_PATTERN [\#21](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/21) ([ArturT](https://github.com/ArturT))
 - Add support for Codefresh.io CI provider [\#19](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/19) ([ArturT](https://github.com/ArturT))
+
+**Merged pull requests:**
+
+- Bump lodash.merge from 4.6.1 to 4.6.2 [\#25](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/25) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump eslint-utils from 1.3.1 to 1.4.3 [\#24](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/24) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump mixin-deep from 1.3.1 to 1.3.2 [\#23](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/23) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump extend from 3.0.1 to 3.0.2 [\#22](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/22) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v1.6.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.6.0) (2019-10-13)
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.5.1...v1.6.0)
 
 ## [v1.5.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.5.1) (2019-09-26)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.5.0...v1.5.1)
