@@ -1,13 +1,11 @@
 # Change Log
 
-## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
-
-[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.6.0...HEAD)
+## [v1.7.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.7.0) (2019-11-22)
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.6.0...v1.7.0)
 
 **Implemented enhancements:**
 
 - Run tests only when they are detected on the disk. Do not run tests when the test file pattern is invalid. Require to set KNAPSACK\_PRO\_TEST\_FILE\_PATTERN [\#21](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/21) ([ArturT](https://github.com/ArturT))
-- Add support for Codefresh.io CI provider [\#19](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/19) ([ArturT](https://github.com/ArturT))
 
 **Merged pull requests:**
 
@@ -18,6 +16,10 @@
 
 ## [v1.6.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.6.0) (2019-10-13)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.5.1...v1.6.0)
+
+**Implemented enhancements:**
+
+- Add support for Codefresh.io CI provider [\#19](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/19) ([ArturT](https://github.com/ArturT))
 
 ## [v1.5.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.5.1) (2019-09-26)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.5.0...v1.5.1)
