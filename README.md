@@ -617,6 +617,12 @@ Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as g
 
 ## FAQ
 
+__NEW:__ Up to date [FAQ for Knapsack Pro Cypress can be found here](https://knapsackpro.com/faq/knapsack_pro_client/knapsack_pro_cypress).
+
+__OLD:__ This README also contains FAQ questions but we keep adding new info only to our new FAQ page mentioned above.
+
+We keep this old FAQ in README to not break old links spread across the web.
+
 ### Knapsack Pro Core features FAQ
 
 This project depends on `@knapsack-pro/core`. Please check the [FAQ for `@knapsack-pro/core`](https://github.com/KnapsackPro/knapsack-pro-core-js#table-of-contents) to learn more about core features available to you.
