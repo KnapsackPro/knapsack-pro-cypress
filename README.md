@@ -617,7 +617,7 @@ Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as g
 
 ## FAQ
 
-_:heavy_exclamation_mark: __NEW:__ Up to date [FAQ for Knapsack Pro Cypress can be found here](https://knapsackpro.com/faq/knapsack_pro_client/knapsack_pro_cypress).
+:heavy_exclamation_mark: __NEW:__ Up to date [FAQ for Knapsack Pro Cypress can be found here](https://knapsackpro.com/faq/knapsack_pro_client/knapsack_pro_cypress).
 
 __OLD:__ This README also contains FAQ questions but we keep adding new info only to our new FAQ page mentioned above.
 
