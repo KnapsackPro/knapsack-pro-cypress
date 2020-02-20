@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.7.0...HEAD)
+
+**Merged pull requests:**
+
+- Update dependency to use Cypress 4.x [\#26](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/26) ([ArturT](https://github.com/ArturT))
+
 ## [v1.7.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.7.0) (2019-11-22)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.6.0...v1.7.0)
 
