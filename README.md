@@ -74,17 +74,27 @@ Whenever you see `npm` in below steps you can use `yarn` there as well.
 
    Next to your API token, you can find a link "Build metrics" where you can preview recorded CI builds. You will see yellow tips if something is not configured as expected. Refresh the page once you finish running tests to see new tips. You can also click "Show" on CI build to see details about particular CI build. Look for yellow tips suggesting what to change to ensure all works fine for your project.
 
-2. (optional) Do you want to use "retry single failed parallel CI node" feature for your CI? For instance some of CI providers like Travis CI, Buildkite or Codeship allows you to retry only one of failed parallel CI node instead of retrying the whole CI build with all parallel CI nodes. If you want to be able to retry only single failed parallel CI node then you need to tell Knapsack Pro API to remember the way how test files where allocated across parallel CI nodes by adding to your CI environment variables `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
+2. (optional) Do you want to use "retry single failed parallel CI node" feature for your CI?
+
+    For instance some of CI providers like Travis CI, Buildkite or Codeship allows you to retry only one of failed parallel CI node instead of retrying the whole CI build with all parallel CI nodes. If you want to be able to retry only single failed parallel CI node then you need to tell Knapsack Pro API to remember the way how test files where allocated across parallel CI nodes by adding to your CI environment variables `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
 
    The default is `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=false` which means when you want to retry the whole failed CI build then a new dynamic test suite split will happen across all retried parallel CI nodes thanks to Knapsack Pro Queue Mode. Some people may prefer to retry the whole failed CI build with test files allocated across parallel CI nodes in the same order as it happend for the failed CI build - in such case you should set `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
 
-3. (optional) `@knapsack-pro/cypress` detects information about CI build from supported CI environment variables. When information like git branch name and git commit hash cannot be detect from CI environment variables then `@knapsack-pro/cypress` will try to use git installed on CI machine to detect the infomation. If you don't have git installed then you should set the information using environment variables:
+3. (optional) If your parallel CI nodes start work very late after other parallel CI nodes already finished work.
+
+   Some of CI providers have a problem with starting parallel CI nodes as soon as possible. For instance, you have a fixed pool of parallel CI nodes or the CI provider infrastructure is overloaded which can lead to some parallel CI nodes starting work later than others. 
+
+   Do you have the CI server that does not start all parallel CI nodes at the same time and one of your parallel CI nodes will start work very late after all other parallel CI nodes already finished consuming tests from the Knapsack Pro Queue? In such a case, if you would use default `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=false` then the very late CI node would start running all tests again based on a new Queue which means you would run test suite twice. This problem can happen if your test suite is very small and differences in the start time of parallel CI nodes are very big.
+
+   You should set `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true` to ensure the very late parallel CI node won't run tests again if the Queue was already consumed. The downside of this is that you won't be able to run 2 CI builds for the same set of values git commit/branch/ci node total number if your CI provider does not expose unique CI build ID. Knapsack Pro tries to detect CI build ID from the environment variables of your CI provider. Here you can check if your CI provider exposes CI build ID, see function [`ciNodeBuildId`](https://github.com/KnapsackPro/knapsack-pro-core-js/blob/master/src/ci-providers/github-actions.ts#L13). If you CI provider won't provide CI build ID you can set KNAPSACK_PRO_CI_NODE_BUILD_ID (see docs later).
+
+4. (optional) `@knapsack-pro/cypress` detects information about CI build from supported CI environment variables. When information like git branch name and git commit hash cannot be detect from CI environment variables then `@knapsack-pro/cypress` will try to use git installed on CI machine to detect the infomation. If you don't have git installed then you should set the information using environment variables:
 
    - `KNAPSACK_PRO_COMMIT_HASH` - git commit hash (SHA1)
    - `KNAPSACK_PRO_BRANCH` - git branch name
    - `KNAPSACK_PRO_CI_NODE_BUILD_ID` - a unique ID for your CI build. All parallel CI nodes being part of single CI build must have the same node build ID. Example how to generate node build ID: `KNAPSACK_PRO_CI_NODE_BUILD_ID=$(openssl rand - base64 32)`.
 
-4. (optional) If you have test files in a non-default directory you won't be able to run tests and you may see below error.
+5. (optional) If you have test files in a non-default directory you won't be able to run tests and you may see below error.
 
    ```
    Response body:
@@ -93,7 +103,7 @@ Whenever you see `npm` in below steps you can use `yarn` there as well.
 
    Please [adjust `KNAPSACK_PRO_TEST_FILE_PATTERN`](#how-to-run-tests-only-from-specific-directory) variable to match your test files directory structure to let Knapsack Pro detect all the test files you want to run in parallel.
 
-5. (optional) If you want to keep screenshots and videos of failed tests recorded by Cypress you need to set in `cypress.json` config file [trashAssetsBeforeRuns](https://docs.cypress.io/guides/references/configuration.html#Screenshots) to `false`:
+6. (optional) If you want to keep screenshots and videos of failed tests recorded by Cypress you need to set in `cypress.json` config file [trashAssetsBeforeRuns](https://docs.cypress.io/guides/references/configuration.html#Screenshots) to `false`:
 
    ```
    {
@@ -105,7 +115,7 @@ Whenever you see `npm` in below steps you can use `yarn` there as well.
 
    `@knapsack-pro/cypress` runs tests using [Cypress run command](https://docs.cypress.io/guides/guides/module-api.html#cypress-run) after fetching set of tests from Knapsack Pro Queue API. When another set of tests is fetched from Queue API then we run Cypress run command again with a new set of tests and Cypress run command by default removes screenshots and videos. That's why we need to turn it off in order to preserve screenshots/videos.
 
-6. Please select your CI provider and follow instructions to run tests with `@knapsack-pro/cypress`.
+7. Please select your CI provider and follow instructions to run tests with `@knapsack-pro/cypress`.
 
    - [CircleCI](#circleci)
    - [Travis CI](#travis-ci)
