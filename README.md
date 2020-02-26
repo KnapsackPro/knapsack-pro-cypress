@@ -271,6 +271,8 @@ For any sensitive environment variables (like Knapsack Pro API token) that you d
 }
 ```
 
+If you would like to [run multiple Knapsack Pro commands for different test runners on Heroku CI](https://knapsackpro.com/faq/question/how-to-run-multiple-test-suite-commands-in-heroku-ci) please follow tips.
+
 Note the [Heroku CI Parallel Test Runs](https://devcenter.heroku.com/articles/heroku-ci-parallel-test-runs) are in Beta and you may need to ask Heroku support to enable it for your project.
 
 You can learn more about [Heroku CI](https://devcenter.heroku.com/articles/heroku-ci).
