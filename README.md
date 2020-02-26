@@ -80,7 +80,7 @@ Whenever you see `npm` in below steps you can use `yarn` there as well.
 
    The default is `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=false` which means when you want to retry the whole failed CI build then a new dynamic test suite split will happen across all retried parallel CI nodes thanks to Knapsack Pro Queue Mode. Some people may prefer to retry the whole failed CI build with test files allocated across parallel CI nodes in the same order as it happend for the failed CI build - in such case you should set `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true`.
 
-3. (optional) If your parallel CI nodes start work very late after other parallel CI nodes already finished work.
+3. (optional) If one of the parallel CI nodes start work very late after other parallel CI nodes already finished work.
 
    Some of CI providers have a problem with starting parallel CI nodes as soon as possible. For instance, you have a fixed pool of parallel CI nodes or the CI provider infrastructure is overloaded which can lead to some parallel CI nodes starting work later than others. 
 
