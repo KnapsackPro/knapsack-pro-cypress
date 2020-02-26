@@ -82,7 +82,7 @@ Whenever you see `npm` in below steps you can use `yarn` there as well.
 
 3. (optional) If one of the parallel CI nodes start work very late after other parallel CI nodes already finished work.
 
-   Some of CI providers have a problem with starting parallel CI nodes as soon as possible. For instance, you have a fixed pool of parallel CI nodes or the CI provider infrastructure is overloaded which can lead to some parallel CI nodes starting work later than others. 
+   Some of CI providers have a problem with starting parallel CI nodes as soon as possible. For instance, you have a fixed pool of parallel CI nodes shared with many CI builds and sometimes CI build has started work even the pool has not enough available parallel CI nodes. Another case is when the CI provider infrastructure is overloaded which can lead to some parallel CI nodes starting work later than others. 
 
    Do you have the CI server that does not start all parallel CI nodes at the same time and one of your parallel CI nodes will start work very late after all other parallel CI nodes already finished consuming tests from the Knapsack Pro Queue? In such a case, if you would use default `KNAPSACK_PRO_FIXED_QUEUE_SPLIT=false` then the very late CI node would start running all tests again based on a new Queue which means you would run test suite twice. This problem can happen if your test suite is very small and differences in the start time of parallel CI nodes are very big.
 
