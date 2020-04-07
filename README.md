@@ -174,7 +174,7 @@ env:
     # allows to be able to retry failed tests on one of parallel job (CI node)
     - KNAPSACK_PRO_FIXED_QUEUE_SPLIT=true
 
-  matrix:
+  jobs:
     - KNAPSACK_PRO_CI_NODE_INDEX=0
     - KNAPSACK_PRO_CI_NODE_INDEX=1
 ```
