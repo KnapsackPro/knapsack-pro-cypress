@@ -649,6 +649,8 @@ If you want to use a few patterns you can do it this way `KNAPSACK_PRO_TEST_FILE
 
 ### How to pass command line options?
 
+__UP TO DATE ANSWER:__ https://knapsackpro.com/faq/question/how-to-pass-command-line-options-to-cypress
+
 You can pass command line options to Cypress by just passing them to `@knapsack-pro/cypress`. See example:
 
 ```
