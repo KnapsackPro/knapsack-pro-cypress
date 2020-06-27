@@ -1,5 +1,18 @@
 # Change Log
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v2.0.0...HEAD)
+
+**Implemented enhancements:**
+
+- \[breaking change for Github Actions CI\] Update to @knapsack-pro/core 2.0.0 [\#31](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/31) ([ArturT](https://github.com/ArturT))
+
+**Merged pull requests:**
+
+- Bump lodash from 4.17.11 to 4.17.15 [\#30](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/30) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump minimist from 1.2.0 to 1.2.3 [\#28](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/28) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v2.0.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v2.0.0) (2020-02-20)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.7.0...v2.0.0)
 
