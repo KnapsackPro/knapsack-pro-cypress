@@ -5,7 +5,7 @@
 
 **Implemented enhancements:**
 
-- \[breaking change for Github Actions CI\] Update to @knapsack-pro/core 2.0.0 [\#31](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/31) ([ArturT](https://github.com/ArturT))
+- \[breaking change\] Update to @knapsack-pro/core 2.0.0 - read PR description how to migrate for Github Actions [\#31](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/31) ([ArturT](https://github.com/ArturT))
 
 **Merged pull requests:**
 
