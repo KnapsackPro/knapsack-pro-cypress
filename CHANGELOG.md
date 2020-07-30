@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v3.0.0...HEAD)
+
+**Merged pull requests:**
+
+- Update cypress dependency to \>= 4.9.0 [\#33](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/33) ([ArturT](https://github.com/ArturT))
+
 ## [v3.0.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v3.0.0) (2020-06-27)
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v2.0.0...v3.0.0)
 
