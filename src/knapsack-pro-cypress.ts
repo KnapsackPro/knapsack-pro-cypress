@@ -32,7 +32,7 @@ const knapsackPro = new KnapsackProCore(
 
 const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
   const testFilePaths: string[] = queueTestFiles.map(
-    (testFile: TestFile) => testFile.path
+    (testFile: TestFile) => testFile.path,
   );
   const { runs: tests, totalFailed } = await cypress.run({
     ...cypressCLIOptions,
