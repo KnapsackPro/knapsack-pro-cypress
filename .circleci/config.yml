@@ -5,7 +5,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.15
+      - image: circleci/node:12.18
 
     working_directory: ~/knapsack-pro-cypress
 
