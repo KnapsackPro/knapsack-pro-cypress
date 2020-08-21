@@ -10,7 +10,6 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 ## Table of Contents
 
 - [Installation](#installation)
@@ -41,6 +40,7 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
   - [How to pass command line options?](#how-to-pass-command-line-options)
   - [How to record CI builds in Cypress Dashboard?](#how-to-record-ci-builds-in-cypress-dashboard)
 - [Development](#development)
+  - [Requirements](#requirements)
   - [Dependencies](#dependencies)
   - [Setup](#setup)
   - [Publishing](#publishing)
@@ -703,6 +703,12 @@ You must use CI build ID variable for your CI provider instead of above example 
 | Codefresh.io   | `CF_BUILD_ID`                                |
 
 ## Development
+
+### Requirements
+
+You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node version in development.
+
+- `>= Node 12.18.3 LTS`
 
 ### Dependencies
 
