@@ -819,7 +819,7 @@ You must use CI build ID variable for your CI provider instead of above example 
    $ gem install github_changelog_generator
 
    # generate CHANGELOG.md
-   $ github_changelog_generator KnapsackPro/knapsack-pro-cypress
+   $ github_changelog_generator --user KnapsackPro --project knapsack-pro-cypress
    $ git commit -am "Update CHANGELOG.md"
    $ git push origin master
    ```
@@ -860,7 +860,7 @@ You must use CI build ID variable for your CI provider instead of above example 
 9. Now when git tag is on Github you can update `CHANGELOG.md` again.
 
    ```
-   $ github_changelog_generator KnapsackPro/knapsack-pro-cypress
+   $ github_changelog_generator --user KnapsackPro --project knapsack-pro-cypress
    $ git commit -am "Update CHANGELOG.md"
    $ git push origin master
    ```
