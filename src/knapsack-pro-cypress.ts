@@ -49,7 +49,10 @@ const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
 
   const recordedTestFiles: TestFile[] = tests.map((test: any) => ({
     path: test.spec.relative,
-    time_execution: test.stats.wallClockDuration / 1000,
+    time_execution:
+      // test.stats.wallClockDuration - Cypress 3.x and 4.x
+      // test.stats.duration - Cypress 5.x
+      (test.stats.wallClockDuration || test.stats.duration) / 1000,
   }));
 
   return {
