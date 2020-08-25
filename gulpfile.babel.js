@@ -13,7 +13,7 @@ const paths = {
 function compile() {
   const filterBinFiles = gFilter(
     `${tsProject.config.compilerOptions.outDir}/knapsack-pro-cypress.js`,
-    { restore: true },
+    { restore: true }
   );
 
   return (
