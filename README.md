@@ -745,27 +745,6 @@ You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node version in devel
 
 6. Set up your IDE:
 
-   - WebStorm / PhpStorm
-
-     - Install the following plugins:
-
-       - [Prettier](https://plugins.jetbrains.com/plugin/10456-prettier)
-       - [EditorConfig](https://plugins.jetbrains.com/plugin/7294-editorconfig)
-       - [.ignore](https://plugins.jetbrains.com/plugin/7495--ignore)
-       - [.env files support](https://plugins.jetbrains.com/plugin/9525--env-files-support)
-
-     - Go to `File > Settings > Languages & Frameworks > JavaScript > Code Quality Tools > ESLint`
-
-       Turn on `Enable` checkbox.
-
-     - Go to `File > Settings > Languages & Frameworks > TypeScript > TSLint`
-
-       Turn on `Enable` checkbox.
-
-     - Go to `File > Settings > Tools > File Watchers`
-
-       Click `Import` button and select `watchers.xml` file from the repository.
-
    - Visual Studio Code
 
      - Install the following plugins:
@@ -774,17 +753,6 @@ You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node version in devel
        - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
        - [TypeScript TSLint Plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin)
        - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-
-     - Go to `File > Preferences > Settings > Extensions > Prettier - Code formatter`
-
-       - Turn on `Prettier: Eslint Integration` checkbox.
-       - Turn on `Prettier: Tslint Integration` checkbox. If you can't find this checkbox, use `Ctrl + Shift + P` shortcut to find `Preferences: Open Settings (JSON)` option. Add below line to your settings file:
-
-       ```
-       {
-           "prettier.tslintIntegration": true
-       }
-       ```
 
      - Go to `File > Preferences > Settings > Text Editor > Formatting`
 
