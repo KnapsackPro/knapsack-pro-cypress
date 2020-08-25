@@ -13,6 +13,7 @@ const paths = {
 function compile() {
   const filterBinFiles = gFilter(
     `${tsProject.config.compilerOptions.outDir}/knapsack-pro-cypress.js`,
+    // eslint-disable-next-line comma-dangle
     { restore: true }
   );
 
