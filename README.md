@@ -10,6 +10,7 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -166,7 +167,7 @@ You can parallelize your CI build across virtual machines with [travis matrix fe
 ```yaml
 # .travis.yml
 script:
-  - "$(npm bin)/knapsack-pro-cypress"
+  - '$(npm bin)/knapsack-pro-cypress'
 
 env:
   global:
@@ -212,7 +213,7 @@ When using the `docker-compose` plugin on Buildkite, you have to tell it which e
 
 ```yaml
 steps:
-  - label: "Test"
+  - label: 'Test'
     parallelism: 2
     plugins:
       - docker-compose#3.0.3:
@@ -549,32 +550,32 @@ Below you can find Codefresh YAML config and `Test.Dockerfile` used by Codefresh
 
 ```yaml
 # .codefresh/codefresh.yml
-version: "1.0"
+version: '1.0'
 
 stages:
-  - "clone"
-  - "build"
-  - "tests"
+  - 'clone'
+  - 'build'
+  - 'tests'
 
 steps:
   main_clone:
-    type: "git-clone"
-    description: "Cloning main repository..."
-    repo: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}"
-    revision: "${{CF_BRANCH}}"
-    stage: "clone"
+    type: 'git-clone'
+    description: 'Cloning main repository...'
+    repo: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
+    revision: '${{CF_BRANCH}}'
+    stage: 'clone'
   BuildTestDockerImage:
     title: Building Test Docker image
     type: build
     arguments:
-      image_name: "${{CF_ACCOUNT}}/${{CF_REPO_NAME}}-test"
-      tag: "${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}"
+      image_name: '${{CF_ACCOUNT}}/${{CF_REPO_NAME}}-test'
+      tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
       dockerfile: Test.Dockerfile
-    stage: "build"
+    stage: 'build'
 
   run_tests:
-    stage: "tests"
-    image: "${{BuildTestDockerImage}}"
+    stage: 'tests'
+    image: '${{BuildTestDockerImage}}'
     working_directory: /src
     fail_fast: false
     environment:
