@@ -10,6 +10,7 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -166,7 +167,7 @@ You can parallelize your CI build across virtual machines with [travis matrix fe
 ```yaml
 # .travis.yml
 script:
-  - "$(npm bin)/knapsack-pro-cypress"
+  - '$(npm bin)/knapsack-pro-cypress'
 
 env:
   global:
@@ -212,7 +213,7 @@ When using the `docker-compose` plugin on Buildkite, you have to tell it which e
 
 ```yaml
 steps:
-  - label: "Test"
+  - label: 'Test'
     parallelism: 2
     plugins:
       - docker-compose#3.0.3:
@@ -549,32 +550,32 @@ Below you can find Codefresh YAML config and `Test.Dockerfile` used by Codefresh
 
 ```yaml
 # .codefresh/codefresh.yml
-version: "1.0"
+version: '1.0'
 
 stages:
-  - "clone"
-  - "build"
-  - "tests"
+  - 'clone'
+  - 'build'
+  - 'tests'
 
 steps:
   main_clone:
-    type: "git-clone"
-    description: "Cloning main repository..."
-    repo: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}"
-    revision: "${{CF_BRANCH}}"
-    stage: "clone"
+    type: 'git-clone'
+    description: 'Cloning main repository...'
+    repo: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
+    revision: '${{CF_BRANCH}}'
+    stage: 'clone'
   BuildTestDockerImage:
     title: Building Test Docker image
     type: build
     arguments:
-      image_name: "${{CF_ACCOUNT}}/${{CF_REPO_NAME}}-test"
-      tag: "${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}"
+      image_name: '${{CF_ACCOUNT}}/${{CF_REPO_NAME}}-test'
+      tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
       dockerfile: Test.Dockerfile
-    stage: "build"
+    stage: 'build'
 
   run_tests:
-    stage: "tests"
-    image: "${{BuildTestDockerImage}}"
+    stage: 'tests'
+    image: '${{BuildTestDockerImage}}'
     working_directory: /src
     fail_fast: false
     environment:
@@ -744,27 +745,6 @@ You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node version in devel
 
 6. Set up your IDE:
 
-   - WebStorm / PhpStorm
-
-     - Install the following plugins:
-
-       - [Prettier](https://plugins.jetbrains.com/plugin/10456-prettier)
-       - [EditorConfig](https://plugins.jetbrains.com/plugin/7294-editorconfig)
-       - [.ignore](https://plugins.jetbrains.com/plugin/7495--ignore)
-       - [.env files support](https://plugins.jetbrains.com/plugin/9525--env-files-support)
-
-     - Go to `File > Settings > Languages & Frameworks > JavaScript > Code Quality Tools > ESLint`
-
-       Turn on `Enable` checkbox.
-
-     - Go to `File > Settings > Languages & Frameworks > TypeScript > TSLint`
-
-       Turn on `Enable` checkbox.
-
-     - Go to `File > Settings > Tools > File Watchers`
-
-       Click `Import` button and select `watchers.xml` file from the repository.
-
    - Visual Studio Code
 
      - Install the following plugins:
@@ -773,17 +753,6 @@ You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node version in devel
        - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
        - [TypeScript TSLint Plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin)
        - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-
-     - Go to `File > Preferences > Settings > Extensions > Prettier - Code formatter`
-
-       - Turn on `Prettier: Eslint Integration` checkbox.
-       - Turn on `Prettier: Tslint Integration` checkbox. If you can't find this checkbox, use `Ctrl + Shift + P` shortcut to find `Preferences: Open Settings (JSON)` option. Add below line to your settings file:
-
-       ```
-       {
-           "prettier.tslintIntegration": true
-       }
-       ```
 
      - Go to `File > Preferences > Settings > Text Editor > Formatting`
 
