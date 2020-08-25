@@ -56,8 +56,8 @@
   "dependencies": {
     "@knapsack-pro/core": "^3.0.0",
     "cypress": ">=4.9.0",
-    "glob": "^7.1.3",
-    "minimist": "^1.2.0"
+    "glob": "^7.1.6",
+    "minimist": "^1.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
