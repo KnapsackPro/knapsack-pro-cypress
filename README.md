@@ -53,6 +53,9 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
 
 ## Installation
 
+Please ensure you have added `cypress` package in your project `package.json`.
+`@knapsack-pro/cypress` uses `cypress` version installed in your project.
+
 For `npm` users:
 
 ```
