@@ -55,11 +55,14 @@
   },
   "dependencies": {
     "@knapsack-pro/core": "^3.0.0",
-    "cypress": ">=4.9.0",
     "glob": "^7.1.6",
     "minimist": "^1.2.5"
   },
+  "peerDependencies": {
+    "cypress": ">=3.0.0 <6.0.0"
+  },
   "devDependencies": {
+    "cypress": "5.0.0",
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
     "@babel/register": "^7.10.5",
