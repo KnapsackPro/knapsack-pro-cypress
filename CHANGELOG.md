@@ -1,5 +1,9 @@
 # Changelog
 
+## [v4.0.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.0.0) (2020-08-26)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.0.0-beta.0...v4.0.0)
+
 ## [v4.0.0-beta.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.0.0-beta.0) (2020-08-26)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v3.1.0...v4.0.0-beta.0)
@@ -128,7 +132,6 @@
 
 - Pass CLI arguments to cypress.run  [\#10](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/10)
 - Add support for Semaphore CI 2.0 [\#12](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/12) ([ArturT](https://github.com/ArturT))
-- Add changes related to fallback mode [\#8](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/8) ([ArturT](https://github.com/ArturT))
 
 ## [v1.1.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.1.0) (2019-03-07)
 
@@ -149,6 +152,10 @@
 ## [v1.0.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.0.0) (2018-12-29)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v0.3.1...v1.0.0)
+
+**Implemented enhancements:**
+
+- Add changes related to fallback mode [\#8](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/8) ([ArturT](https://github.com/ArturT))
 
 **Merged pull requests:**
 
