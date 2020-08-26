@@ -1,0 +1,13 @@
+npm install
+
+# link deps
+npm link @knapsack-pro/core
+
+# build project
+npm run build
+
+# register @knapsack-pro/cypress package globally in your local system
+npm link
+
+# link deps because npm link removed it
+npm link @knapsack-pro/core

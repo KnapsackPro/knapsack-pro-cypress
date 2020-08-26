@@ -719,6 +719,8 @@ You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node version in devel
 
 1. Setup [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js) project.
 
+**Follow below steps or use `bin/setup_development` script to take care of steps 2-5.**
+
 2. Install dependencies:
 
    ```
