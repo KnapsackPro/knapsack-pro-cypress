@@ -6,6 +6,8 @@
 
 **Implemented enhancements:**
 
+- Add cypress \>=3.0.0 \<6.0.0 to peerDependencies [\#40](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/40) ([ArturT](https://github.com/ArturT))
+- Add support to read test duration time for Cypress 5.x [\#39](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/39) ([ArturT](https://github.com/ArturT))
 - Use @knapsack-pro/core 3.0.0 [\#36](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/36) ([ArturT](https://github.com/ArturT))
 
 **Closed issues:**
@@ -14,6 +16,8 @@
 
 **Merged pull requests:**
 
+- Update packages [\#38](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/38) ([ArturT](https://github.com/ArturT))
+- Update formatting related configs \(prettier etc\) [\#37](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/37) ([ArturT](https://github.com/ArturT))
 - Use Node 12.18.3 LTS in development and update README requirements [\#35](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/35) ([ArturT](https://github.com/ArturT))
 
 ## [v3.1.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v3.1.0) (2020-07-30)
@@ -52,7 +56,6 @@
 **Implemented enhancements:**
 
 - Run tests only when they are detected on the disk. Do not run tests when the test file pattern is invalid. Require to set KNAPSACK\_PRO\_TEST\_FILE\_PATTERN [\#21](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/21) ([ArturT](https://github.com/ArturT))
-- Add support for Codefresh.io CI provider [\#19](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/19) ([ArturT](https://github.com/ArturT))
 
 **Merged pull requests:**
 
@@ -64,6 +67,10 @@
 ## [v1.6.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.6.0) (2019-10-13)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v1.5.1...v1.6.0)
+
+**Implemented enhancements:**
+
+- Add support for Codefresh.io CI provider [\#19](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/19) ([ArturT](https://github.com/ArturT))
 
 ## [v1.5.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v1.5.1) (2019-09-26)
 
