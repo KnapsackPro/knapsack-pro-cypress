@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.0.0...HEAD)
+
+**Merged pull requests:**
+
+- Update @knapsack-pro/core 3.0.1 [\#42](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/42) ([ArturT](https://github.com/ArturT))
+- Bump lodash from 4.17.15 to 4.17.20 [\#41](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/41) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v4.0.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.0.0) (2020-08-26)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.0.0-beta.0...v4.0.0)
