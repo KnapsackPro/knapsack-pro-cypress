@@ -1,4 +1,5 @@
 const minimist = require('minimist');
+const { v4: uuidv4 } = require('uuid');
 
 export class CypressCLI {
   // list should match camelCase args here
@@ -15,5 +16,21 @@ export class CypressCLI {
     return minimist(argv, {
       alias: CypressCLI.alias,
     });
+  }
+
+  public static updateOptions(args: object): object {
+    // If you want to send recorded data to Cypress Dashboard
+    // then we need to generate a unique group name for set of tests fetched
+    // from Knapsack Pro API for each cypress.run execution
+    // Only then Cypress API accepts data
+    // (Cypress not allow to use the same group name within the same CI build)
+    if (args.hasOwnProperty('record')) {
+      return {
+        ...args,
+        group: uuidv4(),
+      };
+    }
+
+    return args;
   }
 }
