@@ -17,8 +17,11 @@ import { CypressCLI } from './cypress-cli';
 
 const cypressCLIOptions = CypressCLI.argvToOptions();
 const knapsackProLogger = new KnapsackProLogger();
+
 knapsackProLogger.debug(
-  `Cypress CLI options:\n${KnapsackProLogger.objectInspect(cypressCLIOptions)}`
+  `Initial Cypress CLI options:\n${KnapsackProLogger.objectInspect(
+    cypressCLIOptions
+  )}`
 );
 
 EnvConfig.loadEnvironmentVariables();
@@ -34,8 +37,16 @@ const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
   const testFilePaths: string[] = queueTestFiles.map(
     (testFile: TestFile) => testFile.path
   );
+
+  const updatedCypressCLIOptions = CypressCLI.updateOptions(cypressCLIOptions);
+  knapsackProLogger.debug(
+    `Updated Cypress CLI options for the set of tests fetched from Knapsack Pro API:\n${KnapsackProLogger.objectInspect(
+      updatedCypressCLIOptions
+    )}`
+  );
+
   const { runs: tests, totalFailed } = await cypress.run({
-    ...cypressCLIOptions,
+    ...updatedCypressCLIOptions,
     spec: testFilePaths,
   });
 
