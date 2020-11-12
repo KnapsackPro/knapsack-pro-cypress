@@ -698,6 +698,7 @@ You must use CI build ID variable for your CI provider instead of above example 
 | Codeship Pro   | `CI_BUILD_ID`                                |
 | Drone          | `DRONE_BUILD_NUMBER`                         |
 | Gitlab         | `CI_PIPELINE_ID`, `CI_JOB_ID`, `CI_BUILD_ID` |
+| Github Actions | `GITHUB_RUN_ID`                              |
 | Heroku         | `HEROKU_TEST_RUN_ID`                         |
 | Jenkins        | `BUILD_NUMBER`                               |
 | Semaphore 1.0  | `SEMAPHORE_BUILD_NUMBER`                     |
