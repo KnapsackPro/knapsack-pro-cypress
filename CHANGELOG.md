@@ -1,5 +1,22 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.0.1...HEAD)
+
+**Fixed bugs:**
+
+- When you use --record flag to send data to Cypress Dashboard then generate a unique group name for each set of tests fetched from Knapsack Pro Queue API to make Cypress Dashboard accept recorded data. [\#47](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/47) ([ArturT](https://github.com/ArturT))
+
+**Closed issues:**
+
+- Missing build id environment variable for github actions [\#45](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/45)
+- False positive \(zero exit code\) returned when versions mismatch [\#43](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/43)
+
+**Merged pull requests:**
+
+- Add Github Actions build ID to FAQ [\#46](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/46) ([ArturT](https://github.com/ArturT))
+
 ## [v4.0.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.0.1) (2020-09-18)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.0.0...v4.0.1)
