@@ -650,21 +650,11 @@ This project depends on `@knapsack-pro/core`. Please check the [FAQ for `@knapsa
 
 ### How to run tests only from specific directory?
 
-You can set `KNAPSACK_PRO_TEST_FILE_PATTERN="cypress/integration/**/*.{js,jsx,coffee,cjsx}"` and change pattern to match your directory with test files. You can use [glob](https://github.com/isaacs/node-glob) pattern.
-
-If you want to use a few patterns you can do it this way `KNAPSACK_PRO_TEST_FILE_PATTERN="{pattern_1,pattern_2}"`.
+https://knapsackpro.com/faq/question/how-to-run-tests-only-from-specific-directory-in-cypress
 
 ### How to pass command line options?
 
-**UP TO DATE ANSWER:** https://knapsackpro.com/faq/question/how-to-pass-command-line-options-to-cypress
-
-You can pass command line options to Cypress by just passing them to `@knapsack-pro/cypress`. See example:
-
-```
-$(npm bin)/knapsack-pro-cypress --browser chrome
-```
-
-You can pass many of [Cypress CLI arguments](https://docs.cypress.io/guides/guides/command-line.html#cypress-run) to `@knapsack-pro/cypress`.
+https://knapsackpro.com/faq/question/how-to-pass-command-line-options-to-cypress
 
 ### How to record CI builds in Cypress Dashboard?
 
