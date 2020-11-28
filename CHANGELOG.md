@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.1.0...HEAD)
+
+**Implemented enhancements:**
+
+- Update @knapsack-pro/core 3.1.0 - Add support for an attempt to connect to existing Queue on API side to reduce slow requests number [\#49](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/49) ([ArturT](https://github.com/ArturT))
+
 ## [v4.1.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.1.0) (2020-11-28)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.0.2...v4.1.0)
