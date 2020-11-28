@@ -60,7 +60,7 @@
     "uuid": "^8.3.1"
   },
   "peerDependencies": {
-    "cypress": ">=3.0.0 <6.0.0"
+    "cypress": ">=3.0.0 <7.0.0"
   },
   "devDependencies": {
     "cypress": "5.1.0",
