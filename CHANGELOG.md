@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.0.2...HEAD)
+
+**Merged pull requests:**
+
+- Update cypress peerDependencies to allow Cypress 6.x version [\#48](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/48) ([ArturT](https://github.com/ArturT))
+
 ## [v4.0.2](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.0.2) (2020-11-12)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.0.1...v4.0.2)
