@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.2.0...HEAD)
+
+**Merged pull requests:**
+
+- Update @knapsack-pro/core to 3.1.1 [\#52](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/52) ([ArturT](https://github.com/ArturT))
+- Bump ini from 1.3.5 to 1.3.8 [\#51](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/51) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v4.2.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.2.0) (2020-11-28)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.1.0...v4.2.0)
