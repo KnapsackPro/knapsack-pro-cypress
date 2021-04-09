@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.2.1...HEAD)
+
+**Merged pull requests:**
+
+- Allow Cypress 7.x as peer dependency [\#55](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/55) ([ArturT](https://github.com/ArturT))
+- Bump y18n from 3.2.1 to 3.2.2 [\#54](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/54) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v4.2.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.2.1) (2021-01-07)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.2.0...v4.2.1)
