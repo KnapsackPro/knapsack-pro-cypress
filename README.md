@@ -34,6 +34,7 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
     - [Jenkins](#jenkins)
     - [GitHub Actions](#github-actions)
     - [Codefresh.io](#codefreshio)
+    - [BitBucket Pipelines](#bitbucket-pipelines)
     - [Other CI provider](#other-ci-provider)
 - [FAQ](#faq)
   - [Knapsack Pro Core features FAQ](#knapsack-pro-core-features-faq)
@@ -136,6 +137,7 @@ Whenever you see `npm` in below steps you can use `yarn` there as well.
    - [Jenkins](#jenkins)
    - [GitHub Actions](#github-actions)
    - [Codefresh.io](#codefreshio)
+   - [BitBucket Pipelines](#bitbucket-pipelines)
    - [Other CI provider](#other-ci-provider)
 
 ### CI steps
@@ -621,6 +623,10 @@ WORKDIR /src
 
 RUN npm install
 ```
+
+#### BitBucket Pipelines
+
+[See article](https://docs.knapsackpro.com/2021/how-bitbucket-pipeline-with-parallel-cypress-tests-can-speed-up-ci-build).
 
 #### Other CI provider
 
