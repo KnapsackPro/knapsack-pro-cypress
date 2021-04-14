@@ -14,7 +14,7 @@ export class TestFilesFinder {
 
       const errorMessage =
         // tslint:disable-next-line: max-line-length
-        'Test files cannot be found.\nPlease set KNAPSACK_PRO_TEST_FILE_PATTERN matching your test directory structure.\nLearn more: https://github.com/KnapsackPro/knapsack-pro-cypress#how-to-run-tests-only-from-specific-directory';
+        'Test files cannot be found.\nPlease set KNAPSACK_PRO_TEST_FILE_PATTERN matching your test directory structure.\nLearn more: https://knapsackpro.com/faq/question/how-to-run-tests-only-from-specific-directory-in-cypress';
 
       knapsackProLogger.error(errorMessage);
       throw errorMessage;
