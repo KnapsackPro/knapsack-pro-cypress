@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+## [v4.3.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.3.1) (2021-04-14)
 
-[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.3.0...HEAD)
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.3.0...v4.3.1)
 
 **Merged pull requests:**
 
