@@ -37,10 +37,6 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
     - [BitBucket Pipelines](#bitbucket-pipelines)
     - [Other CI provider](#other-ci-provider)
 - [FAQ](#faq)
-  - [Knapsack Pro Core features FAQ](#knapsack-pro-core-features-faq)
-  - [How to run tests only from specific directory?](#how-to-run-tests-only-from-specific-directory)
-  - [How to pass command line options?](#how-to-pass-command-line-options)
-  - [How to record CI builds in Cypress Dashboard?](#how-to-record-ci-builds-in-cypress-dashboard)
 - [Development](#development)
   - [Requirements](#requirements)
   - [Dependencies](#dependencies)
@@ -644,27 +640,9 @@ Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as g
 
 ## FAQ
 
-:heavy_exclamation_mark: **NEW:** Up to date [FAQ for Knapsack Pro Cypress can be found here](https://knapsackpro.com/faq/knapsack_pro_client/knapsack_pro_cypress).
+- [FAQ for Knapsack Pro Cypress can be found here](https://knapsackpro.com/faq/knapsack_pro_client/knapsack_pro_cypress).
 
-**OLD:** This README also contains FAQ questions but we keep adding new info only to our new FAQ page mentioned above.
-
-We keep this old FAQ in README to not break old links spread across the web.
-
-### Knapsack Pro Core features FAQ
-
-This project depends on `@knapsack-pro/core`. Please check the [FAQ for `@knapsack-pro/core`](https://github.com/KnapsackPro/knapsack-pro-core-js#table-of-contents) to learn more about core features available to you.
-
-### How to run tests only from specific directory?
-
-https://knapsackpro.com/faq/question/how-to-run-tests-only-from-specific-directory-in-cypress
-
-### How to pass command line options?
-
-https://knapsackpro.com/faq/question/how-to-pass-command-line-options-to-cypress
-
-### How to record CI builds in Cypress Dashboard?
-
-https://knapsackpro.com/faq/question/how-to-record-ci-builds-in-cypress-dashboard
+- This project depends on `@knapsack-pro/core`. Please check the [FAQ for `@knapsack-pro/core`](https://github.com/KnapsackPro/knapsack-pro-core-js#table-of-contents) to learn more about core features available to you.
 
 ## Development
 
