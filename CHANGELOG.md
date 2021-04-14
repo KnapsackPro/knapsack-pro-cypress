@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.3.0...HEAD)
+
+**Merged pull requests:**
+
+- Remove FAQ questions from readme and update link to FAQ in an error message  [\#58](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/58) ([ArturT](https://github.com/ArturT))
+- Add BitBucket Pipeline info to readme [\#57](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/57) ([ArturT](https://github.com/ArturT))
+
 ## [v4.3.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.3.0) (2021-04-09)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.2.1...v4.3.0)
