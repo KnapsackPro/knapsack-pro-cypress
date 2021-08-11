@@ -1,5 +1,24 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.3.1...HEAD)
+
+**Closed issues:**
+
+- Bitbucket Guideline - Issues to know exactly how I have to install this by using bitbucket [\#56](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/56)
+- Rerunning pipelines may not work with --project flag. [\#53](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/53)
+
+**Merged pull requests:**
+
+- Bump path-parse from 1.0.5 to 1.0.7 [\#65](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/65) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Allow Cypress 8.x as peer dependency [\#64](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/64) ([ArturT](https://github.com/ArturT))
+- npm audit fix [\#63](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/63) ([ArturT](https://github.com/ArturT))
+- Bump color-string from 1.5.4 to 1.6.0 [\#62](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/62) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump browserslist from 4.14.0 to 4.16.6 [\#61](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/61) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump hosted-git-info from 2.5.0 to 2.8.9 [\#60](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/60) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump lodash from 4.17.20 to 4.17.21 [\#59](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/59) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v4.3.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.3.1) (2021-04-14)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.3.0...v4.3.1)
