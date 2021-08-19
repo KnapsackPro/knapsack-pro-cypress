@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.4.1...HEAD)
+
+**Implemented enhancements:**
+
+- Can't force disable Cypress recording [\#66](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/66)
+
 ## [v4.4.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.4.1) (2021-08-19)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.4.0...v4.4.1)
