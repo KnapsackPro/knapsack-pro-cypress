@@ -18,13 +18,13 @@ export class CypressCLI {
     });
   }
 
-  public static updateOptions(args: object): object {
+  public static updateOptions(args: any): object {
     // If you want to send recorded data to Cypress Dashboard
     // then we need to generate a unique group name for set of tests fetched
     // from Knapsack Pro API for each cypress.run execution
     // Only then Cypress API accepts data
     // (Cypress not allow to use the same group name within the same CI build)
-    if (args.hasOwnProperty('record')) {
+    if (args.hasOwnProperty('record') && args.record != 'false') {
       return {
         ...args,
         group: uuidv4(),
