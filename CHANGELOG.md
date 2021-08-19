@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.4.0...HEAD)
+
+**Implemented enhancements:**
+
+- Allow user to disable recording with `--record false` flag [\#67](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/67) ([ArturT](https://github.com/ArturT))
+
 ## [v4.4.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.4.0) (2021-08-11)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.3.1...v4.4.0)
