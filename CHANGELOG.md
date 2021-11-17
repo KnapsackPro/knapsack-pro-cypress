@@ -8,6 +8,10 @@
 
 - Can't force disable Cypress recording [\#66](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/66)
 
+**Merged pull requests:**
+
+- Allow Cypress 9.x as peer dependency [\#68](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/68) ([ArturT](https://github.com/ArturT))
+
 ## [v4.4.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.4.1) (2021-08-19)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.4.0...v4.4.1)
