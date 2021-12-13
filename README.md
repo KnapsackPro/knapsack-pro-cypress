@@ -106,7 +106,7 @@ Whenever you see `npm` in below steps you can use `yarn` there as well.
 
    Please [adjust `KNAPSACK_PRO_TEST_FILE_PATTERN`](#how-to-run-tests-only-from-specific-directory) variable to match your test files directory structure to let Knapsack Pro detect all the test files you want to run in parallel.
 
-6. (optional) If you want to keep screenshots and videos of failed tests recorded by Cypress you need to set in `cypress.json` config file [trashAssetsBeforeRuns](https://docs.cypress.io/guides/references/configuration.html#Screenshots) to `false`:
+7. (optional) If you want to keep screenshots and videos of failed tests recorded by Cypress you need to set in `cypress.json` config file [trashAssetsBeforeRuns](https://docs.cypress.io/guides/references/configuration.html#Screenshots) to `false`:
 
    ```
    {
@@ -637,6 +637,14 @@ KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 $(npm bin)/knapsack-pr
 ```
 
 Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as global environment variable.
+
+## Component tests
+
+If you'd like to run [Cypress component tests](https://docs.cypress.io/guides/component-testing/introduction) instead of or in addition to your e2e tests just pass the `testingType` option to the Knapsack CLI:
+
+   ```
+    $(npm bin)/knapsack-pro-cypress --testingType=component
+   ```
 
 ## FAQ
 
