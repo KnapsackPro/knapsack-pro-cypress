@@ -642,9 +642,9 @@ Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as g
 
 If you'd like to run [Cypress component tests](https://docs.cypress.io/guides/component-testing/introduction) instead of or in addition to your e2e tests just pass the `testingType` option to the Knapsack CLI:
 
-   ```
-    $(npm bin)/knapsack-pro-cypress --testingType=component
-   ```
+```
+ $(npm bin)/knapsack-pro-cypress --testingType=component
+```
 
 ## FAQ
 
