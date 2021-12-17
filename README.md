@@ -638,6 +638,14 @@ KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 $(npm bin)/knapsack-pr
 
 Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as global environment variable.
 
+## Component tests
+
+If you'd like to run [Cypress component tests](https://docs.cypress.io/guides/component-testing/introduction) instead of or in addition to your e2e tests just pass the `testingType` option to the Knapsack CLI:
+
+   ```
+    $(npm bin)/knapsack-pro-cypress --testingType=component
+   ```
+
 ## FAQ
 
 - [FAQ for Knapsack Pro Cypress can be found here](https://knapsackpro.com/faq/knapsack_pro_client/knapsack_pro_cypress).
