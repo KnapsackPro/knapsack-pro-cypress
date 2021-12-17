@@ -36,6 +36,7 @@ Read article about [runnning javascript E2E tests faster with Cypress on paralle
     - [Codefresh.io](#codefreshio)
     - [BitBucket Pipelines](#bitbucket-pipelines)
     - [Other CI provider](#other-ci-provider)
+  - [Component tests](#component-tests)
 - [FAQ](#faq)
 - [Development](#development)
   - [Requirements](#requirements)
@@ -638,7 +639,7 @@ KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 $(npm bin)/knapsack-pr
 
 Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as global environment variable.
 
-## Component tests
+### Component tests
 
 If you'd like to run [Cypress component tests](https://docs.cypress.io/guides/component-testing/introduction) instead of or in addition to your e2e tests just pass the `testingType` option to the Knapsack CLI:
 
