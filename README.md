@@ -675,6 +675,7 @@ You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node version in devel
 
    ```
    $ npm install
+   $(npm bin)/cypress install
    ```
 
 3. In order to use local version of `@knapsack-pro/core` run:
