@@ -262,7 +262,7 @@ Use `test` key to run tests with `@knapsack-pro/cypress` as shown in below examp
 You need to specify also the environment variable `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` with API token for Knapsack Pro.
 For any sensitive environment variables (like Knapsack Pro API token) that you do not want commited in your `app.json` manifest, you can add them to your pipeline’s Heroku CI settings.
 
-```
+```json
 # app.json
 {
   "environments": {
@@ -338,7 +338,7 @@ Here you can find info [how to configure the GitLab parallel CI nodes](https://d
 
 GitLab CI does not provide parallel jobs environment variables so you will have to define `KNAPSACK_PRO_CI_NODE_TOTAL` and `KNAPSACK_PRO_CI_NODE_INDEX` for each parallel job running as part of the same `test` stage. Below is relevant part of `.gitlab-ci.yml` configuration for 2 parallel jobs.
 
-```
+```yaml
 # .gitlab-ci.yml
 stages:
   - test
@@ -412,7 +412,7 @@ Please remember to set up API token `KNAPSACK_PRO_TEST_SUITE_TOKEN_CYPRESS` as g
 
 The only thing you need to do is to configure number of parallel CI nodes for your project by using [matrix modification](https://cirrus-ci.org/guide/writing-tasks/#matrix-modification). See example for 2 parallel CI nodes.
 
-```
+```yaml
 # .cirrus.yml
 task:
   matrix:
@@ -432,7 +432,7 @@ You can learn basics about it in the article [Parallelism and Distributed Builds
 
 Here is example `Jenkinsfile` working with Jenkins Pipeline.
 
-```
+```groovy
 timeout(time: 60, unit: 'MINUTES') {
   node() {
     stage('Checkout') {
