@@ -5,7 +5,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:12.18
+      - image: cimg/node:16.15
 
     working_directory: ~/knapsack-pro-cypress
 
@@ -25,7 +25,7 @@ jobs:
 
       - run: cd ~/knapsack-pro-core-js && npm install
       - run: cd ~/knapsack-pro-core-js && npm run build
-      - run: cd ~/knapsack-pro-core-js && sudo npm link
+      - run: cd ~/knapsack-pro-core-js && npm link
 
       - save_cache:
           name: Saving Cache of @knapsack-pro/core
