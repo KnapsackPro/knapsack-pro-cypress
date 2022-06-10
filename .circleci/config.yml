@@ -54,11 +54,8 @@ jobs:
 
       # run code linters
       - run:
-          name: Run code linters (ESLint)
-          command: npm run lint:js
+          name: ESLint check
+          command: npm run eslint:check
       - run:
-          name: Run code linters (TSLint)
-          command: npm run lint:ts
-      - run:
-          name: Run code linters (Prettier)
-          command: npm run lint:format
+          name: Prettier check
+          command: npm run prettier:check
