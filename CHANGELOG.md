@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.5.0...HEAD)
+
+**Merged pull requests:**
+
+- Update dependencies and development ESLint config [\#75](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/75) ([ArturT](https://github.com/ArturT))
+- Fix the link to test file pattern examples in README [\#74](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/74) ([ArturT](https://github.com/ArturT))
+- Add component testing instructions to readme [\#69](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/69) ([mattvague](https://github.com/mattvague))
+
 ## [v4.5.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.5.0) (2021-11-17)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.4.1...v4.5.0)
