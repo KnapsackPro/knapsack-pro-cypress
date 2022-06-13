@@ -1,5 +1,17 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.6.0...HEAD)
+
+**Closed issues:**
+
+- \[Security\] Upgrade axios dependency in `@knapsack-pro/core` to  0.21.2 or later [\#70](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/70)
+
+**Merged pull requests:**
+
+- \[breaking change\] Add support for Cypress 10.x [\#77](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/77) ([ArturT](https://github.com/ArturT))
+
 ## [v4.6.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v4.6.0) (2022-06-13)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.5.0...v4.6.0)
