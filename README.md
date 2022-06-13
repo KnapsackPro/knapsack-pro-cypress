@@ -115,7 +115,7 @@ Whenever you see `npm` in below steps you can use `yarn` there as well.
 
    Please [adjust `KNAPSACK_PRO_TEST_FILE_PATTERN`](https://knapsackpro.com/faq/question/how-to-run-tests-only-from-specific-directory-in-cypress) variable to match your test files directory structure to let Knapsack Pro detect all the test files you want to run in parallel.
 
-6. (optional) If you want to keep screenshots and videos of failed tests recorded by Cypress you need to set in `cypress.json` config file [trashAssetsBeforeRuns](https://docs.cypress.io/guides/references/configuration.html#Screenshots) to `false`:
+6. (optional) If you want to keep screenshots and videos of failed tests recorded by Cypress, you need to set the [trashAssetsBeforeRuns](https://docs.cypress.io/guides/references/configuration.html#Screenshots) option to `false` in the `cypress.config.js` file:
 
    ```
    {
