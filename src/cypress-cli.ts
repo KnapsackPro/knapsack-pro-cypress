@@ -4,12 +4,16 @@ const minimist = require('minimist');
 const { v4: uuidv4 } = require('uuid');
 
 export class CypressCLI {
-  // list should match camelCase args here
-  // https://docs.cypress.io/guides/guides/module-api.html#cypress-run
+  // Translate Cypress options to Cypress CLI options:
+  // Cypress options: https://docs.cypress.io/guides/guides/command-line#Commands
+  // Cypress CLI options (with camelCase): https://docs.cypress.io/guides/guides/module-api.html#cypress-run
   public static alias = {
     'ci-build-id': 'ciBuildId',
-    'no-exit': 'noExit',
+    'config-file': 'configFile',
     'reporter-options': 'reporterOptions',
+    'slow-test-threshold': 'slowTestThreshold',
+    'testing-type': 'testingType',
+    'no-exit': 'noExit',
   };
 
   public static argvToOptions(): object {

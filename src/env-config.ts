@@ -11,6 +11,6 @@ export class EnvConfig {
       return process.env.KNAPSACK_PRO_TEST_FILE_PATTERN;
     }
 
-    return 'cypress/integration/**/*.{js,jsx,coffee,cjsx}';
+    return 'cypress/e2e/**/*.{js,jsx,coffee,cjsx}';
   }
 }
