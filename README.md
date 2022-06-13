@@ -60,7 +60,7 @@ For `npm` users:
 # if you use the latest Cypress version
 $ npm install --save-dev @knapsack-pro/cypress
 
-# if you use Cypress version older than 10
+# if you use the Cypress version older than 10
 $ npm install --save-dev @knapsack-pro/cypress@^4.6.0
 ```
 
@@ -70,7 +70,7 @@ For `yarn` users:
 # if you use the latest Cypress version
 $ yarn add --dev @knapsack-pro/cypress
 
-# if you use Cypress version older than 10
+# if you use the Cypress version older than 10
 $ yarn add --dev @knapsack-pro/cypress@4.6.0
 ```
 
