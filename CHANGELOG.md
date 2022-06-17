@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+## [v5.1.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v5.1.0) (2022-06-17)
 
-[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.0.0...HEAD)
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.0.0...v5.1.0)
 
 **Implemented enhancements:**
 
