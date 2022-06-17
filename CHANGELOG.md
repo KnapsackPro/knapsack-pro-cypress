@@ -1,5 +1,17 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.0.0...HEAD)
+
+**Implemented enhancements:**
+
+- Remove tracking legacy wallClockDuration for Cypress 3.x and 4.x [\#78](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/78) ([ArturT](https://github.com/ArturT))
+
+**Fixed bugs:**
+
+- Catch an exception from cypress.run to handle UnhandledPromiseRejectionWarning [\#79](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/79) ([ArturT](https://github.com/ArturT))
+
 ## [v5.0.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v5.0.0) (2022-06-13)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v4.6.0...v5.0.0)
