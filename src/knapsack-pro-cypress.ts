@@ -47,10 +47,19 @@ const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
     )}`,
   );
 
-  const { runs: tests, totalFailed } = await cypress.run({
-    ...updatedCypressCLIOptions,
-    spec: testFilePaths,
-  });
+  const { runs: tests, totalFailed } = await cypress
+    .run({
+      ...updatedCypressCLIOptions,
+      spec: testFilePaths,
+    })
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .catch((e: any) => {
+      knapsackProLogger.error(
+        `Error from cypress.run:\n${KnapsackProLogger.objectInspect(e)}`,
+      );
+      process.exitCode = 1;
+      throw new Error('cypress.run process failed. See the above logs.');
+    });
 
   // when Cypress crashed
   if (typeof tests === 'undefined') {
