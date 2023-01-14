@@ -13,4 +13,8 @@ export class EnvConfig {
 
     return 'cypress/e2e/**/*.{js,jsx,coffee,cjsx}';
   }
+
+  public static get testFileExcludePattern(): void | string {
+    return process.env.KNAPSACK_PRO_TEST_FILE_EXCLUDE_PATTERN;
+  }
 }
