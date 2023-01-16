@@ -22,7 +22,7 @@ export class TestFilesFinder {
       const knapsackProLogger = new KnapsackProLogger();
 
       const errorMessage =
-        'Test files cannot be found.\nPlease make sure that KNAPSACK_PRO_TEST_FILE_PATTERN and KNAPSACK_PRO_TEST_FILE_IGNORE_PATTERN allows for some files in your test directory structure to be matched.\nLearn more: https://knapsackpro.com/faq/question/how-to-run-tests-only-from-specific-directory-in-cypress';
+        'Test files cannot be found.\nPlease make sure that KNAPSACK_PRO_TEST_FILE_PATTERN and KNAPSACK_PRO_TEST_FILE_IGNORE_PATTERN allow for some files in your test directory structure to be matched.\nLearn more: https://knapsackpro.com/faq/question/how-to-run-tests-only-from-specific-directory-in-cypress';
 
       knapsackProLogger.error(errorMessage);
       throw errorMessage;
