@@ -42,7 +42,7 @@ See the [docs](https://docs.knapsackpro.com/cypress/guide/) to get started.
 
 You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node version in development.
 
-- `>= Node 16.15.1 LTS`
+- `>= Node 18.13.0 LTS`
 
 ### Dependencies
 
