@@ -1,5 +1,22 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.1.0...HEAD)
+
+**Implemented enhancements:**
+
+- Feature: Support exclusion pattern with KNAPSACK\_PRO\_TEST\_FILE\_EXCLUDE\_PATTERN env var [\#84](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/84)
+- Support env KNAPSACK\_PRO\_TEST\_FILE\_EXCLUDE\_PATTERN [\#85](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/85) ([renehernandez](https://github.com/renehernandez))
+
+**Fixed bugs:**
+
+- Improvements: make project compile again [\#86](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/86) ([ArturT](https://github.com/ArturT))
+
+**Merged pull requests:**
+
+- Point installation to docs on knapsackspro.com [\#82](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/82) ([3v0k4](https://github.com/3v0k4))
+
 ## [v5.1.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v5.1.0) (2022-06-17)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.0.0...v5.1.0)
