@@ -1,5 +1,18 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.2.0...HEAD)
+
+**Implemented enhancements:**
+
+- Update @knapsack-pro/core to 3.3.1 [\#87](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/87) ([ArturT](https://github.com/ArturT))
+
+**Merged pull requests:**
+
+- Bump json5 from 1.0.1 to 1.0.2 [\#83](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/83) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump decode-uri-component from 0.2.0 to 0.2.2 [\#81](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/81) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v5.2.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v5.2.0) (2023-01-16)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.1.0...v5.2.0)
