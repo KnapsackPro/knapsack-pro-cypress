@@ -3,6 +3,7 @@
 import {
   KnapsackProCore,
   KnapsackProLogger,
+  testFilesToExecuteType,
   onQueueFailureType,
   onQueueSuccessType,
   TestFile,
@@ -28,11 +29,12 @@ knapsackProLogger.debug(
 
 EnvConfig.loadEnvironmentVariables();
 
-const allTestFiles: TestFile[] = TestFilesFinder.allTestFiles();
+const testFilesToExecute: testFilesToExecuteType = () =>
+  TestFilesFinder.allTestFiles();
 const knapsackPro = new KnapsackProCore(
   clientName,
   clientVersion,
-  allTestFiles,
+  testFilesToExecute,
 );
 
 const onSuccess: onQueueSuccessType = async (queueTestFiles: TestFile[]) => {
