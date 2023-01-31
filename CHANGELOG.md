@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.3.0...HEAD)
+
+**Fixed bugs:**
+
+- Search for test files on the disk only if needed by the `@knapsack-pro/core` [\#88](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/88) ([ArturT](https://github.com/ArturT))
+
 ## [v5.3.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v5.3.0) (2023-01-30)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.2.0...v5.3.0)
