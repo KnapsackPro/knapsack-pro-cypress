@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.3.1...HEAD)
+
+**Merged pull requests:**
+
+- Update peerDependencies and update Cypress version [\#91](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/91) ([ArturT](https://github.com/ArturT))
+- Tweak readme [\#90](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/90) ([3v0k4](https://github.com/3v0k4))
+
 ## [v5.3.1](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v5.3.1) (2023-01-31)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.3.0...v5.3.1)
