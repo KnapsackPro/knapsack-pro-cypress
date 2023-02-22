@@ -102,9 +102,9 @@ You can use [NVM](https://github.com/nvm-sh/nvm) to manage Node versions in deve
 
 If your feature requires code changes in [@knapsack-pro/core](https://github.com/KnapsackPro/knapsack-pro-core-js), please push the `@knapsack-pro/core` to GitHub first. Then you can push changes for `@knapsack-pro/cypress` to ensure the CI will use the latest `@knapsack-pro/core`.
 
-#### Example Cypress test suite
+#### Cypress example test suite
 
-To test `@knapsack-pro/cypress` against a real test suite we use the forked [cypress-example-kitchensink](https://github.com/KnapsackPro/cypress-example-kitchensink/blob/knapsack-pro/README.knapsack-pro.md) project.
+To test `@knapsack-pro/cypress` against a real test suite we use the [cypress-example-test-suite](https://github.com/KnapsackPro/cypress-example-test-suite) project.
 
 ### Publishing
 
