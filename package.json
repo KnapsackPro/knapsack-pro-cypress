@@ -18,7 +18,11 @@
     "runner",
     "CI"
   ],
-  "author": "Knapsack Pro <support@knapsackpro.com> (https://knapsackpro.com)",
+  "author": {
+    "name": "Knapsack Sp. z o.o.",
+    "email": "support@knapsackpro.com",
+    "url": "https://knapsackpro.com"
+  },
   "contributors": [
     {
       "name": "Artur Trzop",
