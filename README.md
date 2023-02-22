@@ -35,7 +35,7 @@ See the [docs](https://docs.knapsackpro.com/cypress/guide/) to get started:
 
 <div align="center">
   <a href="https://docs.knapsackpro.com/cypress/guide/">
-    <img alt="Install button" src="./.github/assets/install-button.png" width="103" height="50" />
+    <img alt="Install button" src="./.github/assets/install-button.png" width="116" height="50" />
   </a>
 </div>
 
