@@ -190,4 +190,7 @@ To test `@knapsack-pro/cypress` against a real test suite we use the [cypress-ex
    npm publish
    ```
 
-1. Update the latest available library version in `TestSuiteClientVersionChecker` for the Knapsack Pro API repository.
+1. Update the latest available library version in:
+
+   - `TestSuiteClientVersionChecker` for the Knapsack Pro API repository.
+   - [cypress-example-test-suite](https://github.com/KnapsackPro/cypress-example-test-suite)
