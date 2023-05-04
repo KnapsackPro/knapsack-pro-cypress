@@ -1,8 +1,20 @@
 # Changelog
 
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.5.0...HEAD)
+
+**Merged pull requests:**
+
+- Update @knapsack-pro/core to 4.1.0 [\#93](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/93) ([ArturT](https://github.com/ArturT))
+
 ## [v5.5.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v5.5.0) (2023-03-01)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.4.0...v5.5.0)
+
+**Closed issues:**
+
+- Update for Cypress 12 [\#89](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/89)
 
 **Merged pull requests:**
 
@@ -11,10 +23,6 @@
 ## [v5.4.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v5.4.0) (2023-02-22)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.3.1...v5.4.0)
-
-**Closed issues:**
-
-- Update for Cypress 12 [\#89](https://github.com/KnapsackPro/knapsack-pro-cypress/issues/89)
 
 **Merged pull requests:**
 
