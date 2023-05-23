@@ -1,6 +1,14 @@
 # Changelog
 
-## [v6.0.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v6.0.0)
+## [Unreleased](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/HEAD)
+
+[Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v6.0.0...HEAD)
+
+**Merged pull requests:**
+
+- Update @knapsack-pro/core to 5.1.0 [\#95](https://github.com/KnapsackPro/knapsack-pro-cypress/pull/95) ([ArturT](https://github.com/ArturT))
+
+## [v6.0.0](https://github.com/KnapsackPro/knapsack-pro-cypress/tree/v6.0.0) (2023-05-22)
 
 [Full Changelog](https://github.com/KnapsackPro/knapsack-pro-cypress/compare/v5.6.0...v6.0.0)
 
