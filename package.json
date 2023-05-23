@@ -1,6 +1,6 @@
 {
   "name": "@knapsack-pro/cypress",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "description": "Knapsack Pro Cypress splits Cypress.io tests across CI nodes and makes sure that tests will run in optimal time on each CI node.",
   "keywords": [
     "knapsack",
